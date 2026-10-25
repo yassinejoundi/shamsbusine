@@ -13,15 +13,27 @@ export function HomeMotion({ children }: { children: React.ReactNode }) {
   useGSAP(() => {
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.utils.toArray<HTMLElement>("[data-reveal]", scope.current).forEach((element, index) => {
-        gsap.from(element, {
-          opacity: 0.35,
-          immediateRender: false,
-          duration: element.classList.contains("hero-figure") ? 0.75 : 0.5,
-          delay: index < 5 ? index * 0.06 : 0,
-          ease: "power1.out",
-          clearProps: "opacity",
-          scrollTrigger: { trigger: element, start: "top 96%", once: true },
+      gsap.from("[data-hero]", {
+        opacity: 0.65,
+        duration: 0.65,
+        stagger: 0.06,
+        ease: "power2.out",
+        clearProps: "opacity",
+      });
+
+      gsap.utils.toArray<HTMLElement>("section", scope.current).forEach((section) => {
+        const elements = gsap.utils.toArray<HTMLElement>("[data-reveal]", section);
+        elements.forEach((element, index) => {
+          const isPhoto = element.matches("figure, .photo") || element.classList.contains("questions-image");
+          gsap.from(element, {
+            opacity: isPhoto ? 0.45 : 0.7,
+            immediateRender: false,
+            duration: isPhoto ? 0.75 : 0.45,
+            delay: (index % 3) * 0.06,
+            ease: "power2.out",
+            clearProps: "opacity",
+            scrollTrigger: { trigger: element, start: "top 95%", once: true },
+          });
         });
       });
 
