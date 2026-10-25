@@ -1,0 +1,51 @@
+{
+  "note": "Original company archive. Confirm disclosure permissions before publication. No generated or stock images.",
+  "logo": {
+    "file": "/images/shamsbusine-logo.png",
+    "original": "media/brand/shamsbusine-logo.png"
+  },
+  "images": [
+    {
+      "file": "/images/villa-jardin.webp",
+      "original": "media/projects/creation-shams-copy/DSC1212.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1212.jpg",
+      "project_pages": "creation-shams-copy"
+    },
+    {
+      "file": "/images/villa-exterieur.webp",
+      "original": "media/projects/villa-4/DSC0991.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC0991.jpg",
+      "project_pages": "villa-4"
+    },
+    {
+      "file": "/images/escalier-interieur.webp",
+      "original": "media/projects/villa-3/DSC1326.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1326.jpg",
+      "project_pages": "villa-3"
+    },
+    {
+      "file": "/images/chantier-structure.webp",
+      "original": "media/projects/villa-azouzi-tameslouht/tameslouht-10.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-10.jpg",
+      "project_pages": "villa-azouzi-tameslouht"
+    },
+    {
+      "file": "/images/chantier-maconnerie.webp",
+      "original": "media/projects/villa-nouria/12.png",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/12.png",
+      "project_pages": "villa-nouria"
+    },
+    {
+      "file": "/images/detail-finitions.webp",
+      "original": "media/projects/villa-4/DSC1007.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1007.jpg",
+      "project_pages": "villa-4"
+    }
+  ]
+}

@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shams Busine
 
-## Getting Started
+French homepage for construction and renovation enquiries in Marrakech.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Verify
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run lint
+node --test --test-isolation=none lib/enquiry.test.mjs
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The Node test command uses the built-in TypeScript support in Node 22.18+.
 
-## Learn More
+The homepage is composed in `app/page.tsx`. Shared navigation and footer live in `components/site/`; homepage sections live in `components/home/`. Work Sans is served locally, with its license in `app/fonts/OFL.txt`. Selected company photographs and their original source URLs are recorded in `public/images/sources.json`.
 
-To learn more about Next.js, take a look at the following resources:
+Local project handoffs: `.project/website-structure.md` and `.project/website-design.md`. The `.project` directory is intentionally ignored by Git. Review evidence is kept in `.project/review/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Only the homepage is implemented. Navigation uses section anchors until future routes are built. The enquiry form prepares an email in the visitor’s mail application; it does not collect or send data through a backend. Telephone, email, WhatsApp availability and photo disclosure permissions need business confirmation before publication. Exact office address, hours, counters, testimonials and legal claims are omitted pending verification.
