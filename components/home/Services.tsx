@@ -1,3 +1,5 @@
+import { Arrow } from "@/components/site/Arrow";
+
 const services = [
   { title: "Gros œuvre & étanchéité", text: "Terrassement, fondations, béton armé et maçonnerie. Protection des toitures, terrasses et sous-sols par des travaux d’étanchéité adaptés au projet." },
   { title: "Second œuvre & techniques", text: "Plomberie, réseaux sanitaires, électricité et courants faibles. Chauffage, ventilation et climatisation, en coordination avec les autres corps de métier." },
@@ -12,7 +14,7 @@ export function Services() {
         <div className="services-intro">
           <h2 id="services-title" data-reveal>À chaque étape,<br />le bon métier.</h2>
           <p data-reveal>Construire, transformer, rénover. Des compétences complémentaires, réunies autour de votre projet.</p>
-          <a className="text-link" href="#devis" data-reveal>Discuter de vos travaux <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="#devis" data-reveal>Discuter de vos travaux <Arrow /></a>
         </div>
         <div className="service-list">
           {services.map(({ title, text }, index) => (

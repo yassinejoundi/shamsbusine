@@ -10,15 +10,14 @@ export function Hero() {
           <p className="hero-description" data-reveal>Construction et rénovation à Marrakech. Du gros œuvre aux finitions, Shams Busine accompagne votre projet.</p>
           <div className="hero-actions" data-reveal>
             <a href="#devis" className="button">Demander un devis <Arrow /></a>
-            <a href="#realisations" className="text-link">Voir les réalisations <span aria-hidden="true">↘</span></a>
+            <a href="#realisations" className="text-link">Voir les réalisations <Arrow /></a>
           </div>
-          <p className="hero-location" data-reveal>Marrakech, Maroc<br />Du premier trait aux derniers détails.</p>
         </div>
         <figure className="hero-figure" data-reveal>
           <div className="photo hero-photo">
             <Image src="/images/villa-jardin.webp" alt="Villa aux façades roses, grandes baies vitrées et jardin planté de palmiers" fill sizes="(max-width: 699px) 100vw, 68vw" preload />
           </div>
-          <figcaption><span>Construire des lieux. Soigner les détails.</span><span aria-hidden="true">Shams Busine ↗</span></figcaption>
+          <figcaption><span>Du premier trait aux derniers détails.</span><span>Marrakech, Maroc</span></figcaption>
         </figure>
       </div>
     </section>
