@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { navigation } from "@/lib/site";
+import { NavigationLink } from "./NavigationLink";
 
 export function MobileMenu() {
   const menu = useRef<HTMLDetailsElement>(null);
@@ -21,7 +22,7 @@ export function MobileMenu() {
       <summary>Menu <FontAwesomeIcon icon={faBars} className="when-closed" aria-hidden="true" /><FontAwesomeIcon icon={faXmark} className="when-open" aria-hidden="true" /></summary>
       <nav aria-label="Navigation mobile">
         {navigation.map(({ href, label }) => (
-          <a key={href} href={href} aria-current={href === "/" ? "page" : undefined} onClick={() => closeMenu()}>{label}</a>
+          <NavigationLink key={href} href={href} onClick={() => closeMenu()}>{label}</NavigationLink>
         ))}
       </nav>
     </details>

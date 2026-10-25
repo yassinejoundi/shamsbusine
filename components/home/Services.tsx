@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { DisclosureIcon } from "@/components/site/DisclosureIcon";
 
 const services = [
@@ -16,7 +17,10 @@ export function Services() {
       <div className="frame">
         <div className="section-intro">
           <h2 id="services-title" data-reveal>Des métiers<br />complémentaires.</h2>
-          <p data-reveal>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
+          <div>
+            <p data-reveal>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
+            <Link href="/services" className="text-link" data-reveal>Explorer nos services</Link>
+          </div>
         </div>
         <div className="services-layout">
           <figure className="services-figure" data-reveal>

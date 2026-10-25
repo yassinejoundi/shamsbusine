@@ -17,7 +17,7 @@ export function SiteFooter() {
             <p>Construction & rénovation.<br />Marrakech, Maroc.</p>
           </div>
           <nav aria-label="Navigation de pied de page">
-            {navigation.slice(1).map(({ href, label }) => <a href={href} key={href}>{label}</a>)}
+            {navigation.slice(1).map(({ href, label }) => <Link href={href} key={href}>{label}</Link>)}
           </nav>
           <div className="footer-contact">
             <Link className="text-link" href="/#devis">Votre prochain projet</Link>

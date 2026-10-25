@@ -1,0 +1,91 @@
+.services-page { overflow-wrap: break-word; }
+.services-hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.75rem 2rem; padding-block-start: 2rem; }
+.services-hero h1 { grid-column: 1 / 9; font-size: clamp(3rem, 7.1vw, 7rem); letter-spacing: -.055em; line-height: 1.02; }
+.services-hero-copy { grid-column: 9 / 13; align-self: center; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.services-hero-copy p { max-width: 36ch; }
+.services-hero-figure { grid-column: 1 / 10; }
+.services-hero-photo { aspect-ratio: 2.4; }
+.services-hero-photo img { object-position: center 65%; }
+.services-hero-note { grid-column: 11 / 13; align-self: end; padding-block-end: 2.25rem; }
+.services-scope-index { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-block-end: 3rem; }
+.services-scope-index a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: underline; }
+.services-scope-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem 12%; }
+.services-scope-entry { scroll-margin-block-start: 2rem; min-width: 0; }
+.services-scope-entry h3 { max-width: 24ch; }
+.services-scope-entry > p { margin-block-start: 1.2rem; max-width: 44ch; }
+.services-scope-entry details { margin-block-start: .75rem; max-width: 44ch; }
+.services-scope-entry summary { justify-content: flex-start; gap: 1rem; text-decoration: underline; text-underline-offset: .3em; font-weight: 500; }
+.services-scope-entry ul { padding-inline-start: 1.2rem; margin-block: 1rem 0; }
+.services-scope-entry li + li { margin-block-start: .5rem; }
+.services-stage { background: var(--ink); color: var(--ground); padding-block: 5rem; }
+.services-stage-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10%; align-items: start; }
+.services-stage-layout > div > p { margin-block-start: 1.5rem; max-width: 35ch; }
+.services-stage-links { list-style: none; padding: 0; margin: 0; }
+.services-stage-links li + li { margin-block-start: 2rem; }
+.services-stage-links a { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: .5rem; }
+.services-stage-links a > span { font-size: var(--subheading); line-height: 1.3; letter-spacing: -.025em; }
+.services-stage-links small { display: block; font-size: 1rem; line-height: 1.6; letter-spacing: 0; margin-block-start: .5rem; }
+.services-stage-links svg { color: var(--accent); }
+.services-stage :focus-visible { outline-color: var(--accent); }
+.services-project-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3.5rem 2rem; align-items: start; }
+.services-project-wide { grid-column: 1 / 8; }
+.services-exterior-photo { aspect-ratio: 1.5; }
+.services-project-portrait { grid-column: 9 / 13; margin-block-start: 6rem; }
+.services-interior-photo { aspect-ratio: .82; }
+.services-interior-photo img { object-position: 36% center; }
+.services-project-detail { grid-column: 2 / 7; }
+.services-material-photo { aspect-ratio: 1.45; }
+.services-project-note { grid-column: 8 / 13; align-self: center; }
+.services-project-note > p:first-child { font-size: var(--subheading); line-height: 1.3; letter-spacing: -.025em; }
+.services-project-note p + p { margin-block-start: 1.25rem; }
+.services-project-note a { margin-block-start: .75rem; }
+.services-process { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 10%; }
+.services-process-list { margin: 0; padding: 0; list-style: none; }
+.services-process-list li + li { margin-block-start: 2.5rem; }
+.services-process-list p { margin-block-start: .8rem; max-width: 49ch; }
+.services-questions { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 10%; align-items: start; }
+.services-questions > div > p { margin-block-start: 1.5rem; max-width: 32ch; }
+.services-questions .services-faq { margin-block-start: 0; }
+.services-enquiry { background: var(--surface); padding-block: 5.5rem 6rem; }
+.services-enquiry-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10%; }
+.services-enquiry-layout > div > p { max-width: 37ch; margin-block-start: 1.5rem; }
+.services-quote-action { margin-block-end: 1.25rem; }
+.services-enquiry-details ul { padding-inline-start: 1.2rem; margin-block: 1rem 2rem; }
+.services-enquiry-details li + li { margin-block-start: .5rem; }
+.services-enquiry-details a:not(.services-quote-action) { display: flex; align-items: center; min-height: 44px; text-decoration: underline; overflow-wrap: anywhere; }
+
+@media (max-width: 1099px) {
+  .services-hero { gap: 2rem 1.5rem; }
+  .services-hero h1 { grid-column: 1 / 8; }
+  .services-hero-copy { grid-column: 8 / 13; }
+  .services-hero-figure { grid-column: 1 / 10; }
+  .services-hero-photo { aspect-ratio: 1.8; }
+  .services-hero-note { grid-column: 10 / 13; }
+  .services-scope-grid { gap: 3rem 7%; }
+  .services-stage-layout, .services-process, .services-questions, .services-enquiry-layout { gap: 6%; }
+  .services-project-grid { column-gap: 1.25rem; }
+  .services-project-portrait { margin-block-start: 3rem; }
+}
+
+@media (max-width: 699px) {
+  .services-hero { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; padding-block-start: 1.75rem; }
+  .services-hero h1, .services-hero-copy, .services-hero-figure, .services-hero-note { grid-column: auto; }
+  .services-hero h1 { font-size: clamp(2.5rem, 10.5vw, 4.5rem); }
+  .services-hero-copy { gap: 1rem; }
+  .services-hero-photo { aspect-ratio: 1.25; }
+  .services-hero-note { max-width: 32ch; padding-block-end: 0; }
+  .services-scope-index { gap: .3rem 1.25rem; margin-block-end: 2.5rem; }
+  .services-scope-grid { grid-template-columns: minmax(0, 1fr); gap: 2.75rem; }
+  .services-scope-entry h3 { font-size: 1.5rem; }
+  .services-scope-entry > p { margin-block-start: .75rem; }
+  .services-stage, .services-enquiry { padding-block: 3.5rem; }
+  .services-stage-layout, .services-process, .services-questions, .services-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .services-project-grid { display: flex; flex-direction: column; gap: 2.5rem; }
+  .services-project-wide, .services-project-detail { width: 100%; }
+  .services-exterior-photo { aspect-ratio: 1.2; }
+  .services-project-portrait { width: 78%; align-self: flex-end; margin-block-start: 0; }
+  .services-interior-photo { aspect-ratio: .9; }
+  .services-project-note { width: 100%; }
+  .services-process-list li + li { margin-block-start: 2rem; }
+  .services-enquiry-layout > div > p:first-child { margin-block-start: 0; }
+}
