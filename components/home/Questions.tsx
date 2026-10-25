@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DisclosureIcon } from "@/components/site/DisclosureIcon";
 
 const questions = [
   ["Quels travaux pouvez-vous réaliser ?", "Construction, gros œuvre, étanchéité, installations techniques, rénovation et finitions. Décrivez votre besoin pour que nous précisions ensemble le périmètre des travaux."],
@@ -12,14 +13,14 @@ export function Questions() {
   return (
     <section className="questions frame section-space" aria-labelledby="questions-title">
       <div className="questions-image" data-reveal>
-        <div className="photo detail-photo"><Image src="/images/detail-finitions.webp" alt="Détail de finitions en marbre sombre et bois, au bord d’un jardin" fill sizes="(max-width: 699px) 82vw, 30vw" /></div>
-        <p>Les bons échanges font<br />les bons départs.</p>
+        <div className="photo detail-photo"><Image src="/images/chantier-maconnerie.webp" alt="Maçonnerie en briques, structure en béton et échafaudages sur un chantier" fill sizes="(max-width: 699px) 78vw, 30vw" /></div>
+        <p>Bien préparer. Mieux construire.</p>
       </div>
       <div>
-        <h2 id="questions-title" data-reveal>Avant de se lancer.</h2>
+        <h2 id="questions-title" data-reveal>Vos questions.</h2>
         <div className="faq-list">
           {questions.map(([question, answer]) => (
-            <details key={question} data-reveal><summary>{question}<span className="disclosure-icon" aria-hidden="true" /></summary><p>{answer}</p></details>
+            <details key={question} data-reveal><summary>{question}<DisclosureIcon /></summary><p>{answer}</p></details>
           ))}
         </div>
       </div>

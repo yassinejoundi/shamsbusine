@@ -1,20 +1,18 @@
 import Image from "next/image";
-import { Arrow } from "@/components/site/Arrow";
 
 export function Company() {
   return (
-    <section className="company section-space" id="entreprise" aria-labelledby="company-title">
-      <div className="frame company-layout">
-        <div className="company-copy">
-          <h2 id="company-title" data-reveal>L’exigence,<br />sur le terrain.</h2>
-          <p data-reveal>Basée à Marrakech, Shams Busine intervient sur des projets résidentiels, commerciaux et professionnels, de la structure aux finitions.</p>
-          <p data-reveal>Notre approche : une coordination attentive, des échanges clairs et le soin du détail. La qualité d’exécution et la sécurité guident notre travail au quotidien.</p>
-          <a className="text-link" href="#devis" data-reveal>Parler avec notre équipe <Arrow /></a>
+    <section className="company frame section-space" id="entreprise" aria-labelledby="company-title">
+      <div className="photo company-panorama" data-reveal><Image src="/images/chantier-structure.webp" alt="Chantier de construction avec structure en béton, coffrages et terrain en cours d’aménagement" fill sizes="100vw" /></div>
+      <div className="company-panel">
+        <div>
+          <h2 id="company-title" data-reveal>Une équipe<br />de terrain.</h2>
+          <a className="text-link" href="#devis" data-reveal>Échanger avec Shams Busine</a>
         </div>
-        <figure data-reveal>
-          <div className="photo company-photo"><Image src="/images/chantier-maconnerie.webp" alt="Bâtiment en cours de construction, maçonnerie en briques et structure en béton avec échafaudage" fill sizes="(max-width: 699px) 100vw, 46vw" /></div>
-          <figcaption>Le savoir-faire se construit, chaque jour.</figcaption>
-        </figure>
+        <div className="company-copy">
+          <p data-reveal>Basée à Marrakech, Shams Busine accompagne les projets résidentiels, commerciaux et professionnels, de la structure aux finitions.</p>
+          <p data-reveal>Coordonner les métiers, soigner l’exécution et garder un dialogue clair : nos engagements se vivent sur le chantier, avec une attention constante à la sécurité.</p>
+        </div>
       </div>
     </section>
   );
