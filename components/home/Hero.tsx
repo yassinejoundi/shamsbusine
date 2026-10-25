@@ -9,7 +9,7 @@ export function Hero() {
         <Image src="/images/detail-finitions.webp" alt="Marbre sombre, bois et végétation dans un aménagement extérieur" fill sizes="(max-width: 699px) 30vw, 24vw" />
       </div>
       <div className="hero-copy">
-        <p className="hero-description" data-hero>Construction et rénovation à Marrakech. Avec Shams Busine, donnez vie à votre projet, du gros œuvre aux finitions.</p>
+        <p className="hero-description" data-hero>Construction et rénovation à Marrakech. Du gros œuvre aux finitions, Shams Busine donne vie à votre projet.</p>
         <div className="hero-actions" data-hero>
           <a href="#devis" className="button">Demander un devis <Arrow /></a>
           <a href="#realisations" className="text-link">Découvrir nos réalisations</a>

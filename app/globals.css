@@ -63,7 +63,7 @@ section[id] { scroll-margin-block-start: 2rem; }
 .hero h1 span:last-child { margin-inline-start: 26%; }
 .hero-detail { grid-column: 10 / 13; grid-row: 1; align-self: start; aspect-ratio: 1.4; margin-block-start: .5rem; }
 .hero-copy { grid-column: 9 / 13; grid-row: 2; padding-block: 2rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
-.hero-description { max-width: 36ch; }
+.hero-description { max-width: 36ch; font-size: 1.125rem; line-height: 1.6; }
 .hero-actions { margin-block-start: 2rem; display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
 .hero-figure { grid-column: 1 / 8; grid-row: 2; }
 .photo { position: relative; overflow: hidden; background: var(--surface); }
@@ -103,7 +103,6 @@ details[open] > summary .when-open { display: inline-block; }
 details[open] > summary .when-closed { display: none; }
 .service-list .disclosure-icon { color: var(--accent); }
 details > p { padding-block-start: 1rem; max-width: 53ch; }
-.service-list details > a { margin-block-start: .75rem; }
 .process-steps { list-style: none; padding: 0; margin: 0; }
 .process-steps li { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8%; padding-block: 2rem; align-items: start; }
 .process-steps li + li { margin-block-start: 1rem; }
@@ -135,9 +134,8 @@ input, select, textarea { display: block; width: 100%; min-width: 0; border: 1px
 input, select { min-height: 52px; }
 textarea { resize: vertical; min-height: 120px; }
 textarea::placeholder { color: var(--secondary); }
-.form-note, .form-fallback, .form-status { font-size: 1rem; line-height: 1.5; }
+.form-note, .form-status { font-size: 1rem; line-height: 1.5; }
 .form-note { color: var(--secondary); }
-.form-fallback { text-decoration: underline; overflow-wrap: anywhere; }
 .form-status:empty { display: none; }
 .quote-form .button { align-self: flex-start; }
 .site-footer { background: var(--ink); color: var(--ground); padding-block: 3rem 1.5rem; }
@@ -175,7 +173,7 @@ textarea::placeholder { color: var(--secondary); }
 }
 
 @media (max-width: 699px) {
-  :root { --gutter: 1.25rem; --display: clamp(4.6rem, 20vw, 8rem); --heading: clamp(1.85rem, 7.7vw, 2.8rem); --subheading: 1.25rem; }
+  :root { --gutter: 1.25rem; --display: clamp(4rem, 20vw, 8rem); --heading: clamp(1.85rem, 7.7vw, 2.8rem); --subheading: 1.25rem; }
   .site-header { min-height: 90px; gap: .75rem; padding-block: .6rem; }
   .brand img { width: 65px; }
   .header-actions { gap: 1rem; }

@@ -23,7 +23,7 @@ export function QuoteForm() {
         return;
       }
       window.location.href = enquiryEmail({ name: value("name"), city: value("city"), type: value("type"), description: value("description") });
-      setNotice("Votre application e-mail est sollicitée. Relisez puis envoyez votre message. Si elle ne s’ouvre pas, utilisez l’adresse e-mail ci-dessous.");
+      setNotice("Votre application e-mail est sollicitée. Relisez puis envoyez votre message. Si elle ne s’ouvre pas, utilisez le lien e-mail de cette section.");
     }}>
       <div className="form-row">
         <label>Votre nom<input name="name" autoComplete="name" required maxLength={100} /></label>
@@ -34,7 +34,6 @@ export function QuoteForm() {
       <p className="form-note" id="email-note">Ce formulaire prépare un message dans votre application e-mail. Aucun envoi n’est effectué sur ce site.</p>
       <button type="submit" className="button" aria-describedby="email-note">Préparer mon e-mail <Arrow /></button>
       <p className="form-status" role="status">{notice}</p>
-      <a className="form-fallback" href="mailto:info@shamsbusine.com">Écrire directement à info@shamsbusine.com</a>
     </form>
   );
 }

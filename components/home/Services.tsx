@@ -28,7 +28,6 @@ export function Services() {
               <details key={title} open={index === 0} data-reveal>
                 <summary><h3>{title}</h3><DisclosureIcon /></summary>
                 <p>{text}</p>
-                <a className="text-link" href="#devis">Demander un devis</a>
               </details>
             ))}
           </div>
