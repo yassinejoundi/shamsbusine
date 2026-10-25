@@ -222,6 +222,11 @@ textarea::placeholder { color: var(--secondary); }
   .button:not(:disabled):active { transform: scale(.96); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  /* ScrollTrigger can restore a cached inline scroll behavior after refresh. */
+  html { scroll-behavior: auto !important; }
+}
+
 @media (hover: hover) {
   .button:hover { background: var(--accent-hover); }
   a:not(.button):hover { text-decoration: underline; }

@@ -8,10 +8,20 @@ export function QuoteForm() {
   const [notice, setNotice] = useState("");
 
   return (
-    <form className="quote-form" action="mailto:info@shamsbusine.com" method="get" onSubmit={(event) => {
+    <form className="quote-form" action="mailto:info@shamsbusine.com" method="get" onInput={(event) => {
+      const field = event.target;
+      if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) field.setCustomValidity("");
+    }} onSubmit={(event) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       const value = (key: string) => String(data.get(key) ?? "").trim();
+      for (const name of ["name", "city", "description"]) {
+        if (value(name)) continue;
+        const field = event.currentTarget.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
+        field.setCustomValidity("Veuillez renseigner ce champ.");
+        field.reportValidity();
+        return;
+      }
       window.location.href = enquiryEmail({ name: value("name"), city: value("city"), type: value("type"), description: value("description") });
       setNotice("Votre application e-mail est sollicitée. Relisez puis envoyez votre message. Si elle ne s’ouvre pas, utilisez l’adresse e-mail ci-dessous.");
     }}>
