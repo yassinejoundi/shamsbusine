@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export function HomeMotion({ children }: { children: React.ReactNode }) {
+export function PageMotion({ children }: { children: React.ReactNode }) {
   const scope = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {

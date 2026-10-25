@@ -5,11 +5,11 @@ import { ProjectProcess } from "@/components/home/ProjectProcess";
 import { Company } from "@/components/home/Company";
 import { Questions } from "@/components/home/Questions";
 import { QuoteSection } from "@/components/home/QuoteSection";
-import { HomeMotion } from "@/components/home/HomeMotion";
+import { PageMotion } from "@/components/site/PageMotion";
 
 export default function Home() {
   return (
-    <HomeMotion>
+    <PageMotion>
       <main id="contenu" tabIndex={-1}>
         <Hero />
         <SelectedWork />
@@ -19,6 +19,6 @@ export default function Home() {
         <Questions />
         <QuoteSection />
       </main>
-    </HomeMotion>
+    </PageMotion>
   );
 }
