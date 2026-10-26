@@ -29,7 +29,7 @@ export default function RealisationsPage({
           <h1 id="realisations-title" data-hero><span>Des projets</span><span>en images.</span></h1>
           <div className="realisations-intro-copy">
             <p data-hero>De la structure aux finitions, découvrez des chantiers Shams Busine en images.</p>
-            <Link href="/#devis" className="button" data-hero>
+            <Link href="/contact/#devis" className="button" data-hero>
               Demander un devis <Arrow />
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function RealisationsPage({
               <p data-reveal>Pour un premier échange utile, indiquez la ville, les travaux envisagés et l’étape où vous en êtes.</p>
             </div>
             <div className="realisations-enquiry-actions">
-              <Link href="/#devis" className="button" data-reveal>
+              <Link href="/contact/#devis" className="button" data-reveal>
                 Décrire mon projet <Arrow />
               </Link>
               <a href="tel:+212777543997" data-reveal>+212 777 54 39 97</a>

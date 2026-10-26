@@ -15,7 +15,7 @@ export function SiteNavbar() {
         {navigation.slice(1).map(({ href, label }) => <NavigationLink key={href} href={href}>{label}</NavigationLink>)}
       </nav>
       <div className="header-actions">
-        <Link href="/#devis" className="header-quote">Demander un devis <Arrow /></Link>
+        <Link href="/contact/#devis" className="header-quote">Demander un devis <Arrow /></Link>
         <MobileMenu />
       </div>
     </header>

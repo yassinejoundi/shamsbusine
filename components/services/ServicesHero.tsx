@@ -8,7 +8,7 @@ export function ServicesHero() {
       <h1 id="services-heading" data-hero>De la structure<br />aux finitions.</h1>
       <div className="services-hero-copy">
         <p data-hero>Nos services de construction et de rénovation à Marrakech. Des compétences réunies, du premier ouvrage au dernier détail.</p>
-        <Link href="/#devis" className="button" data-hero>Demander un devis <Arrow /></Link>
+        <Link href="/contact/#devis" className="button" data-hero>Demander un devis <Arrow /></Link>
         <a href="#metiers" className="text-link" data-hero>Découvrir les métiers</a>
       </div>
       <figure className="services-hero-figure" data-hero>

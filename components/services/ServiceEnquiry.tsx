@@ -13,7 +13,7 @@ export function ServiceEnquiry() {
         <div className="services-enquiry-details">
           <p data-reveal>Pour commencer, partagez&nbsp;:</p>
           <ul data-reveal><li>La ville et le type de bâtiment</li><li>Les travaux envisagés et l’état du projet</li><li>Les plans ou les photos disponibles</li></ul>
-          <Link href="/#devis" className="button services-quote-action" data-reveal>Demander un devis <Arrow /></Link>
+          <Link href="/contact/#devis" className="button services-quote-action" data-reveal>Demander un devis <Arrow /></Link>
           <a href={contact.phoneHref} data-reveal>{contact.phone}</a>
           <a href={`mailto:${contact.email}`} data-reveal>{contact.email}</a>
         </div>

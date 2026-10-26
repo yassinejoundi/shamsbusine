@@ -20,7 +20,7 @@ export function SiteFooter() {
             {navigation.slice(1).map(({ href, label }) => <Link href={href} key={href}>{label}</Link>)}
           </nav>
           <div className="footer-contact">
-            <Link className="text-link" href="/#devis">Votre prochain projet</Link>
+            <Link className="text-link" href="/contact/#devis">Votre prochain projet</Link>
             <a href={contact.phoneHref}>{contact.phone}</a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>

@@ -18,7 +18,7 @@ export function EntrepriseHero() {
       </figure>
       <div className="entreprise-hero-copy">
         <p data-hero>Construction et rénovation à Marrakech, de la structure aux finitions.</p>
-        <Link className="button" href="/#devis" data-hero>Parler de mon projet <Arrow /></Link>
+        <Link className="button" href="/contact/#devis" data-hero>Parler de mon projet <Arrow /></Link>
       </div>
       <h1 id="entreprise-title" data-hero data-wordmark><span>Shams</span> <span>Busine</span></h1>
     </section>
