@@ -21,6 +21,26 @@ export function PageMotion({ children }: { children: React.ReactNode }) {
         clearProps: "opacity",
       });
 
+      const wordmark = scope.current?.querySelector<HTMLElement>("[data-wordmark]");
+      if (wordmark) {
+        gsap.fromTo(wordmark, { scaleX: 0.96 }, {
+          scaleX: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          clearProps: "scaleX",
+        });
+      }
+
+      const photo = scope.current?.querySelector<HTMLElement>("[data-photo-motion] img");
+      if (photo) {
+        gsap.fromTo(photo, { scale: 1.04 }, {
+          scale: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          clearProps: "scale",
+        });
+      }
+
       gsap.utils.toArray<HTMLElement>("section", scope.current).forEach((section) => {
         const elements = gsap.utils.toArray<HTMLElement>("[data-reveal]", section);
         elements.forEach((element, index) => {

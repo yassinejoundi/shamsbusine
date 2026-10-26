@@ -1,0 +1,123 @@
+.entreprise-page { overflow-wrap: break-word; }
+
+.entreprise-hero { padding-block-start: 0; }
+.entreprise-hero-figure { margin: 0 calc(var(--gutter) * -1); }
+.entreprise-hero-photo { aspect-ratio: 3; }
+.entreprise-hero-photo img { object-position: center 38%; }
+.entreprise-hero-copy { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; padding-block: 1.5rem .5rem; }
+.entreprise-hero-copy > p { max-width: 48ch; font-size: 1.0625rem; }
+.entreprise-hero h1 { margin-block: .75rem 0; font-size: clamp(3rem, 15.4vw, 14rem); line-height: .84; letter-spacing: -.06em; white-space: nowrap; }
+
+.entreprise-approche { margin-block-start: var(--section-gap); padding-block: 5.5rem; background: var(--surface); }
+.entreprise-approche > .frame > h2 { max-width: 16ch; font-size: clamp(2.25rem, 3.2vw, 2.5rem); }
+.entreprise-approche-lead { max-width: 43ch; margin-block-start: 1.5rem; font-size: 1.3125rem; line-height: 1.5; }
+.entreprise-approche-tiles { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 1rem; align-items: stretch; margin-block-start: 4.5rem; }
+.entreprise-approche-figure { margin: 0; }
+.entreprise-approche-photo { aspect-ratio: 1.35; }
+.entreprise-approche-photo img { object-position: center 76%; }
+.entreprise-approche-facts { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 4vw, 4rem); background: var(--ink); color: var(--ground); }
+.entreprise-approche-facts h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.entreprise-approche-facts > p { max-width: 40ch; margin-block-start: .75rem; }
+.entreprise-approche-facts dl { display: grid; gap: 1rem; margin: 2rem 0 0; }
+.entreprise-approche-facts dl > div { display: grid; grid-template-columns: minmax(6.5rem, .55fr) 1fr; gap: 1rem; }
+.entreprise-approche-facts dt { color: #d0d1cb; }
+.entreprise-approche-facts dd { margin: 0; }
+
+.entreprise-gallery { padding-block: var(--section-gap); }
+.entreprise-gallery-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 8%; align-items: end; margin-block-end: 3.5rem; }
+.entreprise-gallery-intro h2 { max-width: 14ch; font-size: clamp(2rem, 3.2vw, 2.5rem); }
+.entreprise-gallery-intro > p { max-width: 40ch; justify-self: end; }
+.entreprise-gallery-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); gap: clamp(7rem, 22vh, 14rem) 2rem; align-items: start; }
+.entreprise-gallery-grid figure { margin: 0; }
+.entreprise-gallery-villa { grid-column: 1 / 8; grid-row: 1; }
+.entreprise-gallery-facade { grid-column: 6 / 13; grid-row: 2; }
+.entreprise-gallery-interior { grid-column: 2 / 8; grid-row: 3; }
+.entreprise-gallery-fountain { grid-column: 6 / 13; grid-row: 4; }
+.entreprise-gallery-photo { aspect-ratio: 1.5; }
+.entreprise-gallery-facade .entreprise-gallery-photo { aspect-ratio: 1.6; }
+.entreprise-gallery-interior .entreprise-gallery-photo { aspect-ratio: 1.35; }
+.entreprise-gallery-interior img { object-position: center 50%; }
+.entreprise-gallery-fountain .entreprise-gallery-photo { aspect-ratio: 1.5; }
+
+.entreprise-methode { background: var(--ink); color: var(--ground); padding-block: 5.5rem; }
+.entreprise-methode-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 8%; align-items: end; }
+.entreprise-methode-intro h2 { max-width: 14ch; font-size: clamp(2rem, 3.2vw, 2.5rem); }
+.entreprise-methode-intro > p { max-width: 40ch; justify-self: end; }
+.entreprise-stages { list-style: none; padding: 0; margin: 3.5rem 0 0; }
+.entreprise-stages li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); gap: 8%; align-items: start; }
+.entreprise-stages li + li { margin-block-start: 2.25rem; }
+.entreprise-stages h3 { font-size: clamp(2rem, 4.2vw, 3.5rem); max-width: 21ch; }
+.entreprise-stages p { max-width: 44ch; justify-self: end; padding-block-start: .6rem; }
+.entreprise-methode :focus-visible { outline-color: var(--accent); }
+
+.entreprise-enquiry { padding-block: 4rem 7rem; }
+.entreprise-enquiry-layout { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.entreprise-enquiry h2 { max-width: 34ch; font-size: 1.3125rem; font-weight: 400; line-height: 1.5; letter-spacing: 0; }
+.entreprise-enquiry-actions { display: flex; align-items: center; }
+
+@media (max-width: 1099px) {
+  .entreprise-hero-photo { aspect-ratio: 2.7; }
+  .entreprise-hero-copy { gap: 1.5rem; }
+  .entreprise-approche-tiles { gap: .75rem; margin-block-start: 3.5rem; }
+  .entreprise-approche-facts { padding: 2rem; }
+  .entreprise-approche-facts dl > div { grid-template-columns: minmax(5.5rem, .55fr) 1fr; gap: .75rem; }
+  .entreprise-gallery-intro, .entreprise-methode-intro { gap: 6%; }
+  .entreprise-gallery-grid { column-gap: 1.5rem; }
+  .entreprise-stages li { grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 6%; }
+}
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .entreprise-hero-photo { aspect-ratio: 3.3; }
+  .entreprise-hero h1 { font-size: clamp(3.75rem, 12vw, 8rem); }
+}
+
+@media (min-width: 700px) and (max-width: 767px) {
+  .entreprise-hero-photo { aspect-ratio: 4.2; }
+}
+
+@media (max-width: 899px) {
+  .entreprise-approche-tiles { grid-template-columns: minmax(0, 1fr); }
+  .entreprise-approche-photo { aspect-ratio: 1.7; }
+}
+
+@media (max-width: 699px) {
+  .entreprise-hero-figure { margin-inline: calc(var(--gutter) * -1); }
+  .entreprise-hero-photo { height: 46svh; min-height: 14rem; max-height: 27rem; aspect-ratio: auto; }
+  .entreprise-hero-photo img { object-position: center 43%; }
+  .entreprise-hero-copy { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-block: 1rem .5rem; }
+  .entreprise-hero-copy > p { font-size: 1rem; }
+  .entreprise-hero h1 { margin-block-start: .75rem; font-size: 21vw; line-height: .84; letter-spacing: -.065em; white-space: normal; }
+  .entreprise-hero h1 span { display: block; }
+  .entreprise-approche { padding-block: 3.75rem; }
+  .entreprise-approche > .frame > h2 { font-size: var(--heading); }
+  .entreprise-approche-lead { margin-block-start: 1rem; font-size: 1.0625rem; }
+  .entreprise-approche-tiles { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-start: 2rem; }
+  .entreprise-approche-photo { aspect-ratio: 1.2; }
+  .entreprise-approche-facts { padding: 1.75rem 1.25rem; }
+  .entreprise-approche-facts dl { gap: .75rem; margin-block-start: 1.25rem; }
+  .entreprise-approche-facts dl > div { grid-template-columns: minmax(6rem, .65fr) 1fr; gap: .75rem; }
+  .entreprise-gallery { padding-block: 4.5rem; }
+  .entreprise-gallery-intro, .entreprise-methode-intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-end: 2rem; }
+  .entreprise-gallery-intro h2, .entreprise-methode-intro h2, .entreprise-enquiry h2 { font-size: var(--heading); }
+  .entreprise-gallery-intro > p, .entreprise-methode-intro > p { justify-self: start; }
+  .entreprise-gallery-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 2.5rem; }
+  .entreprise-gallery-villa, .entreprise-gallery-facade, .entreprise-gallery-interior, .entreprise-gallery-fountain { grid-column: 1; grid-row: auto; width: 88%; }
+  .entreprise-gallery-facade, .entreprise-gallery-fountain { justify-self: end; }
+  .entreprise-gallery-photo, .entreprise-gallery-facade .entreprise-gallery-photo, .entreprise-gallery-interior .entreprise-gallery-photo, .entreprise-gallery-fountain .entreprise-gallery-photo { aspect-ratio: 1.25; }
+  .entreprise-methode { padding-block: 3.75rem; }
+  .entreprise-methode-intro { margin-block-end: 0; }
+  .entreprise-stages { margin-block-start: 2rem; }
+  .entreprise-stages li { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .entreprise-stages li + li { margin-block-start: 1.75rem; }
+  .entreprise-stages h3 { font-size: var(--subheading); }
+  .entreprise-stages p { justify-self: start; padding: 0; max-width: 40ch; }
+  .entreprise-enquiry { padding-block: 3.75rem 5rem; }
+  .entreprise-enquiry h2 { font-size: 1.125rem; }
+}
+
+@media (max-width: 359px) {
+  .entreprise-hero-photo { height: 30svh; min-height: 10rem; max-height: 16rem; }
+  .entreprise-hero h1 { font-size: 21vw; }
+  .entreprise-gallery-villa, .entreprise-gallery-facade, .entreprise-gallery-interior, .entreprise-gallery-fountain { width: 100%; }
+  .entreprise-approche-facts dl > div { grid-template-columns: minmax(5rem, .65fr) 1fr; }
+}

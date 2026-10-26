@@ -6,11 +6,11 @@ export const contact = {
   whatsapp: "https://wa.me/212777543997",
 };
 
-// Keep homepage anchors for destinations whose standalone routes are not built yet.
+// Keep homepage anchors for sections that do not have standalone routes yet.
 export const navigation = [
   { label: "Accueil", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Réalisations", href: "/realisations" },
-  { label: "Entreprise", href: "/#entreprise" },
+  { label: "Entreprise", href: "/entreprise" },
   { label: "Contact", href: "/#devis" },
 ];
