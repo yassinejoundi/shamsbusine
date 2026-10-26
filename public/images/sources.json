@@ -50,6 +50,12 @@
   ],
   "generated_images": [
     {
+      "file": "/images/contact-materials.webp",
+      "generated_by": "OpenAI ImageGen",
+      "role": "Conceptual material still life in the Contact hero; not a Shams Busine project photograph.",
+      "prompt": "Use case: photorealistic-natural. Asset type: secondary editorial image within the contact page hero for a French construction company in Marrakech. Primary request: a premium, tactile still life that evokes the moment before a building project begins. Scene/backdrop: warm limestone work surface, natural plaster wall, hard Moroccan morning sunlight. Subject: one folded blank architectural tracing sheet, a simple carpenter's pencil, a small irregular sample of pale limestone and a short raw clay brick fragment. Style/medium: high-end architectural editorial photography, authentic material textures and natural imperfections, no stylized rendering. Composition/framing: close, vertical crop, deliberately sparse with a strong diagonal shadow and generous breathing room; no people or buildings. Palette: warm plaster, limestone, faded terracotta, charcoal pencil, subtle amber sunlight. Constraints: conceptual atmosphere only; does not depict a real Shams Busine project. No readable plans, text, numbers, logo, watermark, hands, machinery or digital screens."
+    },
+    {
       "file": "/images/materials-study.webp",
       "generated_by": "OpenAI ImageGen",
       "role": "Atmospheric material still life in the Entreprise hero; not a project photograph.",

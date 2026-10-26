@@ -15,10 +15,11 @@ export function PageMotion({ children }: { children: React.ReactNode }) {
     media.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.from("[data-hero]", {
         opacity: 0.65,
+        y: scope.current?.querySelector(".contact-hero") ? 12 : 0,
         duration: 0.65,
         stagger: 0.06,
         ease: "power2.out",
-        clearProps: "opacity",
+        clearProps: "opacity,transform",
       });
 
       const wordmark = scope.current?.querySelector<HTMLElement>("[data-wordmark]");
