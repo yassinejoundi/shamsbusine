@@ -1,5 +1,5 @@
 {
-  "note": "Original company archive. Confirm disclosure permissions before publication. No generated or stock images.",
+  "note": "Project photographs come from the original company archive; confirm disclosure permissions before publication. The generated material study is atmospheric and does not depict a Shams Busine project. No stock images.",
   "logo": {
     "file": "/images/shamsbusine-logo.png",
     "original": "media/brand/shamsbusine-logo.png"
@@ -46,6 +46,14 @@
       "sourceMapping": ".project/metadata/project-images.csv",
       "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1007.jpg",
       "project_pages": "villa-4"
+    }
+  ],
+  "generated_images": [
+    {
+      "file": "/images/materials-study.webp",
+      "generated_by": "OpenAI ImageGen",
+      "role": "Atmospheric material still life in the Entreprise hero; not a project photograph.",
+      "prompt": "Use case: photorealistic-natural. Asset type: secondary editorial image for the Entreprise hero on a French construction company's website. Primary request: create an atmospheric material study that complements authentic photographs of an actual masonry site. Scene/backdrop: a quiet, warm off-white plaster surface in soft Marrakech afternoon light. Subject: a small, carefully composed still life of genuine construction material samples: rough pale limestone, raw red-clay brick, plaster, cast concrete, and a short piece of natural timber. Style/medium: photorealistic architectural editorial photography; tactile grain, honest imperfections, crisp detail, restrained and premium. Composition/framing: compact square composition, materials arranged in an uneven stepped cluster, close crop, readable textures at small web size. Lighting/mood: directional raking daylight and gentle real shadows; calm, considered, sunlit. Color palette: plaster, pale stone, charcoal-gray concrete, restrained natural brick, muted timber. Materials/textures: porous stone, rough brick, powdery plaster, board-formed concrete, visible wood grain. Constraints: this is a generic still life, not a photograph of a Shams Busine project or job site; no building, room, construction site, workers, tools, scaffolding, machinery, crane, or architecture in frame. Avoid: text, letters, numbers, logos, watermark, gradients, artificial-looking 3D, decorative props."
     }
   ]
 }
