@@ -9,8 +9,8 @@ export const contact = {
 // Keep homepage anchors for destinations whose standalone routes are not built yet.
 export const navigation = [
   { label: "Accueil", href: "/" },
-  { label: "Réalisations", href: "/#realisations" },
   { label: "Services", href: "/services" },
+  { label: "Réalisations", href: "/realisations" },
   { label: "Entreprise", href: "/#entreprise" },
   { label: "Contact", href: "/#devis" },
 ];
