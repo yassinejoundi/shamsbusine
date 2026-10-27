@@ -103,11 +103,17 @@ details[open] > summary .when-open { display: inline-block; }
 details[open] > summary .when-closed { display: none; }
 .service-list .disclosure-icon { color: var(--accent); }
 details > p { padding-block-start: 1rem; max-width: 53ch; }
+.process { background: var(--surface); padding-block: clamp(4rem, 8vw, 7rem); }
+.process-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, .8fr); align-items: end; gap: clamp(2rem, 6vw, 6rem); margin-block-end: clamp(2.5rem, 5vw, 4.5rem); }
+.process-intro > p { max-width: 38ch; justify-self: end; }
+.process-layout { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.process-photo { aspect-ratio: 1.15; }
+.process-photo img { object-position: center 63%; }
 .process-steps { list-style: none; padding: 0; margin: 0; }
-.process-steps li { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8%; padding-block: 2rem; align-items: start; }
-.process-steps li + li { margin-block-start: 1rem; }
-.process-steps h3 { font-size: var(--heading); }
-.process-steps p { max-width: 40ch; justify-self: end; }
+.process-steps li { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1rem, 2.5vw, 2.5rem); align-items: start; padding-block: 1.5rem; }
+.process-steps li + li { margin-block-start: .75rem; }
+.process-steps h3 { font-size: var(--subheading); }
+.process-steps p { max-width: 38ch; }
 .company-panorama { aspect-ratio: 2.7; }
 .company-panorama img { object-position: center 64%; }
 .company-panel { position: relative; margin-inline-start: 10%; margin-block-start: -3rem; background: var(--surface); padding: 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
@@ -172,6 +178,10 @@ textarea::placeholder { color: var(--secondary); }
   .footer-contact { grid-column: 2; }
 }
 
+@media (max-width: 799px) {
+  .process-steps li { grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+}
+
 @media (max-width: 699px) {
   :root { --gutter: 1.25rem; --display: clamp(4rem, 20vw, 8rem); --heading: clamp(1.85rem, 7.7vw, 2.8rem); --subheading: 1.25rem; }
   .site-header { min-height: 90px; gap: .75rem; padding-block: .6rem; }
@@ -208,12 +218,13 @@ textarea::placeholder { color: var(--secondary); }
   .service-list { margin-inline: -1rem; }
   .service-list details { padding-block: 1rem; }
   .service-list details[open] { padding-block: 1.2rem; }
-  .process-steps li { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-block: 1.5rem; }
-  .process-steps li + li { margin-block-start: 0; }
-  .process-steps li:nth-child(2) { padding-inline-start: 6%; }
-  .process-steps li:nth-child(3) { padding-inline-start: 12%; }
+  .process-intro { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; margin-block-end: 2rem; }
+  .process-intro > p { justify-self: start; }
+  .process-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .process-photo { aspect-ratio: 1.2; }
+  .process-steps li { grid-template-columns: minmax(0, 1fr); gap: .65rem; padding-block: 1.25rem; }
+  .process-steps li + li { margin-block-start: .25rem; }
   .process-steps h3 { font-size: var(--subheading); }
-  .process-steps p { justify-self: start; max-width: 40ch; }
   .company-panorama { aspect-ratio: 1.25; }
   .company-panel { margin-inline-start: 0; margin-block-start: 0; padding: 2rem 1.25rem; }
   .company-panel .text-link { margin-block-start: 1rem; }
