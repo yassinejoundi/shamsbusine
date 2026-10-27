@@ -17,7 +17,7 @@ const stages = [
 
 export function ProjectProcess() {
   return (
-    <section className="process section-space" aria-labelledby="process-title">
+    <section className="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
           <h2 id="process-title" data-reveal>Un chantier,<br />un fil conducteur.</h2>
@@ -28,13 +28,13 @@ export function ProjectProcess() {
           <figure className="process-figure" data-reveal>
             <div className="photo process-photo">
               <Image
-                src="/images/chantier-structure.webp"
-                alt="Bâtiment en cours de construction, avec sa structure en béton et son échafaudage."
+                src="/images/techniciens-chantier.webp"
+                alt="Deux techniciens en tenue jaune, vus de dos, observent un chantier."
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
               />
             </div>
-            <figcaption>La structure prend forme sur le terrain.</figcaption>
+            <figcaption>Visuel illustratif — une équipe sur le terrain.</figcaption>
           </figure>
 
           <ol className="process-steps">

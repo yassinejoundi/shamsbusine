@@ -50,6 +50,12 @@
   ],
   "generated_images": [
     {
+      "file": "/images/techniciens-chantier.webp",
+      "generated_by": "OpenAI ImageGen; navbar logo composited with Sharp",
+      "role": "Illustrative generated image of workers in yellow workwear with the official Shams Busine logo; not verified Shams Busine staff or a specific project.",
+      "prompt": "Photorealistic architectural editorial image of two construction technicians from behind, in yellow high-visibility jackets, inside an active worksite with no city scenery or visible faces. The official navbar logo was composited onto the jacket backs to preserve brand accuracy."
+    },
+    {
       "file": "/images/contact-materials.webp",
       "generated_by": "OpenAI ImageGen",
       "role": "Conceptual material still life in the Contact hero; not a Shams Busine project photograph.",
