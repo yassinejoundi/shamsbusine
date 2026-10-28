@@ -7,15 +7,19 @@
 .services-hero-photo { aspect-ratio: 2.4; }
 .services-hero-photo img { object-position: center 65%; }
 .services-hero-note { grid-column: 11 / 13; align-self: end; padding-block-end: 2.25rem; }
-.services-scope-index { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-block-end: 3rem; }
-.services-scope-index a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: underline; }
-.services-scope-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem 12%; }
-.services-scope-entry { scroll-margin-block-start: 2rem; min-width: 0; }
-.services-scope-entry h3 { max-width: 24ch; }
-.services-scope-entry > p { margin-block-start: 1.2rem; max-width: 44ch; }
-.services-scope-entry details { margin-block-start: .75rem; max-width: 44ch; }
-.services-scope-entry summary { justify-content: flex-start; gap: 1rem; text-decoration: underline; text-underline-offset: .3em; font-weight: 500; }
-.services-scope-entry ul { padding-inline-start: 1.2rem; margin-block: 1rem 0; }
+.services-scopes > .section-intro { grid-template-columns: minmax(0, 1.2fr) minmax(16rem, .8fr); gap: 8%; margin-block-end: clamp(3rem, 6vw, 5rem); }
+.services-scopes > .section-intro h2 { max-width: 11ch; font-size: clamp(3rem, 6vw, 5rem); line-height: .98; }
+.services-scope-layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5%; align-items: start; }
+.services-scope-index { grid-column: 1 / 4; position: sticky; inset-block-start: 2rem; }
+.services-scope-index ul { display: grid; gap: .2rem; list-style: none; margin: 0; padding: 0; }
+.services-scope-index a { display: flex; align-items: center; min-height: 48px; text-decoration: underline; text-underline-offset: .3em; font-size: 1.0625rem; font-weight: 500; line-height: 1.35; text-wrap: pretty; }
+.services-scope-grid { grid-column: 4 / 13; display: grid; gap: clamp(2.5rem, 5vw, 4.25rem); }
+.services-scope-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .88fr); gap: 8%; align-items: start; scroll-margin-block-start: 2rem; min-width: 0; }
+.services-scope-entry h3 { max-width: 20ch; font-size: clamp(1.75rem, 2.6vw, 2.5rem); line-height: 1.08; letter-spacing: -.025em; }
+.services-scope-entry p { margin-block-start: .9rem; max-width: 42ch; }
+.services-scope-entry details { margin-block-start: .15rem; max-width: 40ch; }
+.services-scope-entry summary { justify-content: space-between; gap: 1rem; text-decoration: underline; text-underline-offset: .3em; font-weight: 500; }
+.services-scope-entry ul { padding-inline-start: 1.2rem; margin-block: .75rem 0; }
 .services-scope-entry li + li { margin-block-start: .5rem; }
 .services-stage { background: var(--ink); color: var(--ground); padding-block: 5rem; }
 .services-stage-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10%; align-items: start; }
@@ -61,7 +65,12 @@
   .services-hero-figure { grid-column: 1 / 10; }
   .services-hero-photo { aspect-ratio: 1.8; }
   .services-hero-note { grid-column: 10 / 13; }
-  .services-scope-grid { gap: 3rem 7%; }
+  .services-scope-layout { gap: 1.5rem; }
+  .services-scope-index { grid-column: 1 / 5; }
+  .services-scope-grid { grid-column: 5 / 13; gap: 2.75rem; }
+  .services-scope-entry { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .services-scope-entry p { margin-block-start: .65rem; }
+  .services-scope-entry details { max-width: none; }
   .services-stage-layout, .services-process, .services-questions, .services-enquiry-layout { gap: 6%; }
   .services-project-grid { column-gap: 1.25rem; }
   .services-project-portrait { margin-block-start: 3rem; }
@@ -74,10 +83,16 @@
   .services-hero-copy { gap: 1rem; }
   .services-hero-photo { aspect-ratio: 1.25; }
   .services-hero-note { max-width: 32ch; padding-block-end: 0; }
-  .services-scope-index { gap: .3rem 1.25rem; margin-block-end: 2.5rem; }
-  .services-scope-grid { grid-template-columns: minmax(0, 1fr); gap: 2.75rem; }
+  .services-scopes > .section-intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-end: 2.5rem; }
+  .services-scopes > .section-intro > p { justify-self: start; }
+  .services-scope-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .services-scope-index { position: static; grid-column: 1; }
+  .services-scope-index ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1rem; }
+  .services-scope-index a { min-height: 52px; font-size: 1rem; }
+  .services-scope-grid { grid-column: 1; gap: 2.5rem; margin-block-start: 2rem; }
+  .services-scope-entry { gap: .65rem; }
   .services-scope-entry h3 { font-size: 1.5rem; }
-  .services-scope-entry > p { margin-block-start: .75rem; }
+  .services-scope-entry p { margin-block-start: .6rem; }
   .services-stage, .services-enquiry { padding-block: 3.5rem; }
   .services-stage-layout, .services-process, .services-questions, .services-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .services-project-grid { display: flex; flex-direction: column; gap: 2.5rem; }
