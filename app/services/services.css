@@ -13,14 +13,12 @@
 .services-scope-index { grid-column: 1 / 4; position: sticky; inset-block-start: 2rem; }
 .services-scope-index ul { display: grid; gap: .2rem; list-style: none; margin: 0; padding: 0; }
 .services-scope-index a { display: flex; align-items: center; min-height: 48px; text-decoration: underline; text-underline-offset: .3em; font-size: 1.0625rem; font-weight: 500; line-height: 1.35; text-wrap: pretty; }
-.services-scope-grid { grid-column: 4 / 13; display: grid; gap: clamp(2.5rem, 5vw, 4.25rem); }
+.services-scope-grid { grid-column: 4 / 13; display: grid; gap: clamp(2rem, 4vw, 3.5rem); }
 .services-scope-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .88fr); gap: 8%; align-items: start; scroll-margin-block-start: 2rem; min-width: 0; }
 .services-scope-entry h3 { max-width: 20ch; font-size: clamp(1.75rem, 2.6vw, 2.5rem); line-height: 1.08; letter-spacing: -.025em; }
 .services-scope-entry p { margin-block-start: .9rem; max-width: 42ch; }
-.services-scope-entry details { margin-block-start: .15rem; max-width: 40ch; }
-.services-scope-entry summary { justify-content: space-between; gap: 1rem; text-decoration: underline; text-underline-offset: .3em; font-weight: 500; }
-.services-scope-entry ul { padding-inline-start: 1.2rem; margin-block: .75rem 0; }
-.services-scope-entry li + li { margin-block-start: .5rem; }
+.services-scope-list { max-width: 40ch; margin: 0; padding-inline-start: 1.2rem; list-style: disc; }
+.services-scope-list li + li { margin-block-start: .4rem; }
 .services-stage { background: var(--ink); color: var(--ground); padding-block: 5rem; }
 .services-stage-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10%; align-items: start; }
 .services-stage-layout > div > p { margin-block-start: 1.5rem; max-width: 35ch; }
@@ -70,7 +68,7 @@
   .services-scope-grid { grid-column: 5 / 13; gap: 2.75rem; }
   .services-scope-entry { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
   .services-scope-entry p { margin-block-start: .65rem; }
-  .services-scope-entry details { max-width: none; }
+  .services-scope-list { max-width: 52ch; }
   .services-stage-layout, .services-process, .services-questions, .services-enquiry-layout { gap: 6%; }
   .services-project-grid { column-gap: 1.25rem; }
   .services-project-portrait { margin-block-start: 3rem; }

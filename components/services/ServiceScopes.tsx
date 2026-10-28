@@ -1,4 +1,3 @@
-import { DisclosureIcon } from "@/components/site/DisclosureIcon";
 import { serviceScopes } from "./service-content";
 
 export function ServiceScopes() {
@@ -6,7 +5,7 @@ export function ServiceScopes() {
     <section className="frame section-space services-scopes" id="metiers" aria-labelledby="scopes-heading">
       <div className="section-intro">
         <h2 id="scopes-heading" data-reveal>Les métiers<br />du projet.</h2>
-        <p data-reveal>Six domaines d’intervention, du gros œuvre aux finitions. Parcourez les métiers et les travaux associés à votre projet.</p>
+        <p data-reveal>Découvrez les principaux travaux associés à nos six métiers, de la structure aux finitions.</p>
       </div>
       <div className="services-scope-layout">
         <nav className="services-scope-index" aria-label="Accès direct aux six métiers" data-reveal>
@@ -21,10 +20,9 @@ export function ServiceScopes() {
                 <h3 data-reveal>{title}</h3>
                 <p data-reveal>{description}</p>
               </div>
-              <details data-reveal>
-                <summary aria-label={`Travaux compris : ${title}`}>Travaux compris <DisclosureIcon /></summary>
-                <ul>{scope.map((item) => <li key={item}>{item}</li>)}</ul>
-              </details>
+              <ul className="services-scope-list" data-reveal>
+                {scope.map((item) => <li key={item}>{item}</li>)}
+              </ul>
             </article>
           ))}
         </div>
