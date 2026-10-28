@@ -46,6 +46,20 @@
       "sourceMapping": ".project/metadata/project-images.csv",
       "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1007.jpg",
       "project_pages": "villa-4"
+    },
+    {
+      "file": "/images/services-structure.webp",
+      "original": "media/projects/villa-azouzi-tameslouht/tameslouht-28.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-28.jpg",
+      "project_pages": "villa-azouzi-tameslouht"
+    },
+    {
+      "file": "/images/services-finitions.webp",
+      "original": "media/projects/villa-4/DSC1041.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1041.jpg",
+      "project_pages": "villa-4"
     }
   ],
   "generated_images": [
