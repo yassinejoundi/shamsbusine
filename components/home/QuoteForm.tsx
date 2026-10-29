@@ -42,7 +42,7 @@ export function QuoteForm() {
         return;
       }
       window.location.href = enquiryEmail({ name: value("name"), city: value("city"), phone: value("phone"), email: value("email"), type: value("type"), description: value("description") });
-      setNotice("Un brouillon prérempli s’ouvre dans votre application e-mail. Vérifiez les informations avant l’envoi.");
+      setNotice("Votre demande est prête à être transmise. Vérifiez les informations avant l’envoi.");
     }}>
       <div className="form-row">
         <label><span className="form-label-text">Votre nom <span className="required-mark" aria-hidden="true">*</span></span><input name="name" autoComplete="name" required maxLength={100} /></label>
@@ -54,8 +54,8 @@ export function QuoteForm() {
       </div>
       <label><span className="form-label-text">Type de projet <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required><option value="" disabled>Choisissez un type de projet</option><option>Construction / gros œuvre</option><option>Rénovation / finitions</option><option>Étanchéité</option><option>Second œuvre / techniques</option><option>Conseil / suivi</option><option>Autre projet</option></select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>
       <label><span className="form-label-text">Décrivez votre projet <span className="required-mark" aria-hidden="true">*</span></span><textarea name="description" rows={4} required maxLength={2000} placeholder="Nature des travaux, état du projet, plans disponibles…" /></label>
-      <p className="form-note" id="email-note">Un brouillon d’e-mail prérempli s’ouvrira pour vérification. Vos informations ne sont pas enregistrées sur ce site.</p>
-      <button type="submit" className="button" aria-describedby="email-note">Préparer mon e-mail <Arrow /></button>
+      <p className="form-note" id="request-note">Votre demande sera transmise à Shams Busine et enregistrée dans notre base de données.</p>
+      <button type="submit" className="button" aria-describedby="request-note">Envoyer ma demande <Arrow /></button>
       <p className="form-status" role="status">{notice}</p>
     </form>
   );
