@@ -7,7 +7,7 @@ type Service = {
   image?: {
     src: string;
     alt: string;
-    caption: string;
+    caption?: string;
     kind: "structure" | "finishes";
   };
 };
@@ -37,7 +37,6 @@ const services: Service[] = [
     image: {
       src: "/images/services-finitions.webp",
       alt: "Plafond en bois aux lignes géométriques dans un intérieur clair.",
-      caption: "Un détail de finition en bois.",
       kind: "finishes",
     },
   },
@@ -75,7 +74,7 @@ export function Services() {
                   <div className={`photo service-tile__photo service-tile__photo--${image.kind}`}>
                     <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" />
                   </div>
-                  <figcaption>{image.caption}</figcaption>
+                  {image.caption && <figcaption>{image.caption}</figcaption>}
                 </figure>
               )}
               <div className="service-tile__body">

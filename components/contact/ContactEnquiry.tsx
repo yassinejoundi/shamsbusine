@@ -6,7 +6,7 @@ export function ContactEnquiry() {
       <div className="frame contact-enquiry-layout">
         <div className="contact-enquiry-copy">
           <h2 id="contact-enquiry-title" data-reveal>Un premier échange utile.</h2>
-          <p data-reveal>Indiquez le type de travaux, la ville du chantier et le moyen de contact que vous préférez.</p>
+          <p data-reveal>Partagez vos coordonnées, la ville du chantier et le type de projet à chiffrer.</p>
         </div>
         <div className="contact-enquiry-form" aria-labelledby="contact-form-title">
           <h3 id="contact-form-title" data-reveal>Décrire mon projet</h3>
