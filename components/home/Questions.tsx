@@ -11,20 +11,38 @@ const questions = [
 
 export function Questions() {
   return (
-    <section className="questions frame section-space" aria-labelledby="questions-title">
-      <div className="questions-image" data-reveal>
-        <div className="photo detail-photo"><Image src="/images/chantier-maconnerie.webp" alt="Maçonnerie en briques, structure en béton et échafaudages sur un chantier" fill sizes="(max-width: 699px) 78vw, 30vw" /></div>
-        <p>Bien préparer. Mieux construire.</p>
-      </div>
-      <div>
-        <h2 id="questions-title" data-reveal>Vos questions.</h2>
-        <div className="faq-list">
-          {questions.map(([question, answer]) => (
-            <details key={question} data-reveal><summary>{question}<DisclosureIcon /></summary><p>{answer}</p></details>
-          ))}
+    <section className="questions section-space" aria-labelledby="questions-title">
+      <div className="frame">
+        <div className="questions-intro">
+          <div data-reveal>
+            <h2 id="questions-title">Avant de se lancer.</h2>
+          </div>
+          <p data-reveal>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
+        </div>
+
+        <div className="questions-layout">
+          <figure className="questions-image" data-reveal>
+            <div className="photo detail-photo">
+              <Image
+                src="/images/chantier-maconnerie.webp"
+                alt="Maçonnerie en briques, structure en béton et échafaudages sur un chantier"
+                fill
+                sizes="(max-width: 699px) 78vw, (max-width: 1099px) 42vw, 34vw"
+              />
+            </div>
+            <figcaption>Maçonnerie en brique et structure en béton.</figcaption>
+          </figure>
+
+          <div className="faq-list">
+            {questions.map(([question, answer]) => (
+              <details key={question} data-reveal>
+                <summary>{question}<DisclosureIcon /></summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

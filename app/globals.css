@@ -135,9 +135,21 @@ details > p { padding-block-start: 1rem; max-width: 53ch; }
 .company-photo { aspect-ratio: 1.25; }
 .company-photo img { object-position: 63% center; }
 .company-figure figcaption { max-width: 48ch; color: var(--ground); }
-.questions { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 12%; align-items: center; }
-.detail-photo { aspect-ratio: .85; }
-.questions-image p { margin-block-start: 1rem; }
+.questions { background: var(--surface); padding-block: clamp(4rem, 8vw, 7rem); }
+.questions-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 8%; align-items: end; margin-block-end: clamp(2.5rem, 6vw, 5rem); }
+.questions-intro h2 { max-width: 11ch; }
+.questions-intro > p { max-width: 37ch; justify-self: end; font-size: 1.125rem; }
+.questions-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+.questions-image { min-width: 0; margin: 0; }
+.detail-photo { aspect-ratio: .86; }
+.questions .faq-list { margin-block-start: 0; }
+.questions .faq-list details { padding: 1rem 1.25rem; }
+.questions .faq-list details:nth-child(odd) { background: transparent; }
+.questions .faq-list details[open] { background: var(--ground); }
+.questions .faq-list details + details { margin-block-start: .65rem; }
+.questions .faq-list summary { min-height: 3.5rem; gap: 1.5rem; font-size: 1.125rem; }
+.questions .disclosure-icon { width: 44px; height: 44px; flex-basis: 44px; background: var(--ink); color: var(--ground); }
+.questions .faq-list details > p { max-width: 56ch; padding-block-end: .5rem; padding-inline-end: 3.75rem; color: var(--secondary); }
 .faq-list { margin-block-start: 2rem; }
 .faq-list details { padding: .9rem 1.25rem; }
 .faq-list details:nth-child(odd), .faq-list details[open] { background: var(--surface); }
@@ -189,7 +201,8 @@ textarea::placeholder { color: var(--secondary); }
   .service-tile--text { grid-column: span 1; }
   .service-tile__photo { aspect-ratio: 1.8; }
   .company-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; }
-  .questions { gap: 7%; }
+  .questions-intro { gap: 5%; }
+  .questions-layout { gap: 4vw; }
   .quote-layout { gap: 5%; }
   .form-row { grid-template-columns: minmax(0, 1fr); }
   .footer-main { grid-template-columns: 1.2fr .8fr; }
@@ -230,7 +243,10 @@ textarea::placeholder { color: var(--secondary); }
   .work-note { width: 78%; align-self: flex-end; padding-block: 0; }
   .work-note p { font-size: 1.5rem; }
   .services, .quote-section { padding-block: 4rem; }
-  .services .section-intro, .company-layout, .questions, .quote-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .services .section-intro, .company-layout, .quote-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .questions-intro, .questions-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .questions-intro { margin-block-end: 2rem; }
+  .questions-intro > p { justify-self: start; font-size: 1rem; }
   .services-intro > div { justify-self: start; }
   .services-bento { grid-template-columns: minmax(0, 1fr); }
   .service-tile--visual, .service-tile--text { grid-column: auto; }
@@ -248,13 +264,15 @@ textarea::placeholder { color: var(--secondary); }
   .company { padding-block: 4rem; }
   .company-photo { aspect-ratio: 1.2; }
   .company-copy .text-link { margin-block-start: 1rem; }
-  .questions { align-items: start; }
   .questions-image { width: 78%; }
   .detail-photo { aspect-ratio: 1.2; }
-  .questions-image p { font-size: 1rem; }
+  .questions .faq-list { margin: 0; }
   .faq-list { margin-inline: -.5rem; margin-block-start: 1.5rem; }
   .faq-list summary { min-height: 56px; }
+  .questions .faq-list summary { font-size: 1rem; }
   .faq-list details { padding-inline: 1rem; }
+  .questions .faq-list details { padding-inline: 1rem; }
+  .questions .faq-list details > p { padding-inline-end: 0; }
   .quote-copy > p { margin-block-start: 1.5rem; }
   .contact-links { margin-block-start: 1.5rem; gap: .4rem; }
   .quote-form { margin-block-start: 1rem; }
