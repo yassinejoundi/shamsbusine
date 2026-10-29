@@ -1,18 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Company() {
   return (
-    <section className="company frame section-space" id="entreprise" aria-labelledby="company-title">
-      <div className="photo company-panorama" data-reveal><Image src="/images/chantier-structure.webp" alt="Chantier de construction avec structure en béton, coffrages et terrain en cours d’aménagement" fill sizes="100vw" /></div>
-      <div className="company-panel">
-        <div>
-          <h2 id="company-title" data-reveal>Une équipe<br />de terrain.</h2>
-          <a className="text-link" href="#devis" data-reveal>Échanger avec Shams Busine</a>
-        </div>
+    <section className="company" id="entreprise" aria-labelledby="company-title">
+      <div className="frame company-layout">
         <div className="company-copy">
-          <p data-reveal>Basée à Marrakech, Shams Busine accompagne les projets résidentiels, commerciaux et professionnels, de la structure aux finitions.</p>
-          <p data-reveal>Coordonner les métiers, soigner l’exécution et garder un dialogue clair : nos engagements se vivent sur le chantier, avec une attention constante à la sécurité.</p>
+          <h2 id="company-title" data-reveal>Une équipe<br />de terrain.</h2>
+          <div className="company-body">
+            <p data-reveal>Basée à Marrakech, Shams Busine accompagne les projets résidentiels, commerciaux et professionnels, de la structure aux finitions.</p>
+            <p data-reveal>Coordonner les métiers, soigner l’exécution et garder un dialogue clair : nos engagements se vivent sur le chantier, avec une attention constante à la sécurité.</p>
+            <Link className="text-link" href="#devis" data-reveal>Parlons de votre projet</Link>
+          </div>
         </div>
+
+        <figure className="company-figure" data-reveal>
+          <div className="photo company-photo">
+            <Image
+              src="/images/company-team.webp"
+              alt="Deux techniciens de dos portent le logo Shams Busine sur leur veste jaune et consultent un plan dans un chantier en béton."
+              fill
+              sizes="(max-width: 699px) 100vw, (max-width: 1099px) 52vw, 56vw"
+            />
+          </div>
+          <figcaption>Visuel illustratif — deux techniciens coordonnent un point de chantier.</figcaption>
+        </figure>
       </div>
     </section>
   );

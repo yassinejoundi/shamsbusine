@@ -122,11 +122,19 @@ details > p { padding-block-start: 1rem; max-width: 53ch; }
 .process-steps li + li { margin-block-start: .75rem; }
 .process-steps h3 { font-size: var(--subheading); }
 .process-steps p { max-width: 38ch; }
-.company-panorama { aspect-ratio: 2.7; }
-.company-panorama img { object-position: center 64%; }
-.company-panel { position: relative; margin-inline-start: 10%; margin-block-start: -3rem; background: var(--surface); padding: 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 8%; }
-.company-panel .text-link { margin-block-start: 1.5rem; }
+.company { background: var(--ink); color: var(--ground); padding-block: clamp(4rem, 8vw, 7rem); }
+.company-layout { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: clamp(2.5rem, 7vw, 7rem); align-items: center; }
+.company-copy { max-width: 44rem; }
+.company-copy h2 { max-width: 10ch; color: var(--ground); }
+.company-body { margin-block-start: clamp(1.75rem, 3.5vw, 3rem); }
+.company-copy p { max-width: 44ch; color: var(--ground); }
 .company-copy p + p { margin-block-start: 1.25rem; }
+.company-copy .text-link { margin-block-start: 1.5rem; color: var(--ground); text-decoration-color: var(--accent); }
+.company :focus-visible { outline-color: var(--accent); }
+.company-figure { min-width: 0; margin: 0; }
+.company-photo { aspect-ratio: 1.25; }
+.company-photo img { object-position: 63% center; }
+.company-figure figcaption { max-width: 48ch; color: var(--ground); }
 .questions { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 12%; align-items: center; }
 .detail-photo { aspect-ratio: .85; }
 .questions-image p { margin-block-start: 1rem; }
@@ -180,7 +188,7 @@ textarea::placeholder { color: var(--secondary); }
   .service-tile--visual { grid-column: 1 / -1; grid-row: auto; }
   .service-tile--text { grid-column: span 1; }
   .service-tile__photo { aspect-ratio: 1.8; }
-  .company-panel { padding: 2rem; margin-inline-start: 5%; gap: 5%; }
+  .company-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; }
   .questions { gap: 7%; }
   .quote-layout { gap: 5%; }
   .form-row { grid-template-columns: minmax(0, 1fr); }
@@ -222,7 +230,7 @@ textarea::placeholder { color: var(--secondary); }
   .work-note { width: 78%; align-self: flex-end; padding-block: 0; }
   .work-note p { font-size: 1.5rem; }
   .services, .quote-section { padding-block: 4rem; }
-  .services .section-intro, .company-panel, .questions, .quote-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .services .section-intro, .company-layout, .questions, .quote-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .services-intro > div { justify-self: start; }
   .services-bento { grid-template-columns: minmax(0, 1fr); }
   .service-tile--visual, .service-tile--text { grid-column: auto; }
@@ -237,9 +245,9 @@ textarea::placeholder { color: var(--secondary); }
   .process-steps li { grid-template-columns: minmax(0, 1fr); gap: .65rem; padding-block: 1.25rem; }
   .process-steps li + li { margin-block-start: .25rem; }
   .process-steps h3 { font-size: var(--subheading); }
-  .company-panorama { aspect-ratio: 1.25; }
-  .company-panel { margin-inline-start: 0; margin-block-start: 0; padding: 2rem 1.25rem; }
-  .company-panel .text-link { margin-block-start: 1rem; }
+  .company { padding-block: 4rem; }
+  .company-photo { aspect-ratio: 1.2; }
+  .company-copy .text-link { margin-block-start: 1rem; }
   .questions { align-items: start; }
   .questions-image { width: 78%; }
   .detail-photo { aspect-ratio: 1.2; }

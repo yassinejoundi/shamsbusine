@@ -80,6 +80,12 @@
       "generated_by": "OpenAI ImageGen",
       "role": "Atmospheric material still life in the Entreprise hero; not a project photograph.",
       "prompt": "Use case: photorealistic-natural. Asset type: secondary editorial image for the Entreprise hero on a French construction company's website. Primary request: create an atmospheric material study that complements authentic photographs of an actual masonry site. Scene/backdrop: a quiet, warm off-white plaster surface in soft Marrakech afternoon light. Subject: a small, carefully composed still life of genuine construction material samples: rough pale limestone, raw red-clay brick, plaster, cast concrete, and a short piece of natural timber. Style/medium: photorealistic architectural editorial photography; tactile grain, honest imperfections, crisp detail, restrained and premium. Composition/framing: compact square composition, materials arranged in an uneven stepped cluster, close crop, readable textures at small web size. Lighting/mood: directional raking daylight and gentle real shadows; calm, considered, sunlit. Color palette: plaster, pale stone, charcoal-gray concrete, restrained natural brick, muted timber. Materials/textures: porous stone, rough brick, powdery plaster, board-formed concrete, visible wood grain. Constraints: this is a generic still life, not a photograph of a Shams Busine project or job site; no building, room, construction site, workers, tools, scaffolding, machinery, crane, or architecture in frame. Avoid: text, letters, numbers, logos, watermark, gradients, artificial-looking 3D, decorative props."
+    },
+    {
+      "file": "/images/company-team.webp",
+      "generated_by": "OpenAI ImageGen; official navbar logo composited with Sharp",
+      "role": "Illustrative generated image of two workers in branded yellow workwear; not verified Shams Busine staff or a specific project.",
+      "prompt": "Photorealistic editorial image for the company-capability section: two construction technicians viewed from behind, in golden-yellow jackets, reviewing a plan inside an unfinished concrete building. No faces, city scenery or visible text. The official Shams Busine navbar logo was composited onto both jacket backs to preserve brand accuracy."
     }
   ]
 }
