@@ -41,6 +41,13 @@
       "project_pages": "villa-nouria"
     },
     {
+      "file": "/images/entreprise-approche.webp",
+      "original": "media/projects/villa-azouzi-tameslouht/tameslouht-17.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-17.jpg",
+      "project_pages": "villa-azouzi-tameslouht"
+    },
+    {
       "file": "/images/faq-villa-detail.jpg",
       "original": "media/projects/villa-salim/DSC1498.jpg",
       "sourceMapping": ".project/metadata/project-images.csv",

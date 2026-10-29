@@ -41,21 +41,16 @@
 }
 .entreprise-approche-intro h2 { max-width: 14ch; }
 .entreprise-approche-intro > p { max-width: 42ch; justify-self: end; }
-.entreprise-approche-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
-}
 .entreprise-approche-figure { margin: 0; }
-.entreprise-approche-photo { aspect-ratio: 1.35; }
-.entreprise-approche-photo img { object-position: center 67%; }
-.entreprise-approche-details { max-width: 42rem; }
-.entreprise-facts { display: grid; gap: 1.25rem; margin: 0; }
-.entreprise-facts > div { display: grid; grid-template-columns: minmax(7rem, .7fr) minmax(0, 1.3fr); gap: 1rem; }
-.entreprise-facts dt { color: var(--secondary); }
-.entreprise-facts dd { margin: 0; font-weight: 500; }
-.entreprise-approche-note { max-width: 40ch; margin-block-start: 2rem; font-size: 1.125rem; }
+.entreprise-approche-photo { aspect-ratio: 1.9; }
+.entreprise-approche-photo img { object-position: center 63%; }
+.entreprise-approche-note {
+  max-width: 42ch;
+  margin-block-start: clamp(2rem, 4vw, 3.5rem);
+  margin-inline-start: auto;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
 
 .entreprise-moyens {
   padding-block: clamp(4rem, 8vw, 7rem);
@@ -153,7 +148,6 @@
   .entreprise-gallery-intro,
   .entreprise-moyens-intro,
   .entreprise-methode-intro { gap: 6%; }
-  .entreprise-approche-layout { gap: 2rem; }
   .entreprise-enquiry-layout { gap: 2rem; }
 }
 
@@ -173,11 +167,8 @@
   .entreprise-gallery-intro > p,
   .entreprise-moyens-intro > p,
   .entreprise-methode-intro > p { justify-self: start; }
-  .entreprise-approche-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
-  .entreprise-approche-photo { aspect-ratio: 1.2; }
-  .entreprise-facts { gap: 1rem; }
-  .entreprise-facts > div { grid-template-columns: minmax(6.5rem, .7fr) minmax(0, 1.3fr); gap: .75rem; }
-  .entreprise-approche-note { margin-block-start: 1.5rem; font-size: 1rem; }
+  .entreprise-approche-photo { aspect-ratio: 1.08; }
+  .entreprise-approche-note { margin-block-start: 1.5rem; font-size: 1.0625rem; }
   .entreprise-moyens,
   .entreprise-methode { padding-block: 3.75rem; }
   .entreprise-moyens-list { margin-block-start: 2.5rem; gap: 2rem; }
