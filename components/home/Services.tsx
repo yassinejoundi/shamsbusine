@@ -66,20 +66,19 @@ export function Services() {
           {services.map(({ title, text, image }) => (
             <li
               className={`service-tile ${image ? "service-tile--visual" : "service-tile--text"}`}
-              data-reveal
               key={title}
             >
               {image && (
                 <figure className="service-tile__figure">
                   <div className={`photo service-tile__photo service-tile__photo--${image.kind}`}>
-                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" />
+                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" data-reveal />
                   </div>
-                  {image.caption && <figcaption>{image.caption}</figcaption>}
+                  {image.caption && <figcaption data-reveal>{image.caption}</figcaption>}
                 </figure>
               )}
               <div className="service-tile__body">
-                <h3>{title}</h3>
-                <p>{text}</p>
+                <h3 data-reveal>{title}</h3>
+                <p data-reveal>{text}</p>
               </div>
             </li>
           ))}

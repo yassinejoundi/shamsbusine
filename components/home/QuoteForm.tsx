@@ -45,17 +45,17 @@ export function QuoteForm() {
       setNotice("Votre demande est prête à être transmise. Vérifiez les informations avant l’envoi.");
     }}>
       <div className="form-row">
-        <label><span className="form-label-text">Votre nom <span className="required-mark" aria-hidden="true">*</span></span><input name="name" autoComplete="name" required maxLength={100} /></label>
-        <label><span className="form-label-text">Ville du projet <span className="required-mark" aria-hidden="true">*</span></span><input name="city" autoComplete="address-level2" required maxLength={100} /></label>
+        <label><span className="form-label-text" data-reveal>Votre nom <span className="required-mark" aria-hidden="true">*</span></span><input name="name" autoComplete="name" required maxLength={100} data-reveal /></label>
+        <label><span className="form-label-text" data-reveal>Ville du projet <span className="required-mark" aria-hidden="true">*</span></span><input name="city" autoComplete="address-level2" required maxLength={100} data-reveal /></label>
       </div>
       <div className="form-row">
-        <label><span className="form-label-text">Votre téléphone <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={24} /></label>
-        <label><span className="form-label-text">Votre adresse e-mail <span className="required-mark" aria-hidden="true">*</span></span><input name="email" type="email" autoComplete="email" required maxLength={254} /></label>
+        <label><span className="form-label-text" data-reveal>Votre téléphone <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={24} data-reveal /></label>
+        <label><span className="form-label-text" data-reveal>Votre adresse e-mail <span className="required-mark" aria-hidden="true">*</span></span><input name="email" type="email" autoComplete="email" required maxLength={254} data-reveal /></label>
       </div>
-      <label><span className="form-label-text">Type de projet <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required><option value="" disabled>Choisissez un type de projet</option><option>Construction / gros œuvre</option><option>Rénovation / finitions</option><option>Étanchéité</option><option>Second œuvre / techniques</option><option>Conseil / suivi</option><option>Autre projet</option></select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>
-      <label><span className="form-label-text">Décrivez votre projet <span className="required-mark" aria-hidden="true">*</span></span><textarea name="description" rows={4} required maxLength={2000} placeholder="Nature des travaux, état du projet, plans disponibles…" /></label>
-      <p className="form-note" id="request-note">Votre demande sera transmise à Shams Busine et enregistrée dans notre base de données.</p>
-      <button type="submit" className="button" aria-describedby="request-note">Envoyer ma demande <Arrow /></button>
+      <label><span className="form-label-text" data-reveal>Type de projet <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required data-reveal><option value="" disabled>Choisissez un type de projet</option><option>Construction / gros œuvre</option><option>Rénovation / finitions</option><option>Étanchéité</option><option>Second œuvre / techniques</option><option>Conseil / suivi</option><option>Autre projet</option></select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>
+      <label><span className="form-label-text" data-reveal>Décrivez votre projet <span className="required-mark" aria-hidden="true">*</span></span><textarea name="description" rows={4} required maxLength={2000} placeholder="Nature des travaux, état du projet, plans disponibles…" data-reveal /></label>
+      <p className="form-note" id="request-note" data-reveal>Votre demande sera transmise à Shams Busine et enregistrée dans notre base de données.</p>
+      <button type="submit" className="button" aria-describedby="request-note" data-reveal>Envoyer ma demande <Arrow /></button>
       <p className="form-status" role="status">{notice}</p>
     </form>
   );

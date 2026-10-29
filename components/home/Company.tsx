@@ -14,16 +14,17 @@ export function Company() {
           </div>
         </div>
 
-        <figure className="company-figure" data-reveal>
+        <figure className="company-figure">
           <div className="photo company-photo">
             <Image
               src="/images/company-team.webp"
               alt="Deux techniciens de dos portent le logo Shams Busine sur leur veste jaune et consultent un plan dans un chantier en béton."
               fill
               sizes="(max-width: 699px) 100vw, (max-width: 1099px) 52vw, 56vw"
+              data-reveal
             />
           </div>
-          <figcaption>Visuel illustratif — deux techniciens coordonnent un point de chantier.</figcaption>
+          <figcaption data-reveal>Visuel illustratif — deux techniciens coordonnent un point de chantier.</figcaption>
         </figure>
       </div>
     </section>

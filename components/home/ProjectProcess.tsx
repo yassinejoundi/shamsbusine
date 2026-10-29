@@ -25,16 +25,17 @@ export function ProjectProcess() {
         </div>
 
         <div className="process-layout">
-          <figure className="process-figure" data-reveal>
+          <figure className="process-figure">
             <div className="photo process-photo">
               <Image
                 src="/images/techniciens-chantier.webp"
                 alt="Deux techniciens en tenue jaune, vus de dos, observent un chantier."
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
+                data-reveal
               />
             </div>
-            <figcaption>Visuel illustratif — une équipe sur le terrain.</figcaption>
+            <figcaption data-reveal>Visuel illustratif — une équipe sur le terrain.</figcaption>
           </figure>
 
           <ol className="process-steps">
