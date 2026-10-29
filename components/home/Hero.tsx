@@ -3,7 +3,7 @@ import { Arrow } from "@/components/site/Arrow";
 
 export function Hero() {
   return (
-    <section className="hero frame" aria-labelledby="hero-title">
+    <section className="hero frame" data-motion-section="hero" aria-labelledby="hero-title">
       <h1 id="hero-title"><span data-hero>Bâtir.</span><span data-hero>Habiter.</span></h1>
       <div className="hero-detail photo" data-hero>
         <Image src="/images/detail-finitions.webp" alt="Marbre sombre, bois et végétation dans un aménagement extérieur" fill sizes="(max-width: 699px) 30vw, 24vw" />

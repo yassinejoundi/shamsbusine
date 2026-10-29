@@ -52,7 +52,7 @@ const services: Service[] = [
 
 export function Services() {
   return (
-    <section className="services section-space" id="services" aria-labelledby="services-title">
+    <section className="services section-space" id="services" data-motion-section="services" aria-labelledby="services-title">
       <div className="frame">
         <div className="section-intro services-intro">
           <h2 id="services-title" data-reveal>Des métiers<br />complémentaires.</h2>

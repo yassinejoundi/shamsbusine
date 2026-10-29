@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function SelectedWork() {
   return (
-    <section className="selected-work frame section-space" id="realisations" aria-labelledby="work-title">
+    <section className="selected-work frame section-space" id="realisations" data-motion-section="work" aria-labelledby="work-title">
       <div className="work-intro">
         <h2 id="work-title" data-reveal>Nos réalisations.</h2>
         <p data-reveal>La structure, les matières, la lumière. Découvrez le travail de Shams Busine à travers ses chantiers et ses réalisations.</p>

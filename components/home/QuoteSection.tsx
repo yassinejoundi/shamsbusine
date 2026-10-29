@@ -5,7 +5,7 @@ import { QuoteForm } from "./QuoteForm";
 
 export function QuoteSection() {
   return (
-    <section className="quote-section" id="devis" aria-labelledby="quote-title">
+    <section className="quote-section" id="devis" data-motion-section="quote" aria-labelledby="quote-title">
       <div className="frame quote-layout">
         <div className="quote-copy">
           <h2 id="quote-title" data-reveal>Bâtissons<br />la suite.</h2>
@@ -23,8 +23,8 @@ export function QuoteSection() {
             </span>
           </address>
         </div>
-        <div className="quote-form-panel">
-          <div className="quote-form-heading" data-reveal>
+        <div className="quote-form-panel" data-reveal>
+          <div className="quote-form-heading">
             <h3 id="quote-form-title">Les détails du projet</h3>
             <p>Tous les champs sont nécessaires pour préparer votre demande.</p>
           </div>

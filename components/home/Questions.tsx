@@ -11,7 +11,7 @@ const questions = [
 
 export function Questions() {
   return (
-    <section className="questions" aria-labelledby="questions-title">
+    <section className="questions" data-motion-section="questions" aria-labelledby="questions-title">
       <div className="frame">
         <div className="questions-intro">
           <div data-reveal>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Company() {
   return (
-    <section className="company" id="entreprise" aria-labelledby="company-title">
+    <section className="company" id="entreprise" data-motion-section="company" aria-labelledby="company-title">
       <div className="frame company-layout">
         <div className="company-copy">
           <h2 id="company-title" data-reveal>Une équipe<br />de terrain.</h2>

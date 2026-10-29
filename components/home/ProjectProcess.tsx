@@ -17,7 +17,7 @@ const stages = [
 
 export function ProjectProcess() {
   return (
-    <section className="process" aria-labelledby="process-title">
+    <section className="process" data-motion-section="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
           <h2 id="process-title" data-reveal>Un chantier,<br />un fil conducteur.</h2>
