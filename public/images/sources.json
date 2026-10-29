@@ -62,6 +62,27 @@
       "project_pages": "villa-4"
     },
     {
+      "file": "/images/entreprise-facade-terracotta.webp",
+      "original": "media/projects/villa-6/DSC1415-1.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1415-1.jpg",
+      "project_pages": "villa-6"
+    },
+    {
+      "file": "/images/entreprise-bois-pierre.webp",
+      "original": "media/projects/villa-4/DSC1093.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1093.jpg",
+      "project_pages": "villa-4"
+    },
+    {
+      "file": "/images/entreprise-cour-terracotta.webp",
+      "original": "media/projects/villa-6/DSC1468.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1468.jpg",
+      "project_pages": "villa-6"
+    },
+    {
       "file": "/images/services-structure.webp",
       "original": "media/projects/villa-azouzi-tameslouht/tameslouht-28.jpg",
       "sourceMapping": ".project/metadata/project-images.csv",
