@@ -3,40 +3,28 @@
 .entreprise-hero {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(1rem, 2.4vw, 2.5rem);
-  row-gap: 1.5rem;
-  padding-block: clamp(2.5rem, 6vw, 6rem) 0;
-}
-.entreprise-hero h1 {
-  grid-column: 1 / 11;
-  max-width: 12ch;
-  font-size: clamp(3.25rem, 8vw, 8rem);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: center;
+  padding-block: clamp(2.5rem, 5vw, 4rem) 0;
 }
 .entreprise-hero-copy {
-  grid-column: 1 / 5;
-  grid-row: 2;
-  align-self: start;
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25rem;
-  padding-block: 1.25rem 2rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
-.entreprise-hero-copy > p { max-width: 38ch; font-size: 1.125rem; }
+.entreprise-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: .98;
+}
+.entreprise-hero h1 span { display: block; }
+.entreprise-hero-copy > p { max-width: 42ch; font-size: 1.125rem; }
 .entreprise-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; }
-.entreprise-hero-visuals {
-  grid-column: 5 / 13;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 1.25rem;
-  align-items: start;
-}
-.entreprise-hero-main { grid-column: 1 / -1; margin: 0; }
-.entreprise-hero-photo { aspect-ratio: 1.5; }
-.entreprise-hero-photo img { object-position: center 57%; }
-.entreprise-hero-detail { grid-column: 1 / 4; margin: 2.5rem 0 0; }
-.entreprise-hero-detail-photo { aspect-ratio: .95; }
+.entreprise-hero-figure { grid-column: 1 / -1; margin: 0; }
+.entreprise-hero-photo { aspect-ratio: 1.4; }
+.entreprise-hero-photo img { object-position: center 64%; }
 .entreprise-page figure figcaption { max-width: 48ch; font-size: .9375rem; }
 
 .entreprise-approche {
@@ -161,16 +149,6 @@
 .entreprise-enquiry-actions { display: flex; align-items: center; }
 
 @media (max-width: 899px) {
-  .entreprise-hero { row-gap: 1rem; }
-  .entreprise-hero h1 { grid-column: 1 / -1; }
-  .entreprise-hero-copy { grid-column: 1 / 7; grid-row: 2; padding-block: 1.5rem; }
-  .entreprise-hero-visuals {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-  .entreprise-hero-main { grid-column: 2 / 13; }
-  .entreprise-hero-detail { grid-column: 1 / 6; margin-block-start: 2rem; }
   .entreprise-approche-intro,
   .entreprise-gallery-intro,
   .entreprise-moyens-intro,
@@ -181,14 +159,9 @@
 
 @media (max-width: 699px) {
   .entreprise-hero { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-block-start: 2.5rem; }
-  .entreprise-hero h1 { font-size: clamp(3rem, 12vw, 4.75rem); }
-  .entreprise-hero-copy { grid-column: 1 / -1; grid-row: 2; padding-block: .75rem 1rem; }
+  .entreprise-hero h1 { font-size: clamp(2.65rem, 10.8vw, 4rem); }
   .entreprise-hero-copy > p { max-width: 40ch; font-size: 1rem; }
-  .entreprise-hero-visuals { grid-column: 1 / -1; grid-row: 3; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 1rem; }
-  .entreprise-hero-main { grid-column: 1 / -1; }
-  .entreprise-hero-photo { aspect-ratio: 1.2; }
-  .entreprise-hero-detail { grid-column: 2 / -1; width: 82%; margin-block-start: 2.5rem; }
-  .entreprise-hero-detail-photo { aspect-ratio: 1.05; }
+  .entreprise-hero-photo { aspect-ratio: 1.12; }
   .entreprise-page figure figcaption { font-size: .875rem; }
   .entreprise-approche { margin-block-start: 4rem; padding-block: 3.5rem; }
   .entreprise-approche-intro,
@@ -226,4 +199,12 @@
   .entreprise-enquiry { padding-block: 3.75rem; }
   .entreprise-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .entreprise-enquiry h2 { font-size: clamp(2.5rem, 10vw, 3.75rem); }
+}
+
+@media (min-width: 1100px) {
+  .entreprise-hero { padding-block-start: clamp(3rem, 5vw, 5rem); }
+  .entreprise-hero-copy { grid-column: 1 / 7; }
+  .entreprise-hero-figure { grid-column: 7 / 13; }
+  .entreprise-hero h1 { font-size: clamp(4.125rem, 6vw, 6rem); }
+  .entreprise-hero-photo { aspect-ratio: 1.22; }
 }
