@@ -69,14 +69,22 @@
   .services-questions-action:hover { color: var(--accent); }
   .services-faq details:not([open]) summary:hover { color: var(--accent); }
 }
-
-.services-enquiry { background: var(--surface); padding-block: 5.5rem 6rem; }
-.services-enquiry-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10%; }
-.services-enquiry-layout > div > p { max-width: 37ch; margin-block-start: 1.5rem; }
-.services-quote-action { margin-block-end: 1.25rem; }
-.services-enquiry-details ul { padding-inline-start: 1.2rem; margin-block: 1rem 2rem; }
-.services-enquiry-details li + li { margin-block-start: .5rem; }
-.services-enquiry-details a:not(.services-quote-action) { display: flex; align-items: center; min-height: 44px; text-decoration: underline; overflow-wrap: anywhere; }
+.services-enquiry { background: var(--surface); padding-block: clamp(4rem, 8vw, 7rem); }
+.services-enquiry-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+.services-enquiry-intro { padding-block-start: 0; }
+.services-enquiry-intro h2 { max-width: 9ch; font-size: clamp(3.5rem, 6.2vw, 6rem); line-height: .95; letter-spacing: -.06em; }
+.services-enquiry-intro > p:last-child { max-width: 35ch; margin-block-start: 1.5rem; font-size: 1.0625rem; }
+.services-enquiry-details { width: 100%; max-width: 42rem; margin-inline-start: auto; }
+.services-enquiry-details h3 { font-size: clamp(1.75rem, 3vw, 2.375rem); line-height: 1.08; letter-spacing: -.035em; }
+.services-enquiry-prompt { margin-block-start: .65rem; }
+.services-enquiry-details ul { display: grid; gap: .75rem; margin: 1.5rem 0 2rem; padding: 0; list-style: none; }
+.services-enquiry-details li { display: grid; grid-template-columns: minmax(6rem, .65fr) minmax(0, 1.35fr); gap: 1.5rem; align-items: baseline; }
+.services-enquiry-details li strong { color: var(--secondary); font-size: .875rem; font-weight: 600; }
+.services-enquiry-details li span { font-size: 1.0625rem; line-height: 1.45; }
+.services-enquiry-contact { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+.services-quote-action { margin: 0; }
+.services-enquiry-contact address { display: flex; flex-wrap: wrap; column-gap: 1.5rem; font-style: normal; }
+.services-enquiry-contact address a { display: flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .2em; }
 
 @media (prefers-reduced-motion: no-preference) {
   .services-stage-links svg { transition: transform 180ms ease; }
@@ -99,6 +107,9 @@
   .services-stage-intro, .services-process-intro { gap: 6%; }
   .services-stage-links a { grid-template-columns: minmax(0, 1.1fr) minmax(0, .8fr) auto; gap: 1.5rem; }
   .services-stage-title { font-size: clamp(1.75rem, 3.8vw, 2.5rem); }
+  .services-enquiry-layout { gap: clamp(2rem, 5vw, 3.5rem); }
+  .services-enquiry-intro h2 { font-size: clamp(3rem, 5vw, 4.5rem); }
+  .services-enquiry-details li { gap: 1rem; }
   .services-questions-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 1.5rem; }
   .services-questions-intro { grid-column: 1; }
   .services-faq { grid-column: 2; }
@@ -141,6 +152,9 @@
   .services-process-list { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .services-process-list li { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
   .services-process-list h3 { min-height: 0; }
+  .services-enquiry-intro h2 { font-size: clamp(3rem, 13vw, 4.5rem); }
+  .services-enquiry-details li { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .services-enquiry-contact address { column-gap: 1rem; }
   .services-questions { padding-block: 3.5rem; }
   .services-questions-intro { grid-column: 1; }
   .services-faq { grid-column: 1; }
@@ -152,6 +166,5 @@
   .services-project-portrait { width: 78%; align-self: flex-end; margin-block-start: 0; }
   .services-interior-photo { aspect-ratio: .9; }
   .services-project-note { width: 100%; }
-  .services-enquiry-layout > div > p:first-child { margin-block-start: 0; }
   .services-faq details > p { padding-inline-end: 0; }
 }
