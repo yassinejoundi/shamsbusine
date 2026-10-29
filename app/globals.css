@@ -122,7 +122,7 @@ details > p { padding-block-start: 1rem; max-width: 53ch; }
 .process-steps li + li { margin-block-start: .75rem; }
 .process-steps h3 { font-size: var(--subheading); }
 .process-steps p { max-width: 38ch; }
-.company { background: var(--ink); color: var(--ground); padding-block: clamp(4rem, 8vw, 7rem); }
+.company { background: var(--ink); color: var(--ground); padding-block: clamp(4rem, 8vw, 7rem); padding-block-end: clamp(2.5rem, 4vw, 3.5rem); }
 .company-layout { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: clamp(2.5rem, 7vw, 7rem); align-items: center; }
 .company-copy { max-width: 44rem; }
 .company-copy h2 { max-width: 10ch; color: var(--ground); }
@@ -135,27 +135,28 @@ details > p { padding-block-start: 1rem; max-width: 53ch; }
 .company-photo { aspect-ratio: 1.25; }
 .company-photo img { object-position: 63% center; }
 .company-figure figcaption { max-width: 48ch; color: var(--ground); }
-.questions { background: var(--surface); padding-block: clamp(4rem, 8vw, 7rem); }
+.questions { background: var(--ground); padding-block: clamp(2.5rem, 4vw, 3.5rem); }
 .questions-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 8%; align-items: end; margin-block-end: clamp(2.5rem, 6vw, 5rem); }
 .questions-intro h2 { max-width: 11ch; }
 .questions-intro > p { max-width: 37ch; justify-self: end; font-size: 1.125rem; }
 .questions-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
 .questions-image { min-width: 0; margin: 0; }
 .detail-photo { aspect-ratio: .86; }
+.detail-photo img { object-position: 62% center; }
 .questions .faq-list { margin-block-start: 0; }
 .questions .faq-list details { padding: 1rem 1.25rem; }
 .questions .faq-list details:nth-child(odd) { background: transparent; }
-.questions .faq-list details[open] { background: var(--ground); }
+.questions .faq-list details[open] { background: var(--surface); }
 .questions .faq-list details + details { margin-block-start: .65rem; }
 .questions .faq-list summary { min-height: 3.5rem; gap: 1.5rem; font-size: 1.125rem; }
 .questions .disclosure-icon { width: 44px; height: 44px; flex-basis: 44px; background: var(--ink); color: var(--ground); }
-.questions .faq-list details > p { max-width: 56ch; padding-block-end: .5rem; padding-inline-end: 3.75rem; color: var(--secondary); }
+.questions .faq-answer > p { max-width: 56ch; padding-block-start: 1rem; padding-block-end: .5rem; padding-inline-end: 3.75rem; color: var(--secondary); }
 .faq-list { margin-block-start: 2rem; }
 .faq-list details { padding: .9rem 1.25rem; }
 .faq-list details:nth-child(odd), .faq-list details[open] { background: var(--surface); }
 .faq-list summary { font-weight: 500; }
 .faq-list details > p { padding-block-end: .5rem; }
-.quote-section { background: var(--surface); padding-block: 5.5rem; }
+.quote-section { background: var(--surface); padding-block: 5.5rem; padding-block-start: clamp(3rem, 4vw, 4rem); }
 .quote-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8%; align-items: start; }
 .quote-copy > p { max-width: 36ch; margin-block-start: 2rem; }
 .contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; margin-block-start: 2rem; }
@@ -261,10 +262,11 @@ textarea::placeholder { color: var(--secondary); }
   .process-steps li { grid-template-columns: minmax(0, 1fr); gap: .65rem; padding-block: 1.25rem; }
   .process-steps li + li { margin-block-start: .25rem; }
   .process-steps h3 { font-size: var(--subheading); }
-  .company { padding-block: 4rem; }
+  .company { padding-block: 4rem 2.5rem; }
   .company-photo { aspect-ratio: 1.2; }
   .company-copy .text-link { margin-block-start: 1rem; }
   .questions-image { width: 78%; }
+  .questions { padding-block: 2.5rem; }
   .detail-photo { aspect-ratio: 1.2; }
   .questions .faq-list { margin: 0; }
   .faq-list { margin-inline: -.5rem; margin-block-start: 1.5rem; }
@@ -272,8 +274,9 @@ textarea::placeholder { color: var(--secondary); }
   .questions .faq-list summary { font-size: 1rem; }
   .faq-list details { padding-inline: 1rem; }
   .questions .faq-list details { padding-inline: 1rem; }
-  .questions .faq-list details > p { padding-inline-end: 0; }
+  .questions .faq-answer > p { padding-inline-end: 0; }
   .quote-copy > p { margin-block-start: 1.5rem; }
+  .quote-section { padding-block-start: 3rem; }
   .contact-links { margin-block-start: 1.5rem; gap: .4rem; }
   .quote-form { margin-block-start: 1rem; }
   .footer-signature { margin-block-end: 2rem; }
