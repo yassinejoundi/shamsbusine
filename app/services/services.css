@@ -41,10 +41,13 @@
 .services-project-note > p:first-child { font-size: var(--subheading); line-height: 1.3; letter-spacing: -.025em; }
 .services-project-note p + p { margin-block-start: 1.25rem; }
 .services-project-note a { margin-block-start: .75rem; }
-.services-process { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 10%; }
-.services-process-list { margin: 0; padding: 0; list-style: none; }
-.services-process-list li + li { margin-block-start: 2.5rem; }
-.services-process-list p { margin-block-start: .8rem; max-width: 49ch; }
+.services-process-section { background: var(--surface); padding-block: clamp(4rem, 7vw, 6rem); }
+.services-process-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, .8fr); gap: 8%; align-items: end; margin-block-end: clamp(3rem, 5vw, 4.5rem); }
+.services-process-intro h2 { max-width: 10ch; font-size: clamp(3rem, 6vw, 5rem); line-height: .98; }
+.services-process-intro > p { max-width: 36ch; justify-self: end; }
+.services-process-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); margin: 0; padding: 0; list-style: none; }
+.services-process-list h3 { max-width: 18ch; font-size: clamp(1.5rem, 2.4vw, 2.125rem); line-height: 1.1; letter-spacing: -.035em; }
+.services-process-list p { margin-block-start: .9rem; max-width: 40ch; }
 .services-questions { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 10%; align-items: start; }
 .services-questions > div > p { margin-block-start: 1.5rem; max-width: 32ch; }
 .services-questions .services-faq { margin-block-start: 0; }
@@ -74,9 +77,12 @@
   .services-scope-entry { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
   .services-scope-entry p { margin-block-start: .65rem; }
   .services-scope-list { max-width: 52ch; }
-  .services-stage-intro { gap: 6%; }
+  .services-stage-intro, .services-process-intro { gap: 6%; }
   .services-stage-links a { grid-template-columns: minmax(0, 1.1fr) minmax(0, .8fr) auto; gap: 1.5rem; }
   .services-stage-title { font-size: clamp(1.75rem, 3.8vw, 2.5rem); }
+  .services-process-list { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .services-process-list li { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; }
+  .services-process-list p { margin-block-start: 0; }
   .services-project-grid { column-gap: 1.25rem; }
   .services-project-portrait { margin-block-start: 3rem; }
 }
@@ -98,7 +104,7 @@
   .services-scope-entry { gap: .65rem; }
   .services-scope-entry h3 { font-size: 1.5rem; }
   .services-scope-entry p { margin-block-start: .6rem; }
-  .services-stage, .services-enquiry { padding-block: 3.5rem; }
+  .services-stage, .services-enquiry, .services-process-section { padding-block: 3.5rem; }
   .services-stage-intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-end: 2.5rem; }
   .services-stage-intro h2 { font-size: clamp(2.75rem, 10vw, 4rem); }
   .services-stage-intro p { justify-self: start; }
@@ -107,13 +113,17 @@
   .services-stage-title { grid-column: 1; font-size: clamp(1.65rem, 7vw, 2rem); }
   .services-stage-detail { grid-column: 1; }
   .services-stage-links svg { grid-column: 2; grid-row: 1 / span 2; }
-  .services-process, .services-questions, .services-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .services-process-intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block-end: 2.5rem; }
+  .services-process-intro h2 { font-size: clamp(2.75rem, 10vw, 4rem); }
+  .services-process-intro > p { justify-self: start; }
+  .services-process-list { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .services-process-list li { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .services-questions, .services-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .services-project-grid { display: flex; flex-direction: column; gap: 2.5rem; }
   .services-project-wide, .services-project-detail { width: 100%; }
   .services-exterior-photo { aspect-ratio: 1.2; }
   .services-project-portrait { width: 78%; align-self: flex-end; margin-block-start: 0; }
   .services-interior-photo { aspect-ratio: .9; }
   .services-project-note { width: 100%; }
-  .services-process-list li + li { margin-block-start: 2rem; }
   .services-enquiry-layout > div > p:first-child { margin-block-start: 0; }
 }
