@@ -4,7 +4,7 @@ import { contact } from "@/lib/site";
 
 export function ServiceEnquiry() {
   return (
-    <section className="section-space services-enquiry" aria-labelledby="enquiry-heading">
+    <section className="services-enquiry" aria-labelledby="enquiry-heading">
       <div className="frame services-enquiry-layout">
         <div className="services-enquiry-intro">
           <h2 id="enquiry-heading" data-reveal>Parlons de<br />votre projet.</h2>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { QuestionsAccordion } from "@/components/home/QuestionsAccordion";
+import { QuestionsAccordion } from "@/components/site/QuestionsAccordion";
 
 const questions = [
   { question: "Quels travaux pouvez-vous réaliser ?", answer: "Construction, gros œuvre, étanchéité, installations techniques, rénovation et finitions. Décrivez votre besoin pour que nous précisions ensemble le périmètre des travaux." },

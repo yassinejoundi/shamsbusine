@@ -12,7 +12,13 @@ type Question = {
   answer: string;
 };
 
-export function QuestionsAccordion({ questions }: { questions: Question[] }) {
+export function QuestionsAccordion({
+  questions,
+  className,
+}: {
+  questions: Question[];
+  className?: string;
+}) {
   const list = useRef<HTMLDivElement>(null);
   const targetOpen = useRef(new WeakMap<HTMLDetailsElement, boolean>());
   const { contextSafe } = useGSAP({ scope: list });
@@ -72,7 +78,7 @@ export function QuestionsAccordion({ questions }: { questions: Question[] }) {
   };
 
   return (
-    <div className="faq-list" ref={list}>
+    <div className={className ? `faq-list ${className}` : "faq-list"} ref={list}>
       {questions.map(({ question, answer }) => (
         <details key={question} data-reveal>
           <summary onClick={toggleQuestion}>{question}<DisclosureIcon /></summary>
