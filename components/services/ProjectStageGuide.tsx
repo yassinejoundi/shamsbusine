@@ -1,18 +1,44 @@
 import { Arrow } from "@/components/site/Arrow";
 
+const stages = [
+  {
+    href: "#conseil-etudes-suivi",
+    title: "Je prépare mon projet",
+    detail: "Études, chiffrage et organisation",
+  },
+  {
+    href: "#gros-oeuvre",
+    title: "Je veux construire",
+    detail: "Fondations, structure et maçonnerie",
+  },
+  {
+    href: "#renovation-finitions",
+    title: "Je transforme un lieu",
+    detail: "Rénovation, réaménagement et finitions",
+  },
+];
+
 export function ProjectStageGuide() {
   return (
     <section className="section-space services-stage" aria-labelledby="stage-heading">
-      <div className="frame services-stage-layout">
-        <div>
-          <h2 id="stage-heading" data-reveal>À quel stade<br />êtes-vous&nbsp;?</h2>
-          <p data-reveal>Votre point de départ nous aide à identifier les premiers sujets à travailler ensemble.</p>
+      <div className="frame">
+        <div className="services-stage-intro">
+          <h2 id="stage-heading" data-reveal>Où en est<br />votre projet&nbsp;?</h2>
+          <p data-reveal>Chaque projet a son point de départ. Choisissez celui qui vous ressemble pour découvrir les métiers concernés.</p>
         </div>
-        <ul className="services-stage-links">
-          <li data-reveal><a href="#conseil-etudes-suivi"><span>Je prépare mon projet<small>Études, chiffrage et organisation</small></span><Arrow /></a></li>
-          <li data-reveal><a href="#gros-oeuvre"><span>Je veux construire<small>Fondations, structure et maçonnerie</small></span><Arrow /></a></li>
-          <li data-reveal><a href="#renovation-finitions"><span>Je transforme un lieu<small>Rénovation, réaménagement et finitions</small></span><Arrow /></a></li>
-        </ul>
+        <nav aria-label="Choisir un point de départ">
+          <ul className="services-stage-links">
+            {stages.map((stage) => (
+              <li key={stage.href} data-reveal>
+                <a href={stage.href}>
+                  <span className="services-stage-title">{stage.title}</span>
+                  <span className="services-stage-detail">{stage.detail}</span>
+                  <Arrow />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </section>
   );
