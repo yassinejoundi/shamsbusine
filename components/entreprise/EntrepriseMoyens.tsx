@@ -1,0 +1,38 @@
+const equipment = [
+  {
+    title: "Préparer le terrain",
+    description: "Pelles mécaniques, JCB, Bobcat et compacteurs.",
+  },
+  {
+    title: "Coffrer et bâtir",
+    description: "Grues, panneaux de coffrage, poutres H20, étais métalliques et vibrateurs à béton.",
+  },
+  {
+    title: "Organiser le chantier",
+    description: "Échafaudages, bureaux de chantier, compresseurs, postes à souder et pick-ups.",
+  },
+] as const;
+
+export function EntrepriseMoyens() {
+  return (
+    <section className="entreprise-moyens" aria-labelledby="entreprise-moyens-title">
+      <div className="frame">
+        <div className="entreprise-moyens-intro">
+          <h2 id="entreprise-moyens-title" data-reveal>Des moyens sur le terrain.</h2>
+          <p data-reveal>
+            Terrassement, coffrage, levage et organisation : les équipements accompagnent les
+            différentes phases des travaux.
+          </p>
+        </div>
+        <ul className="entreprise-moyens-list">
+          {equipment.map(({ title, description }) => (
+            <li key={title} data-reveal>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

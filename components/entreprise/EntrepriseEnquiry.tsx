@@ -5,9 +5,16 @@ export function EntrepriseEnquiry() {
   return (
     <section className="entreprise-enquiry" aria-labelledby="entreprise-enquiry-title">
       <div className="frame entreprise-enquiry-layout">
-        <h2 id="entreprise-enquiry-title" data-reveal>Pour démarrer, décrivez les travaux, la ville et le calendrier.</h2>
+        <div className="entreprise-enquiry-copy">
+          <h2 id="entreprise-enquiry-title" data-reveal>Parlons de votre projet.</h2>
+          <p data-reveal>
+            Indiquez la ville, les travaux envisagés et le stade d’avancement pour cadrer le premier échange.
+          </p>
+        </div>
         <div className="entreprise-enquiry-actions">
-          <Link className="button" href="/contact/#devis" data-reveal>Décrire mon projet <Arrow /></Link>
+          <Link className="button" href="/contact/#devis" data-reveal>
+            Demander un devis <Arrow />
+          </Link>
         </div>
       </div>
     </section>
