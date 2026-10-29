@@ -1,4 +1,5 @@
 import { DisclosureIcon } from "@/components/site/DisclosureIcon";
+import { Arrow } from "@/components/site/Arrow";
 
 const questions = [
   ["Puis-je demander un seul lot de travaux ?", "Oui, un besoin ciblé peut être étudié : étanchéité, gros œuvre, installations techniques ou finitions. Nous précisons avec vous les travaux concernés et leur coordination avec les autres intervenants."],
@@ -10,15 +11,18 @@ const questions = [
 
 export function ServiceQuestions() {
   return (
-    <section className="frame section-space services-questions" aria-labelledby="faq-heading">
-      <div>
-        <h2 id="faq-heading" data-reveal>Les questions<br />de départ.</h2>
-        <p data-reveal>Quelques repères pour préparer votre échange avec notre équipe.</p>
-      </div>
-      <div className="faq-list services-faq">
-        {questions.map(([question, answer]) => (
-          <details key={question} data-reveal><summary>{question.replace(" ?", "\u00a0?")}<DisclosureIcon /></summary><p>{answer}</p></details>
-        ))}
+    <section className="section-space services-questions" aria-labelledby="faq-heading">
+      <div className="frame services-questions-layout">
+        <div className="services-questions-intro">
+          <h2 id="faq-heading" data-reveal>Vos questions</h2>
+          <p data-reveal>Quelques repères pour préparer votre échange avec notre équipe.</p>
+          <a className="text-link services-questions-action" href="#enquiry-heading" data-reveal>Parler de mon projet <Arrow /></a>
+        </div>
+        <div className="faq-list services-faq">
+          {questions.map(([question, answer]) => (
+            <details key={question} data-reveal><summary>{question.replace(" ?", "\u00a0?")}<DisclosureIcon /></summary><p>{answer}</p></details>
+          ))}
+        </div>
       </div>
     </section>
   );
