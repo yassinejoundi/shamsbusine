@@ -46,8 +46,11 @@
 .services-process-intro h2 { max-width: 10ch; font-size: clamp(3rem, 6vw, 5rem); line-height: .98; }
 .services-process-intro > p { max-width: 36ch; justify-self: end; }
 .services-process-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); margin: 0; padding: 0; list-style: none; }
-.services-process-list h3 { max-width: 18ch; font-size: clamp(1.5rem, 2.4vw, 2.125rem); line-height: 1.1; letter-spacing: -.035em; }
-.services-process-list p { margin-block-start: .9rem; max-width: 40ch; }
+.services-process-list li { display: grid; align-content: start; gap: .9rem; }
+.services-process-step { display: grid; align-content: start; gap: .9rem; }
+.services-process-icon { width: 1.35rem; height: 1.35rem; color: var(--ink); }
+.services-process-list h3 { max-width: 18ch; min-height: 2.2em; font-size: clamp(1.5rem, 2.4vw, 2.125rem); line-height: 1.1; letter-spacing: -.035em; }
+.services-process-list p { max-width: 40ch; }
 .services-questions { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 10%; align-items: start; }
 .services-questions > div > p { margin-block-start: 1.5rem; max-width: 32ch; }
 .services-questions .services-faq { margin-block-start: 0; }
@@ -82,7 +85,6 @@
   .services-stage-title { font-size: clamp(1.75rem, 3.8vw, 2.5rem); }
   .services-process-list { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .services-process-list li { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; }
-  .services-process-list p { margin-block-start: 0; }
   .services-project-grid { column-gap: 1.25rem; }
   .services-project-portrait { margin-block-start: 3rem; }
 }
@@ -117,7 +119,9 @@
   .services-process-intro h2 { font-size: clamp(2.75rem, 10vw, 4rem); }
   .services-process-intro > p { justify-self: start; }
   .services-process-list { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
-  .services-process-list li { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .services-process-list li { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .services-process-step { grid-template-columns: auto minmax(0, 1fr); gap: .75rem; align-items: start; }
+  .services-process-list h3 { min-height: 0; }
   .services-questions, .services-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .services-project-grid { display: flex; flex-direction: column; gap: 2.5rem; }
   .services-project-wide, .services-project-detail { width: 100%; }

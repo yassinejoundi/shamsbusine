@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClipboardCheck, faFileLines, faListCheck } from "@fortawesome/free-solid-svg-icons";
+
 export function ServiceProcess() {
   return (
     <section className="section-space services-process-section" aria-labelledby="delivery-heading">
@@ -7,9 +10,27 @@ export function ServiceProcess() {
           <p data-reveal>De la définition du besoin à la réception, les étapes se précisent selon le périmètre de votre projet.</p>
         </div>
         <ol className="services-process-list">
-          <li><h3 data-reveal>Comprendre & chiffrer</h3><p data-reveal>Nous examinons le besoin, les plans disponibles et les contraintes du site pour préciser le périmètre et préparer le devis.</p></li>
-          <li><h3 data-reveal>Organiser & réaliser</h3><p data-reveal>Les interventions sont planifiées et les corps de métier coordonnés selon les étapes retenues pour votre chantier.</p></li>
-          <li><h3 data-reveal>Contrôler & réceptionner</h3><p data-reveal>Les points de contrôle et la réception permettent de revoir les travaux réalisés au regard du périmètre convenu.</p></li>
+          <li>
+            <div className="services-process-step">
+              <FontAwesomeIcon icon={faFileLines} aria-hidden="true" className="services-process-icon" />
+              <h3 data-reveal>Comprendre & chiffrer</h3>
+            </div>
+            <p data-reveal>Nous examinons le besoin, les plans disponibles et les contraintes du site pour préciser le périmètre et préparer le devis.</p>
+          </li>
+          <li>
+            <div className="services-process-step">
+              <FontAwesomeIcon icon={faListCheck} aria-hidden="true" className="services-process-icon" />
+              <h3 data-reveal>Organiser & réaliser</h3>
+            </div>
+            <p data-reveal>Les interventions sont planifiées et les corps de métier coordonnés selon les étapes retenues pour votre chantier.</p>
+          </li>
+          <li>
+            <div className="services-process-step">
+              <FontAwesomeIcon icon={faClipboardCheck} aria-hidden="true" className="services-process-icon" />
+              <h3 data-reveal>Contrôler & réceptionner</h3>
+            </div>
+            <p data-reveal>Les points de contrôle et la réception permettent de revoir les travaux réalisés au regard du périmètre convenu.</p>
+          </li>
         </ol>
       </div>
     </section>
