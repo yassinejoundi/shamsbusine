@@ -151,5 +151,126 @@
       "role": "Illustrative generated image of two workers in branded yellow workwear; not verified Shams Busine staff or a specific project.",
       "prompt": "Photorealistic editorial image for the company-capability section: two construction technicians viewed from behind, in golden-yellow jackets, reviewing a plan inside an unfinished concrete building. No faces, city scenery or visible text. The official Shams Busine navbar logo was composited onto both jacket backs to preserve brand accuracy."
     }
+  ],
+  "partner_logos": [
+    {
+      "file": "/images/partners/partner-agence-architecture.png",
+      "original": "1.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/1.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Agence d’architecture"
+    },
+    {
+      "file": "/images/partners/partner-sonasid.png",
+      "original": "16.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/16.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Sonasid"
+    },
+    {
+      "file": "/images/partners/partner-menara-prefa.png",
+      "original": "Design-sans-titre-32.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-32.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Ménara Préfa"
+    },
+    {
+      "file": "/images/partners/partner-beldi-fusion-kitchen.png",
+      "original": "15.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/15.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Beldi Fusion Kitchen"
+    },
+    {
+      "file": "/images/partners/partner-chaoua-briques.png",
+      "original": "17.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/17.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Chaoua Briques"
+    },
+    {
+      "file": "/images/partners/partner-ministere-education.png",
+      "original": "Design-sans-titre-12.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-12.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Royaume du Maroc — ministère de l’Éducation nationale, du Préscolaire et des Sports"
+    },
+    {
+      "file": "/images/partners/partner-planete-montessori.png",
+      "original": "18.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/18.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Planète Montessori International School"
+    },
+    {
+      "file": "/images/partners/partner-mega-engineering.png",
+      "original": "2.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/2.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Mega Engineering"
+    },
+    {
+      "file": "/images/partners/partner-association-alnadi.png",
+      "original": "Design-sans-titre-11.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-11.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Association Al Nadi Al Baydaoui de Marrakech"
+    },
+    {
+      "file": "/images/partners/partner-lpae.png",
+      "original": "3.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/3.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Laboratoire privé d’analyses et d’essais, L.P.A.E. Agadir"
+    },
+    {
+      "file": "/images/partners/partner-art-beton.png",
+      "original": "4.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/4.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "ART BÉTON — études et travaux béton"
+    },
+    {
+      "file": "/images/partners/partner-tecnitas.png",
+      "original": "5.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/5.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Tecnitas"
+    },
+    {
+      "file": "/images/partners/partner-labo-control.png",
+      "original": "6.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/6.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Labo Control — laboratoire d’essais, analyses et de contrôle"
+    },
+    {
+      "file": "/images/partners/partner-3d-concept.png",
+      "original": "7.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/7.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "3D Concept"
+    },
+    {
+      "file": "/images/partners/partner-magriser.png",
+      "original": "8.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/8.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Magriser — systèmes d’irrigation"
+    },
+    {
+      "file": "/images/partners/partner-cogetis.png",
+      "original": "9.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/9.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Cogetis — systèmes d’étanchéité"
+    },
+    {
+      "file": "/images/partners/partner-carriprefa.png",
+      "original": "14.png",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/14.png",
+      "source_page": "https://shamsbusine.com/contact-page-copy/",
+      "partner": "Carripréfa"
+    }
   ]
 }

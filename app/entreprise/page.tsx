@@ -5,9 +5,11 @@ import { EntrepriseApproche } from "@/components/entreprise/EntrepriseApproche";
 import { EntrepriseMoyens } from "@/components/entreprise/EntrepriseMoyens";
 import { EntrepriseGalerie } from "@/components/entreprise/EntrepriseGalerie";
 import { EntrepriseMethode } from "@/components/entreprise/EntrepriseMethode";
+import { EntreprisePartenaires } from "@/components/entreprise/EntreprisePartenaires";
 import { EntrepriseEnquiry } from "@/components/entreprise/EntrepriseEnquiry";
 
 import "./entreprise.css";
+import "./partenaires.css";
 
 export const metadata: Metadata = {
   title: "L’entreprise | Construction & rénovation à Marrakech — Shams Busine",
@@ -29,6 +31,7 @@ export default function EntreprisePage() {
         <EntrepriseMoyens />
         <EntrepriseGalerie />
         <EntrepriseMethode />
+        <EntreprisePartenaires />
         <EntrepriseEnquiry />
       </main>
     </PageMotion>
