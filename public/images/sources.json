@@ -103,6 +103,27 @@
       "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-11.55.22-3-e1776432639957.jpeg",
       "project_pages": "realisation-construction-shams-busine; villa-2; villa-touristique",
       "role": "Architectural perspective shown as a rendering, not site photography."
+    },
+    {
+      "file": "/images/services-project-villa.webp",
+      "original": "media/projects/villa-6/DSC1422.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1422.jpg",
+      "project_pages": "villa-6"
+    },
+    {
+      "file": "/images/services-project-interior.webp",
+      "original": "media/projects/villa-3/DSC1328.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1328.jpg",
+      "project_pages": "villa-3"
+    },
+    {
+      "file": "/images/services-project-cour.webp",
+      "original": "media/projects/projet-publique1/projet-public-1.jpeg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/projet-public-1.jpeg",
+      "project_pages": "projet-publique1"
     }
   ],
   "generated_images": [
