@@ -64,8 +64,8 @@
   gap: 8%;
   align-items: end;
 }
-.entreprise-moyens-intro h2,
-.entreprise-methode-intro h2 { max-width: 14ch; color: var(--ground); }
+.entreprise-moyens-intro h2 { max-width: 14ch; color: var(--ground); }
+.entreprise-methode-intro h2 { max-width: 18ch; color: var(--ground); }
 .entreprise-moyens-intro > p,
 .entreprise-methode-intro > p { max-width: 40ch; justify-self: end; color: var(--ground); }
 .entreprise-moyens-list {
@@ -117,19 +117,20 @@
 .entreprise-methode :focus-visible { outline-color: var(--accent); }
 .entreprise-stages {
   display: grid;
-  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
   margin: clamp(3rem, 6vw, 5rem) 0 0;
-  padding-inline-start: 1.5rem;
+  padding: 0;
+  list-style: none;
 }
 .entreprise-stages li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
-  gap: 8%;
-  align-items: start;
-  padding-inline-start: .5rem;
+  min-width: 0;
 }
-.entreprise-stages h3 { max-width: 18ch; color: var(--ground); font-size: clamp(1.75rem, 3.4vw, 3rem); }
-.entreprise-stages p { max-width: 44ch; justify-self: end; color: var(--ground); padding-block-start: .45rem; }
+.entreprise-stages li:nth-child(2) { margin-block-start: clamp(2rem, 4vw, 4rem); }
+.entreprise-stages li:nth-child(3) { margin-block-start: clamp(4rem, 8vw, 7rem); }
+.entreprise-stages h3 { max-width: 12ch; color: var(--ground); font-size: clamp(1.75rem, 3.4vw, 3rem); }
+.entreprise-stages p { max-width: 34ch; margin-block-start: 1.25rem; color: var(--ground); }
 
 .entreprise-enquiry { padding-block: clamp(4rem, 8vw, 7rem); }
 .entreprise-enquiry-layout {
@@ -159,6 +160,20 @@
   .entreprise-gallery-feature .entreprise-gallery-photo { aspect-ratio: 1.65; }
   .entreprise-gallery-matiere .entreprise-gallery-photo,
   .entreprise-gallery-cour .entreprise-gallery-photo { aspect-ratio: 1.2; }
+  .entreprise-stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 1.5rem;
+  }
+  .entreprise-stages li:nth-child(2) { margin-block-start: 1.75rem; }
+  .entreprise-stages li:nth-child(3) {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
+    gap: 8%;
+    align-items: start;
+    margin-block-start: 0;
+  }
+  .entreprise-stages li:nth-child(3) p { margin: 0; justify-self: end; }
   .entreprise-enquiry-layout { gap: 2rem; }
 }
 
@@ -194,10 +209,13 @@
   .entreprise-gallery-feature .entreprise-gallery-photo { aspect-ratio: 1.08; }
   .entreprise-gallery-matiere .entreprise-gallery-photo,
   .entreprise-gallery-cour .entreprise-gallery-photo { aspect-ratio: 1.2; }
-  .entreprise-stages { margin-block-start: 2.5rem; gap: 2rem; padding-inline-start: 1.25rem; }
-  .entreprise-stages li { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .entreprise-stages { grid-template-columns: minmax(0, 1fr); margin-block-start: 2.5rem; gap: 2rem; }
+  .entreprise-stages li:nth-child(2),
+  .entreprise-stages li:nth-child(3) { margin-block-start: 0; }
+  .entreprise-stages li:last-child { display: block; }
   .entreprise-stages h3 { font-size: 1.5rem; }
-  .entreprise-stages p { justify-self: start; padding: 0; }
+  .entreprise-stages p { margin-block-start: .5rem; }
+  .entreprise-stages li:nth-child(3) p { justify-self: start; margin-block-start: .5rem; }
   .entreprise-enquiry { padding-block: 3.75rem; }
   .entreprise-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .entreprise-enquiry h2 { font-size: clamp(2.5rem, 10vw, 3.75rem); }

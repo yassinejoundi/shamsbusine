@@ -18,10 +18,11 @@ export function EntrepriseMethode() {
     <section id="methode" className="entreprise-methode" aria-labelledby="entreprise-methode-title">
       <div className="frame">
         <div className="entreprise-methode-intro">
-          <h2 id="entreprise-methode-title" data-reveal>Une méthode en trois temps.</h2>
+          <h2 id="entreprise-methode-title" data-reveal>
+            Un chantier, un fil conducteur.
+          </h2>
           <p data-reveal>
-            Confiance, qualité et sécurité accompagnent la préparation, la coordination et le suivi
-            du chantier.
+            Étude du besoin, organisation du chantier et points de contrôle structurent chaque étape.
           </p>
         </div>
         <ol className="entreprise-stages">
