@@ -1,8 +1,8 @@
 # Homepage interface review — 25 October 2026
 
-## Motion follow-up — 3 November 2026
+## Motion alignment — 3 November 2026
 
-Homepage scroll motion now uses section-specific, one-time transform entrances with no opacity or fade. The production preview was inspected at desktop, tablet, 390px and 320px widths; the first FAQ disclosure expanded successfully, and the browser console had no errors. `npm run lint`, `npm run build` and `git diff --check` passed. This follow-up covers the motion change and responsive rendering; the broader checks below describe the 25 October baseline.
+The earlier section entrances were replaced after reviewing the BAC English homepage, which keeps normal page content still while scrolling and uses short interaction transitions. Shams Busine now uses native scrolling with concise CSS feedback on controls and disclosures; there are no page-entry or section reveals. Lint and production build passed. The production preview was checked at desktop, tablet, 390px and 320px widths; the mobile menu and homepage/services FAQ disclosures worked, and the browser console had no errors. The broader checks below remain the 25 October baseline.
 
 ## Scope and coverage
 

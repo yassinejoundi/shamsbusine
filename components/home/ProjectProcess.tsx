@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ScrollSection } from "./ScrollSection";
 
 const stages = [
   {
@@ -18,11 +17,11 @@ const stages = [
 
 export function ProjectProcess() {
   return (
-    <ScrollSection animation="process" className="process" aria-labelledby="process-title">
+    <section className="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
-          <h2 id="process-title" data-scroll-item>Un chantier,<br />un fil conducteur.</h2>
-          <p data-scroll-item>De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
+          <h2 id="process-title">Un chantier,<br />un fil conducteur.</h2>
+          <p>De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
         </div>
 
         <div className="process-layout">
@@ -33,22 +32,21 @@ export function ProjectProcess() {
                 alt="Deux techniciens en tenue jaune, vus de dos, observent un chantier."
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
-                data-scroll-item="image"
               />
             </div>
-            <figcaption data-scroll-item>Visuel illustratif — une équipe sur le terrain.</figcaption>
+            <figcaption>Visuel illustratif — une équipe sur le terrain.</figcaption>
           </figure>
 
           <ol className="process-steps">
             {stages.map(({ title, text }) => (
               <li key={title}>
-                <h3 data-scroll-item>{title}</h3>
-                <p data-scroll-item>{text}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </li>
             ))}
           </ol>
         </div>
       </div>
-    </ScrollSection>
+    </section>
   );
 }

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { QuestionsAccordion } from "@/components/site/QuestionsAccordion";
-import { ScrollSection } from "./ScrollSection";
 
 const questions = [
   { question: "Quels travaux pouvez-vous réaliser ?", answer: "Construction, gros œuvre, étanchéité, installations techniques, rénovation et finitions. Décrivez votre besoin pour que nous précisions ensemble le périmètre des travaux." },
@@ -12,11 +11,11 @@ const questions = [
 
 export function Questions() {
   return (
-    <ScrollSection animation="questions" className="questions" aria-labelledby="questions-title">
+    <section className="questions" aria-labelledby="questions-title">
       <div className="frame">
         <div className="questions-intro">
-          <h2 id="questions-title" data-scroll-item>Avant de se lancer.</h2>
-          <p data-scroll-item>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
+          <h2 id="questions-title">Avant de se lancer.</h2>
+          <p>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
         </div>
 
         <div className="questions-layout">
@@ -27,15 +26,14 @@ export function Questions() {
                 alt="Détail d’une façade de villa en pierre grise et enduit clair"
                 fill
                 sizes="(max-width: 699px) 78vw, (max-width: 1099px) 42vw, 34vw"
-                data-scroll-item="image"
               />
             </div>
-            <figcaption data-scroll-item>Une façade contemporaine, entre pierre grise et enduit clair.</figcaption>
+            <figcaption>Une façade contemporaine, entre pierre grise et enduit clair.</figcaption>
           </figure>
 
           <QuestionsAccordion questions={questions} />
         </div>
       </div>
-    </ScrollSection>
+    </section>
   );
 }

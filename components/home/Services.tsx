@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ScrollSection } from "./ScrollSection";
 
 type Service = {
   title: string;
@@ -53,13 +52,13 @@ const services: Service[] = [
 
 export function Services() {
   return (
-    <ScrollSection animation="services" className="services section-space" id="services" aria-labelledby="services-title">
+    <section className="services section-space" id="services" aria-labelledby="services-title">
       <div className="frame">
         <div className="section-intro services-intro">
-          <h2 id="services-title" data-scroll-item>Des métiers<br />complémentaires.</h2>
+          <h2 id="services-title">Des métiers<br />complémentaires.</h2>
           <div>
-            <p data-scroll-item>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
-            <Link href="/services" className="text-link" data-scroll-item>Explorer nos services</Link>
+            <p>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
+            <Link href="/services" className="text-link">Explorer nos services</Link>
           </div>
         </div>
 
@@ -72,19 +71,19 @@ export function Services() {
               {image && (
                 <figure className="service-tile__figure">
                   <div className={`photo service-tile__photo service-tile__photo--${image.kind}`}>
-                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" data-scroll-item="image" />
+                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" />
                   </div>
-                  {image.caption && <figcaption data-scroll-item>{image.caption}</figcaption>}
+                  {image.caption && <figcaption>{image.caption}</figcaption>}
                 </figure>
               )}
               <div className="service-tile__body">
-                <h3 data-scroll-item>{title}</h3>
-                <p data-scroll-item>{text}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-    </ScrollSection>
+    </section>
   );
 }

@@ -1,5 +1,9 @@
 # Services review — 26 October 2026
 
+## Motion policy note — 3 November 2026
+
+The motion findings below describe the earlier ScrollTrigger implementation. The current policy removes page and section scroll reveals in favor of native scrolling and short CSS interaction feedback; see `docs/homepage.md` and `docs/services-design.md`.
+
 ## Direction and initial critique
 
 Continue the installed design-taste direction, Photographs at uneven sizes, seed 1385688691. Existing palette, Work Sans and verified company assets are retained; no redraw, generated image, stock photograph or new dependency is needed. The live interaction is choosing a project stage, inspecting the relevant service scope and proceeding to the existing quote-email brief. Native scroll behavior remains the only scrolling system; no WebGL is justified.

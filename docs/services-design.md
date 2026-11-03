@@ -18,7 +18,7 @@ On this page, the company's actual structure, stone and finished spaces become a
 
 ## Motion and implementation
 
-Use the installed GSAP, ScrollTrigger and scoped `useGSAP`. Move the existing HomeMotion implementation into shared `components/site/PageMotion.tsx` and update its homepage caller without changing its established motion behavior. Apply it to the services page. Mark each meaningful heading, paragraph, photo, service disclosure, guide link, process item and quote action for its own smooth opacity entrance. Avoid animating a container and its descendants at the same time. Photos take 750ms; text 450ms; small grouping staggers 60ms. Refresh measurements when disclosures change the page height. No pinning, parallax, autoplay, scroll engine or continuously running effects. Under reduced motion, keep final opacity and native instant anchor scrolling; clean up on route changes, preference changes and unmount. All content remains visible in default CSS and server HTML.
+Keep native scrolling and static section content, matching the BAC English homepage. Use short CSS transitions on interactive controls and the FAQ disclosure icon only. FAQ answers use native `details` disclosures; do not add GSAP, page-entry reveals, pinning, parallax, autoplay or scroll hijacking. Respect reduced-motion preferences and keep all content available in server HTML.
 
 Keep `app/services/page.tsx` a Server Component composition. Put focused section components and service data in `components/services/`; put route-specific styles in a namespaced stylesheet to protect the homepage. Reuse the shared navbar, footer, arrows, disclosure icons and tokens. Update the global Services destination and add route-aware current-page names through a small navigation leaf component. Shared links to future routes remain valid homepage anchors. Add a homepage link to the new overview.
 
@@ -30,7 +30,7 @@ Use French metadata, one h1, h2 section headings, h3 service headings, semantic 
 
 ## Acceptance and limits
 
-Verify production build, ESLint, existing enquiry tests, desktop/tablet/mobile screenshots, 320px reflow, 200% text sizing, keyboard navigation, native disclosures, every internal link, no-JavaScript content, motion completion after disclosure expansion, live reduced-motion switching, route transitions and ScrollTrigger cleanup. Run an automated WCAG audit. Record screenshots and test evidence locally under `.project/review/`; keep a concise tracked review in `docs/services-review.md`.
+Verify production build, ESLint, existing enquiry tests, desktop/tablet/mobile screenshots, 320px reflow, 200% text sizing, keyboard navigation, native disclosures, every internal link, no-JavaScript content, reduced-motion CSS, route transitions and control feedback. Run an automated WCAG audit. Record screenshots and test evidence locally under `.project/review/`; keep a concise tracked review in `docs/services-review.md`.
 
 No dependencies, generated assets, service-detail routes, contact route or backend are needed. Contact ownership, WhatsApp availability and publication permissions remain business checks. Preserve the pre-existing modifications to `.gitignore`, `package.json` and `package-lock.json` and exclude them from this work's commits.
 

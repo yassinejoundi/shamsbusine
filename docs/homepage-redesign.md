@@ -2,7 +2,7 @@
 
 ## Direction
 
-French homepage only. Make construction and renovation in Marrakech immediately clear, show the company's work, and lead to an email brief or a direct call. Keep Next.js Server Components, local Work Sans, existing Font Awesome and GSAP packages, and the tested enquiry helper.
+French homepage only. Make construction and renovation in Marrakech immediately clear, show the company's work, and lead to an email brief or a direct call. Keep Next.js Server Components, local Work Sans, existing Font Awesome, and the tested enquiry helper.
 
 Art direction: **Photographs at uneven sizes**, seed **1385688691**, selected from three directions for its fit with the real villa archive. On this page, Shams Busine's rose façades, palms and unfinished structures become a photographic passage from building to living. The sun/house/crane logo and amber actions tie that passage to the company.
 
@@ -27,7 +27,7 @@ Blueprint adjustments: replace the dealt draggable process row with “Lines tha
 
 All six deployed photographs and the original logo remain mapped in `public/images/sources.json`, verified against `.project/metadata/project-images.csv`. No stock photos, generated projects, invented client identities or sample statistics. Image generation adds no value to this existing photographic archive.
 
-GSAP / ScrollTrigger / scoped `useGSAP`: composed hero opacity entrance and section entrances, all visible in server HTML. Respect reduced motion and clean up on preference changes and unmount. Lenis and Locomotive were evaluated and omitted: repository instructions explicitly prohibit scroll hijacking. Native smooth anchor navigation is sufficient. No Three.js, pinning, autoplay or persistent animation.
+Keep native scrolling and static section content, matching the BAC English homepage. Use short CSS transitions for navigation, quote actions, the mobile menu icon and FAQ disclosure icon. Respect reduced motion; do not add GSAP, page-entry reveals, pinning, autoplay or scroll hijacking.
 
 ## Acceptance
 
