@@ -18,15 +18,15 @@ export function EntrepriseMoyens() {
     <section className="entreprise-moyens" aria-labelledby="entreprise-moyens-title">
       <div className="frame">
         <div className="entreprise-moyens-intro">
-          <h2 id="entreprise-moyens-title">Des moyens sur le terrain.</h2>
-          <p>
+          <h2 id="entreprise-moyens-title" data-reveal="left">Des moyens sur le terrain.</h2>
+          <p data-reveal="right">
             Terrassement, coffrage, levage et organisation : les équipements accompagnent les
             différentes phases des travaux.
           </p>
         </div>
         <ul className="entreprise-moyens-list">
-          {equipment.map(({ title, description }) => (
-            <li key={title}>
+          {equipment.map(({ title, description }, index) => (
+            <li key={title} data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={String(index)}>
               <h3>{title}</h3>
               <p>{description}</p>
             </li>

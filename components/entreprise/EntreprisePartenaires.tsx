@@ -25,12 +25,12 @@ export function EntreprisePartenaires() {
     <section id="partenaires" className="entreprise-partenaires" aria-labelledby="entreprise-partenaires-title">
       <div className="frame">
         <div className="entreprise-partenaires-intro">
-          <h2 id="entreprise-partenaires-title">Nos partenaires.</h2>
-          <p>Ils nous font confiance pour leurs projets de construction.</p>
+          <h2 id="entreprise-partenaires-title" data-reveal="left">Nos partenaires.</h2>
+          <p data-reveal="right">Ils nous font confiance pour leurs projets de construction.</p>
         </div>
         <ul className="entreprise-partenaires-list">
-          {partners.map((partner) => (
-            <li key={partner.src} className="entreprise-partenaires-logo-item">
+          {partners.map((partner, index) => (
+            <li key={partner.src} className="entreprise-partenaires-logo-item" data-reveal="up" data-reveal-delay={String(index % 4)}>
               <Image
                 className="entreprise-partenaires-logo"
                 src={partner.src}

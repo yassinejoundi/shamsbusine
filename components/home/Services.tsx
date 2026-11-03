@@ -55,17 +55,19 @@ export function Services() {
     <section className="services section-space" id="services" aria-labelledby="services-title">
       <div className="frame">
         <div className="section-intro services-intro">
-          <h2 id="services-title">Des métiers<br />complémentaires.</h2>
-          <div>
+          <h2 id="services-title" data-reveal="left">Des métiers<br />complémentaires.</h2>
+          <div data-reveal="right" data-reveal-delay="1">
             <p>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
             <Link href="/services" className="text-link">Explorer nos services</Link>
           </div>
         </div>
 
         <ul className="services-bento">
-          {services.map(({ title, text, image }) => (
+          {services.map(({ title, text, image }, index) => (
             <li
               className={`service-tile ${image ? "service-tile--visual" : "service-tile--text"}`}
+              data-reveal={index % 2 === 0 ? "left" : "right"}
+              data-reveal-delay={String(Math.min(index, 3))}
               key={title}
             >
               {image && (

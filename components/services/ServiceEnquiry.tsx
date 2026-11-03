@@ -6,12 +6,12 @@ export function ServiceEnquiry() {
   return (
     <section className="services-enquiry" aria-labelledby="enquiry-heading">
       <div className="frame services-enquiry-layout">
-        <div className="services-enquiry-intro">
+        <div className="services-enquiry-intro" data-reveal="left">
           <h2 id="enquiry-heading">Parlons de<br />votre projet.</h2>
           <p>À Marrakech ou ailleurs, précisons ensemble votre besoin et les prochaines étapes.</p>
         </div>
 
-        <div className="services-enquiry-details">
+        <div className="services-enquiry-details" data-reveal="right" data-reveal-delay="1">
           <h3>Les premiers repères</h3>
           <p className="services-enquiry-prompt">Pour préparer notre échange, partagez&nbsp;:</p>
           <ul>

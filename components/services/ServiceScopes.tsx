@@ -4,18 +4,18 @@ export function ServiceScopes() {
   return (
     <section className="frame section-space services-scopes" id="metiers" aria-labelledby="scopes-heading">
       <div className="section-intro">
-        <h2 id="scopes-heading">Les métiers<br />du projet.</h2>
-        <p>Découvrez les principaux travaux associés à nos six métiers, de la structure aux finitions.</p>
+        <h2 id="scopes-heading" data-reveal="left">Les métiers<br />du projet.</h2>
+        <p data-reveal="right">Découvrez les principaux travaux associés à nos six métiers, de la structure aux finitions.</p>
       </div>
       <div className="services-scope-layout">
-        <nav className="services-scope-index" aria-label="Accès direct aux six métiers">
+        <nav className="services-scope-index" aria-label="Accès direct aux six métiers" data-reveal="left">
           <ul>
             {serviceScopes.map(({ id, title }) => <li key={id}><a href={`#${id}`}>{title}</a></li>)}
           </ul>
         </nav>
         <div className="services-scope-grid">
-          {serviceScopes.map(({ id, title, description, scope }) => (
-            <article id={id} key={id} className="services-scope-entry">
+          {serviceScopes.map(({ id, title, description, scope }, index) => (
+            <article id={id} key={id} className="services-scope-entry" data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={String(index % 4)}>
               <div className="services-scope-copy">
                 <h3>{title}</h3>
                 <p>{description}</p>

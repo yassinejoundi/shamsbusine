@@ -20,12 +20,12 @@ export function ProjectProcess() {
     <section className="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
-          <h2 id="process-title">Un chantier,<br />un fil conducteur.</h2>
-          <p>De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
+          <h2 id="process-title" data-reveal="left">Un chantier,<br />un fil conducteur.</h2>
+          <p data-reveal="right">De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
         </div>
 
         <div className="process-layout">
-          <figure className="process-figure">
+          <figure className="process-figure" data-reveal="wipe-left">
             <div className="photo process-photo">
               <Image
                 src="/images/techniciens-chantier.webp"
@@ -38,8 +38,8 @@ export function ProjectProcess() {
           </figure>
 
           <ol className="process-steps">
-            {stages.map(({ title, text }) => (
-              <li key={title}>
+            {stages.map(({ title, text }, index) => (
+              <li key={title} data-reveal="right" data-reveal-delay={String(index)}>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </li>

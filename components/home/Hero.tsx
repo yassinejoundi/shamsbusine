@@ -4,18 +4,18 @@ import { Arrow } from "@/components/site/Arrow";
 export function Hero() {
   return (
     <section className="hero frame" aria-labelledby="hero-title">
-      <h1 id="hero-title"><span>Bâtir.</span><span>Habiter.</span></h1>
-      <div className="hero-detail photo">
+      <h1 id="hero-title"><span data-reveal="type">Bâtir.</span><span data-reveal="type" data-reveal-delay="1">Habiter.</span></h1>
+      <div className="hero-detail photo" data-reveal="right">
         <Image src="/images/detail-finitions.webp" alt="Marbre sombre, bois et végétation dans un aménagement extérieur" fill sizes="(max-width: 699px) 30vw, 24vw" />
       </div>
-      <div className="hero-copy">
+      <div className="hero-copy" data-reveal="right" data-reveal-delay="1">
         <p className="hero-description">Construction et rénovation à Marrakech. Du gros œuvre aux finitions, Shams Busine donne vie à votre projet.</p>
         <div className="hero-actions">
           <a href="#devis" className="button">Demander un devis <Arrow /></a>
           <a href="#realisations" className="text-link">Découvrir nos réalisations</a>
         </div>
       </div>
-      <figure className="hero-figure">
+      <figure className="hero-figure" data-reveal="wipe-left">
         <div className="photo hero-photo">
           <Image src="/images/villa-jardin.webp" alt="Villa aux façades roses, grandes baies vitrées et jardin planté de palmiers" fill sizes="(max-width: 699px) 100vw, 58vw" preload />
         </div>

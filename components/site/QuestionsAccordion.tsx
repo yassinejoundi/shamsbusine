@@ -14,8 +14,8 @@ export function QuestionsAccordion({
 }) {
   return (
     <div className={className ? `faq-list ${className}` : "faq-list"}>
-      {questions.map(({ question, answer }) => (
-        <details key={question}>
+      {questions.map(({ question, answer }, index) => (
+        <details key={question} data-reveal="right" data-reveal-delay={String(index % 4)}>
           <summary>{question}<DisclosureIcon /></summary>
           <div className="faq-answer"><p>{answer}</p></div>
         </details>

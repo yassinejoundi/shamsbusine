@@ -24,8 +24,8 @@ export default function RealisationsPage({
   return (
     <main id="contenu" className="realisations-page" tabIndex={-1}>
       <section className="realisations-intro frame" aria-labelledby="realisations-title">
-        <h1 id="realisations-title"><span>Des projets</span><span>en images.</span></h1>
-        <div className="realisations-intro-copy">
+        <h1 id="realisations-title"><span data-reveal="type">Des projets</span><span data-reveal="type" data-reveal-delay="1">en images.</span></h1>
+        <div className="realisations-intro-copy" data-reveal="right">
           <p>De la structure aux finitions, découvrez des chantiers Shams Busine en images.</p>
           <Link href="/contact/#devis" className="button">
             Demander un devis <Arrow />
@@ -37,11 +37,11 @@ export default function RealisationsPage({
       </Suspense>
       <section className="realisations-enquiry" aria-labelledby="realisations-enquiry-title">
         <div className="frame realisations-enquiry-layout">
-          <div>
+          <div data-reveal="left">
             <h2 id="realisations-enquiry-title">Un projet à faire avancer&nbsp;?</h2>
             <p>Pour un premier échange utile, indiquez la ville, les travaux envisagés et l’étape où vous en êtes.</p>
           </div>
-          <div className="realisations-enquiry-actions">
+          <div className="realisations-enquiry-actions" data-reveal="right" data-reveal-delay="1">
             <Link href="/contact/#devis" className="button">
               Décrire mon projet <Arrow />
             </Link>
@@ -57,8 +57,8 @@ export default function RealisationsPage({
 function ProjectGalleryFallback() {
   return (
     <section id="projets" className="realisations-gallery frame" aria-labelledby="realisations-gallery-title">
-      <h2 id="realisations-gallery-title">Du terrain aux détails.</h2>
-      <p className="realisations-loading" role="status">Chargement des vues de projets…</p>
+      <h2 id="realisations-gallery-title" data-reveal="left">Du terrain aux détails.</h2>
+      <p className="realisations-loading" role="status" data-reveal="up">Chargement des vues de projets…</p>
     </section>
   );
 }

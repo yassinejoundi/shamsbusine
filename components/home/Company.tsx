@@ -5,7 +5,7 @@ export function Company() {
   return (
     <section className="company" id="entreprise" aria-labelledby="company-title">
       <div className="frame company-layout">
-        <div className="company-copy">
+        <div className="company-copy" data-reveal="left">
           <h2 id="company-title">Une équipe<br />de terrain.</h2>
           <div className="company-body">
             <p>Basée à Marrakech, Shams Busine accompagne les projets résidentiels, commerciaux et professionnels, de la structure aux finitions.</p>
@@ -14,7 +14,7 @@ export function Company() {
           </div>
         </div>
 
-        <figure className="company-figure">
+        <figure className="company-figure" data-reveal="wipe-right" data-reveal-delay="1">
           <div className="photo company-photo">
             <Image
               src="/images/company-team.webp"

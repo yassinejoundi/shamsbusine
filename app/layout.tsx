@@ -4,6 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ScrollReveals } from "@/components/site/ScrollReveals";
 import "./globals.css";
 
 config.autoAddCss = false;
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteNavbar />
         {children}
         <SiteFooter />
+        <ScrollReveals />
       </body>
     </html>
   );

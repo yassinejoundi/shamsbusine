@@ -14,12 +14,12 @@ export function Questions() {
     <section className="questions" aria-labelledby="questions-title">
       <div className="frame">
         <div className="questions-intro">
-          <h2 id="questions-title">Avant de se lancer.</h2>
-          <p>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
+          <h2 id="questions-title" data-reveal="left">Avant de se lancer.</h2>
+          <p data-reveal="right">Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
         </div>
 
         <div className="questions-layout">
-          <figure className="questions-image">
+          <figure className="questions-image" data-reveal="wipe-left">
             <div className="photo detail-photo">
               <Image
                 src="/images/faq-villa-detail.jpg"

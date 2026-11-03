@@ -29,16 +29,16 @@ export function EntrepriseGalerie() {
     <section className="entreprise-gallery" aria-labelledby="entreprise-gallery-title">
       <div className="frame">
         <div className="entreprise-gallery-intro">
-          <h2 id="entreprise-gallery-title">
+          <h2 id="entreprise-gallery-title" data-reveal="left">
             Des lieux, des lignes, des matières.
           </h2>
-          <p>
+          <p data-reveal="right">
             Façades, jardins et espaces de vie issus des réalisations Shams Busine.
           </p>
         </div>
         <div className="entreprise-gallery-grid">
-          {photographs.map(({ src, alt, caption, className, sizes }) => (
-            <figure className={className} key={src}>
+          {photographs.map(({ src, alt, caption, className, sizes }, index) => (
+            <figure className={className} key={src} data-reveal={index % 2 === 0 ? "wipe-right" : "wipe-left"} data-reveal-delay={String(index)}>
               <div className="photo entreprise-gallery-photo">
                 <Image src={src} alt={alt} fill sizes={sizes} />
               </div>

@@ -1,6 +1,6 @@
 # Homepage delivery
 
-**3 November 2026 motion update:** Matched the BAC English reference’s restrained CSS interaction feedback. Homepage sections stay still during native scrolling; reduced-motion preferences disable transitions.
+**3 November 2026 motion update:** Added one-time, direction-led reveals across the live routes. Headlines use clipped entrances, photographs wipe from alternating edges, split layouts enter from their own side, and lists use a restrained stagger. Native scrolling stays in control; reduced motion and missing JavaScript keep all content visible.
 
 French homepage rebuilt around a stepped “Bâtir. Habiter.” hero, the company's real photography, six service disclosures, a written construction sequence and a practical email brief.
 
@@ -8,7 +8,7 @@ French homepage rebuilt around a stepped “Bâtir. Habiter.” hero, the compan
 - Shared Server Component navbar/footer; isolated client menu, enquiry and FAQ behavior.
 - Work Sans, the existing logo, warm plaster, charcoal and amber quote actions.
 - Font Awesome icons; no new dependencies, generated assets or invented project claims.
-- Short CSS transitions on navigation, quote actions, mobile menu, form select and FAQ disclosure states; no content reveals on scroll. FAQ answers use native `details` disclosures.
+- A client-side `IntersectionObserver` reveals marked elements once, with no added animation dependency. Short control transitions remain; FAQ answers use native `details` disclosures.
 - Homepage anchors remain in place until destination routes exist.
 
 Direction, seed, source choices and implementation boundaries: [Redesign brief](homepage-redesign.md).

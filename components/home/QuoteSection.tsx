@@ -7,7 +7,7 @@ export function QuoteSection() {
   return (
     <section className="quote-section" id="devis" aria-labelledby="quote-title">
       <div className="frame quote-layout">
-        <div className="quote-copy">
+        <div className="quote-copy" data-reveal="left">
           <h2 id="quote-title">Bâtissons<br />la suite.</h2>
           <p>Construction, rénovation ou aménagement : racontez-nous votre besoin pour préciser ensemble les prochaines étapes.</p>
           <div className="contact-links">
@@ -23,7 +23,7 @@ export function QuoteSection() {
             </span>
           </address>
         </div>
-        <div className="quote-form-panel">
+        <div className="quote-form-panel" data-reveal="wipe-right" data-reveal-delay="1">
           <div className="quote-form-heading">
             <h3 id="quote-form-title">Les détails du projet</h3>
             <p>Tous les champs sont nécessaires pour préparer votre demande.</p>

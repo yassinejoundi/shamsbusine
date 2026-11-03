@@ -77,12 +77,12 @@ export async function ProjectGallery({
     <section id="projets" className="realisations-gallery frame" aria-labelledby="realisations-gallery-title">
       <div className="realisations-gallery-heading">
         <div>
-          <h2 id="realisations-gallery-title">Du terrain aux détails.</h2>
-          <p>Parcourez les photos selon l’espace ou l’étape qui ressemble à votre projet.</p>
+          <h2 id="realisations-gallery-title" data-reveal="left">Du terrain aux détails.</h2>
+          <p data-reveal="right">Parcourez les photos selon l’espace ou l’étape qui ressemble à votre projet.</p>
         </div>
         <p className="realisations-count" aria-live="polite">{visibleViews.length} {visibleViews.length === 1 ? "vue" : "vues"}</p>
       </div>
-      <nav className="realisations-filters" aria-label="Filtrer les réalisations par sujet">
+      <nav className="realisations-filters" aria-label="Filtrer les réalisations par sujet" data-reveal="right">
         <Link href="/realisations/#projets" aria-current={selected === "toutes" ? "page" : undefined}>Toutes les vues</Link>
         {subjects.map(({ id, label }) => (
           <Link key={id} href={`/realisations/?vue=${id}#projets`} aria-current={selected === id ? "page" : undefined}>
@@ -92,7 +92,7 @@ export async function ProjectGallery({
       </nav>
       <div className="realisations-grid">
         {visibleViews.map((view, index) => (
-          <figure key={view.src} className={`realisations-item realisations-item--${layouts[index]}`}>
+          <figure key={view.src} className={`realisations-item realisations-item--${layouts[index]}`} data-reveal={index % 2 ? "wipe-left" : "wipe-right"} data-reveal-delay={String(index % 4)}>
             <div className={`photo realisations-photo realisations-photo--${view.imageClass}`}>
               <Image
                 src={view.src}

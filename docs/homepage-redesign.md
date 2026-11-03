@@ -27,7 +27,7 @@ Blueprint adjustments: replace the dealt draggable process row with “Lines tha
 
 All six deployed photographs and the original logo remain mapped in `public/images/sources.json`, verified against `.project/metadata/project-images.csv`. No stock photos, generated projects, invented client identities or sample statistics. Image generation adds no value to this existing photographic archive.
 
-Keep native scrolling and static section content, matching the BAC English homepage. Use short CSS transitions for navigation, quote actions, the mobile menu icon and FAQ disclosure icon. Respect reduced motion; do not add GSAP, page-entry reveals, pinning, autoplay or scroll hijacking.
+Keep native scrolling. Use one-time, direction-led entrance reveals on selected content: clipped headline lines, image wipes, side-aware split layouts and brief stagger for grids and ordered steps. Keep content visible without JavaScript and when reduced motion is preferred. Preserve short CSS transitions on navigation, quote actions, the mobile menu icon and FAQ disclosure icon. Do not pin sections, autoplay media or hijack scrolling.
 
 ## Acceptance
 

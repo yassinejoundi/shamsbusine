@@ -2,7 +2,7 @@
 
 ## Motion alignment — 3 November 2026
 
-The earlier section entrances were replaced after reviewing the BAC English homepage, which keeps normal page content still while scrolling and uses short interaction transitions. Shams Busine now uses native scrolling with concise CSS feedback on controls and disclosures; there are no page-entry or section reveals. Lint and production build passed. The production preview was checked at desktop, tablet, 390px and 320px widths; the mobile menu and homepage/services FAQ disclosures worked, and the browser console had no errors. The broader checks below remain the 25 October baseline.
+The follow-up creative brief supersedes the earlier static-scroll direction. Marked elements now enter once as they approach the viewport: headlines clip into place, photographs wipe from alternating edges, split layouts enter from their own side, and grids use a short stagger. Native scrolling remains unchanged. Reduced motion and JavaScript failure leave content visible. Lint and production build passed; the production preview covered the homepage, services, company, contact and gallery routes. The homepage was inspected at 320px, 768px and default desktop size; fast forward and backward scrolling left no content hidden. Menu Escape and FAQ keyboard toggling also worked. Reduced motion and JavaScript-off states were verified from their fallback paths, not emulated live. The broader checks below remain the 25 October baseline.
 
 ## Scope and coverage
 
