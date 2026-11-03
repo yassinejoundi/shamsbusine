@@ -35,6 +35,7 @@ export function ScrollReveals() {
 
     const pending = new Set<HTMLElement>();
     const animations = new Map<HTMLElement, Animation>();
+    let lastScrollY = window.scrollY;
     const reveal = (target: HTMLElement) => {
       pending.delete(target);
       const animation = animations.get(target);
@@ -63,6 +64,10 @@ export function ScrollReveals() {
       observer.observe(target);
     };
     const revealPassed = () => {
+      const scrollY = window.scrollY;
+      const movingDown = scrollY > lastScrollY;
+      lastScrollY = scrollY;
+      if (!movingDown) return;
       for (const target of pending) {
         if (target.getBoundingClientRect().bottom < 0) {
           animations.get(target)?.finish();
@@ -84,8 +89,6 @@ export function ScrollReveals() {
     targets.forEach(observe);
     additions.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("scroll", revealPassed, { passive: true });
-    window.addEventListener("resize", revealPassed);
-    revealPassed();
 
     const showAll = (event: MediaQueryListEvent) => {
       if (!event.matches) return;
@@ -101,7 +104,6 @@ export function ScrollReveals() {
       additions.disconnect();
       animations.forEach((animation) => animation.cancel());
       window.removeEventListener("scroll", revealPassed);
-      window.removeEventListener("resize", revealPassed);
       reducedMotion.removeEventListener("change", showAll);
     };
   }, [pathname]);
