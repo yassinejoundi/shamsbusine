@@ -4,6 +4,11 @@
     "file": "/images/shamsbusine-logo.png",
     "original": "media/brand/shamsbusine-logo.png"
   },
+  "favicon": {
+    "file": "/icon.png",
+    "original": "media/brand/shamsbusine-logo.png",
+    "treatment": "symbol crop on a white square"
+  },
   "images": [
     {
       "file": "/images/villa-jardin.webp",
