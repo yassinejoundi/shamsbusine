@@ -20,12 +20,17 @@ export function ContactHero() {
           </div>
         </div>
         <div className="contact-hero-visuals">
-          <figure className="contact-hero-site photo" data-reveal="wipe-right">
-            <Image src="/images/chantier-maconnerie.webp" alt="Maçonnerie en briques et structure en béton sur un chantier Shams Busine" fill sizes="(max-width: 699px) 100vw, (max-width: 1099px) 65vw, 55vw" preload />
-            <figcaption>Du premier échange au chantier.</figcaption>
+          <figure className="contact-hero-photo contact-hero-photo-facade" data-reveal="wipe-right">
+            <div className="contact-hero-photo-frame photo">
+              <Image src="/images/contact-villa-facade.webp" alt="Façade aux tons ocre et pierre claire, ouverte sur le jardin" fill sizes="(max-width: 699px) 60vw, (max-width: 1099px) 42vw, 36vw" preload />
+            </div>
+            <figcaption>Façade ocre</figcaption>
           </figure>
-          <figure className="contact-hero-materials photo" data-reveal="wipe-left" data-reveal-delay="1">
-            <Image src="/images/contact-materials.webp" alt="Étude d’ambiance : papier de plan, pierre, brique et crayon dans la lumière" fill sizes="(max-width: 699px) 38vw, 20vw" />
+          <figure className="contact-hero-photo contact-hero-photo-pool" data-reveal="wipe-left" data-reveal-delay="1">
+            <div className="contact-hero-photo-frame photo">
+              <Image src="/images/contact-villa-piscine.webp" alt="Bassin extérieur bordé par la villa et ses plantations" fill sizes="(max-width: 699px) 40vw, (max-width: 1099px) 25vw, 20vw" />
+            </div>
+            <figcaption>Terrasse &amp; bassin</figcaption>
           </figure>
         </div>
       </div>

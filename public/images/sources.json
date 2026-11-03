@@ -1,5 +1,5 @@
 {
-  "note": "Project photographs come from the original company archive; confirm disclosure permissions before publication. The generated material study is atmospheric and does not depict a Shams Busine project. No stock images.",
+  "note": "Project photographs come from the original company archive; confirm disclosure permissions before publication. ImageGen illustrations are documented separately. No stock images.",
   "logo": {
     "file": "/images/shamsbusine-logo.png",
     "original": "media/brand/shamsbusine-logo.png"
@@ -124,6 +124,20 @@
       "sourceMapping": ".project/metadata/project-images.csv",
       "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/projet-public-1.jpeg",
       "project_pages": "projet-publique1"
+    },
+    {
+      "file": "/images/contact-villa-facade.webp",
+      "original": "media/projects/villa-6/DSC1463.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1463.jpg",
+      "project_pages": "villa-6"
+    },
+    {
+      "file": "/images/contact-villa-piscine.webp",
+      "original": "media/projects/villa-6/DSC1469.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1469.jpg",
+      "project_pages": "villa-6"
     }
   ],
   "generated_images": [
@@ -132,12 +146,6 @@
       "generated_by": "OpenAI ImageGen; navbar logo composited with Sharp",
       "role": "Illustrative generated image of workers in yellow workwear with the official Shams Busine logo; not verified Shams Busine staff or a specific project.",
       "prompt": "Photorealistic architectural editorial image of two construction technicians from behind, in yellow high-visibility jackets, inside an active worksite with no city scenery or visible faces. The official navbar logo was composited onto the jacket backs to preserve brand accuracy."
-    },
-    {
-      "file": "/images/contact-materials.webp",
-      "generated_by": "OpenAI ImageGen",
-      "role": "Conceptual material still life in the Contact hero; not a Shams Busine project photograph.",
-      "prompt": "Use case: photorealistic-natural. Asset type: secondary editorial image within the contact page hero for a French construction company in Marrakech. Primary request: a premium, tactile still life that evokes the moment before a building project begins. Scene/backdrop: warm limestone work surface, natural plaster wall, hard Moroccan morning sunlight. Subject: one folded blank architectural tracing sheet, a simple carpenter's pencil, a small irregular sample of pale limestone and a short raw clay brick fragment. Style/medium: high-end architectural editorial photography, authentic material textures and natural imperfections, no stylized rendering. Composition/framing: close, vertical crop, deliberately sparse with a strong diagonal shadow and generous breathing room; no people or buildings. Palette: warm plaster, limestone, faded terracotta, charcoal pencil, subtle amber sunlight. Constraints: conceptual atmosphere only; does not depict a real Shams Busine project. No readable plans, text, numbers, logo, watermark, hands, machinery or digital screens."
     },
     {
       "file": "/images/materials-study.webp",
