@@ -8,7 +8,7 @@ French homepage rebuilt around a stepped “Bâtir. Habiter.” hero, the compan
 - Shared Server Component navbar/footer; isolated client menu, enquiry and FAQ behavior.
 - Work Sans, the existing logo, warm plaster, charcoal and amber quote actions.
 - Font Awesome icons; no new dependencies, generated assets or invented project claims.
-- A client-side `IntersectionObserver` reveals marked elements once, with no added animation dependency. Short control transitions remain; FAQ answers use native `details` disclosures.
+- `IntersectionObserver` triggers one-time Web Animations as marked elements enter view. The animations do not change React-managed markup; unsupported browsers, JavaScript-off and reduced-motion states keep content visible. No animation dependency was added. Short control transitions remain; FAQ answers use native `details` disclosures.
 - Homepage anchors remain in place until destination routes exist.
 
 Direction, seed, source choices and implementation boundaries: [Redesign brief](homepage-redesign.md).

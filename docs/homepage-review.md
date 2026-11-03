@@ -2,11 +2,11 @@
 
 ## Motion alignment — 3 November 2026
 
-The follow-up creative brief supersedes the earlier static-scroll direction. Marked elements now enter once as they approach the viewport: headlines clip into place, photographs wipe from alternating edges, split layouts enter from their own side, and grids use a short stagger. Native scrolling remains unchanged. Reduced motion and JavaScript failure leave content visible. Lint and production build passed; the production preview covered the homepage, services, company, contact and gallery routes. The homepage was inspected at 320px, 768px and default desktop size; fast forward and backward scrolling left no content hidden. Menu Escape and FAQ keyboard toggling also worked. Reduced motion and JavaScript-off states were verified from their fallback paths, not emulated live. The broader checks below remain the 25 October baseline.
+The follow-up creative brief supersedes the earlier static-scroll direction. Headlines clip into place, photographs wipe from alternating edges, split layouts enter from their own side, and grids use a short stagger. `IntersectionObserver` starts one-time Web Animations as each marked element approaches view. These effects do not alter React-managed markup, avoiding the reported hydration mismatch. Native scrolling remains unchanged; unsupported animation APIs, reduced motion and JavaScript failure leave content visible. `npm run lint`, `npm run build` and `git diff --check` passed. The production homepage preview showed the hero and scroll-enter reveals, with no browser console errors or warnings. Broader checks remain the 25 October baseline.
 
 ## Scope and coverage
 
-Rendered French homepage, all seven sections, navigation, footer, native disclosures and email-brief form. Next.js 16.4.3, React Server Components, global CSS tokens, local Work Sans, Font Awesome and GSAP. Conventions inspected: `AGENTS.md`, `.project/website-structure.md`, `.project/website-design.md` and `docs/homepage-redesign.md`. No other routes or submission backend are in scope.
+Rendered French homepage, all seven sections, navigation, footer, native disclosures and email-brief form. Next.js 16.4.3, React Server Components, global CSS tokens, local Work Sans, Font Awesome and the Web Animations API. No animation dependency was added. Conventions inspected: `AGENTS.md`, `.project/website-structure.md`, `.project/website-design.md` and `docs/homepage-redesign.md`. No other routes or submission backend are in scope.
 
 All six better-interface domain skills were loaded. Empty/invalid form, expanded/collapsed disclosures, open/closed menu, narrow widths, reduced motion and no-JavaScript content were inspected. Static sections have no loading or asynchronous error state.
 
@@ -17,7 +17,7 @@ All six better-interface domain skills were loaded. Empty/invalid form, expanded
 | Writing | All seven homepage components, contact constants, native field errors and mail-preparation notice | No false submission message or unsupported statistics; business verification remains required |
 | Typography | Computed Work Sans, headings at two lines or fewer, 16px inputs, French language, full-page screenshots | Clear; no clipped or truncated copy |
 | Colors | Rendered solid surfaces, focus states, axe and explicit contrast calculations | Passing pairs; tablet overlap warning manually checked as described below |
-| UI | Font Awesome disclosure/menu states, button feedback, HomeMotion cleanup, live preference switching | Clear within repository's subtle-fade motion requirement |
+| UI | Font Awesome disclosure/menu states, button feedback, reveal observer cleanup, live preference switching | Clear within the creative motion brief |
 
 ## Findings
 
