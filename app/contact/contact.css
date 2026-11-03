@@ -38,7 +38,7 @@
   .contact-hero-copy { gap: 1rem; }
   .contact-hero-copy .contact-hero-lead { font-size: 1.5rem; }
   .contact-hero-visuals { gap: .65rem; }
-  .contact-hero-photo figcaption { margin-block-start: .55rem; font-size: .75rem; }
+  .contact-hero-photo figcaption { margin-block-start: .55rem; font-size: .8125rem; }
   .contact-enquiry { padding-block: 3.75rem 5rem; }
   .contact-enquiry-layout { gap: 1.75rem; }
   .contact-enquiry-copy h2 { font-size: var(--heading); }
