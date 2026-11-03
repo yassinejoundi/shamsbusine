@@ -11,10 +11,10 @@ import "./entreprise.css";
 import "./partenaires.css";
 
 export const metadata: Metadata = {
-  title: "L’entreprise | Construction & rénovation à Marrakech — Shams Busine",
+  title: "L’entreprise | Construction & rénovation à Marrakech | Shams Busine",
   description: "Découvrez les équipes, les moyens et la méthode de Shams Busine pour vos projets de construction et de rénovation à Marrakech.",
   openGraph: {
-    title: "L’entreprise — Shams Busine",
+    title: "L’entreprise | Shams Busine",
     description: "Des équipes et des moyens pour accompagner chaque étape du chantier.",
     locale: "fr_MA",
     type: "website",

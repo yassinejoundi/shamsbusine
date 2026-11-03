@@ -23,7 +23,7 @@ export function Company() {
               sizes="(max-width: 699px) 100vw, (max-width: 1099px) 52vw, 56vw"
             />
           </div>
-          <figcaption>Visuel illustratif — deux techniciens coordonnent un point de chantier.</figcaption>
+          <figcaption>Visuel illustratif : deux techniciens coordonnent un point de chantier.</figcaption>
         </figure>
       </div>
     </section>

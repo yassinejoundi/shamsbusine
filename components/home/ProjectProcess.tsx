@@ -34,7 +34,7 @@ export function ProjectProcess() {
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
               />
             </div>
-            <figcaption>Visuel illustratif — une équipe sur le terrain.</figcaption>
+            <figcaption>Visuel illustratif : une équipe sur le terrain.</figcaption>
           </figure>
 
           <ol className="process-steps">

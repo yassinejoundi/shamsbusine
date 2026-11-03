@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Shams Busine | Construction & rénovation à Marrakech",
   description: "Du gros œuvre aux finitions, Shams Busine accompagne vos projets de construction et de rénovation à Marrakech. Parlons de votre projet et de votre devis.",
   openGraph: {
-    title: "Shams Busine — Du plan à la réalité",
+    title: "Shams Busine | Du plan à la réalité",
     description: "Construction et rénovation à Marrakech, du gros œuvre aux finitions.",
     locale: "fr_MA",
     type: "website",

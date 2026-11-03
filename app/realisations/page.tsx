@@ -6,10 +6,10 @@ import { ProjectGallery } from "@/components/realisations/ProjectGallery";
 import "./realisations.css";
 
 export const metadata: Metadata = {
-  title: "Nos réalisations | Construction & rénovation — Shams Busine",
+  title: "Nos réalisations | Construction & rénovation | Shams Busine",
   description: "Découvrez les réalisations Shams Busine en images : extérieurs, structures, intérieurs et détails de finition.",
   openGraph: {
-    title: "Nos réalisations — Shams Busine",
+    title: "Nos réalisations | Shams Busine",
     description: "Des vues de chantiers et d’espaces réalisés par Shams Busine.",
     locale: "fr_MA",
     type: "website",

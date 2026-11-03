@@ -34,6 +34,13 @@
       "project_pages": "villa-azouzi-tameslouht"
     },
     {
+      "file": "/images/services-hero-villa-salim.webp",
+      "original": "media/projects/villa-salim/DSC1493.jpg",
+      "sourceMapping": ".project/metadata/project-images.csv",
+      "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/DSC1493.jpg",
+      "project_pages": "villa-salim"
+    },
+    {
       "file": "/images/chantier-maconnerie.webp",
       "original": "media/projects/villa-nouria/12.png",
       "sourceMapping": ".project/metadata/project-images.csv",

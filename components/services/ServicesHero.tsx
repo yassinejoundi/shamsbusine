@@ -13,7 +13,7 @@ export function ServicesHero() {
       </div>
       <figure className="services-hero-figure" data-reveal="wipe-left">
         <div className="photo services-hero-photo">
-          <Image src="/images/chantier-structure.webp" alt="Structure de bâtiment en cours de réalisation, avec coffrages et échafaudages sur le chantier" fill sizes="(max-width: 699px) 100vw, 72vw" preload />
+          <Image src="/images/services-hero-villa-salim.webp" alt="Façade contemporaine en chantier, avec balcons en béton, échafaudage et enduits inachevés" fill sizes="(max-width: 699px) 100vw, 72vw" preload />
         </div>
         <figcaption>La structure d’abord. Les espaces de vie ensuite.</figcaption>
       </figure>
