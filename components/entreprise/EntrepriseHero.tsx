@@ -6,23 +6,23 @@ export function EntrepriseHero() {
   return (
     <section className="entreprise-hero frame" aria-labelledby="entreprise-title">
       <div className="entreprise-hero-copy">
-        <h1 id="entreprise-title" data-hero>
+        <h1 id="entreprise-title">
           <span>Du gros œuvre</span>
           <span>aux finitions.</span>
         </h1>
-        <p data-hero>
+        <p>
           À Marrakech, Shams Busine accompagne les projets de construction et de rénovation, du gros
           œuvre aux finitions.
         </p>
-        <div className="entreprise-hero-actions" data-hero>
+        <div className="entreprise-hero-actions">
           <Link className="button" href="/contact/#devis">
             Demander un devis <Arrow />
           </Link>
           <Link className="text-link" href="#methode">Découvrir notre méthode</Link>
         </div>
       </div>
-      <figure className="entreprise-hero-figure" data-reveal>
-        <div className="photo entreprise-hero-photo" data-photo-motion>
+      <figure className="entreprise-hero-figure">
+        <div className="photo entreprise-hero-photo">
           <Image
             src="/images/souihla-perspective.jpeg"
             alt="Perspective architecturale d’une construction contemporaine entourée de palmiers et de végétation."

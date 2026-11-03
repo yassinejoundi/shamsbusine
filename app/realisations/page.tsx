@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { PageMotion } from "@/components/site/PageMotion";
 import { Arrow } from "@/components/site/Arrow";
 import { ProjectGallery } from "@/components/realisations/ProjectGallery";
 import "./realisations.css";
@@ -23,37 +22,35 @@ export default function RealisationsPage({
   searchParams: Promise<{ vue?: string | string[] }>;
 }) {
   return (
-    <PageMotion>
-      <main id="contenu" className="realisations-page" tabIndex={-1}>
-        <section className="realisations-intro frame" aria-labelledby="realisations-title">
-          <h1 id="realisations-title" data-hero><span>Des projets</span><span>en images.</span></h1>
-          <div className="realisations-intro-copy">
-            <p data-hero>De la structure aux finitions, découvrez des chantiers Shams Busine en images.</p>
-            <Link href="/contact/#devis" className="button" data-hero>
-              Demander un devis <Arrow />
+    <main id="contenu" className="realisations-page" tabIndex={-1}>
+      <section className="realisations-intro frame" aria-labelledby="realisations-title">
+        <h1 id="realisations-title"><span>Des projets</span><span>en images.</span></h1>
+        <div className="realisations-intro-copy">
+          <p>De la structure aux finitions, découvrez des chantiers Shams Busine en images.</p>
+          <Link href="/contact/#devis" className="button">
+            Demander un devis <Arrow />
+          </Link>
+        </div>
+      </section>
+      <Suspense fallback={<ProjectGalleryFallback />}>
+        <ProjectGallery searchParams={searchParams} />
+      </Suspense>
+      <section className="realisations-enquiry" aria-labelledby="realisations-enquiry-title">
+        <div className="frame realisations-enquiry-layout">
+          <div>
+            <h2 id="realisations-enquiry-title">Un projet à faire avancer&nbsp;?</h2>
+            <p>Pour un premier échange utile, indiquez la ville, les travaux envisagés et l’étape où vous en êtes.</p>
+          </div>
+          <div className="realisations-enquiry-actions">
+            <Link href="/contact/#devis" className="button">
+              Décrire mon projet <Arrow />
             </Link>
+            <a href="tel:+212777543997">+212 777 54 39 97</a>
+            <a href="mailto:info@shamsbusine.com">info@shamsbusine.com</a>
           </div>
-        </section>
-        <Suspense fallback={<ProjectGalleryFallback />}>
-          <ProjectGallery searchParams={searchParams} />
-        </Suspense>
-        <section className="realisations-enquiry" aria-labelledby="realisations-enquiry-title">
-          <div className="frame realisations-enquiry-layout">
-            <div>
-              <h2 id="realisations-enquiry-title" data-reveal>Un projet à faire avancer&nbsp;?</h2>
-              <p data-reveal>Pour un premier échange utile, indiquez la ville, les travaux envisagés et l’étape où vous en êtes.</p>
-            </div>
-            <div className="realisations-enquiry-actions">
-              <Link href="/contact/#devis" className="button" data-reveal>
-                Décrire mon projet <Arrow />
-              </Link>
-              <a href="tel:+212777543997" data-reveal>+212 777 54 39 97</a>
-              <a href="mailto:info@shamsbusine.com" data-reveal>info@shamsbusine.com</a>
-            </div>
-          </div>
-        </section>
-      </main>
-    </PageMotion>
+        </div>
+      </section>
+    </main>
   );
 }
 

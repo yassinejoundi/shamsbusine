@@ -15,11 +15,9 @@ type Question = {
 export function QuestionsAccordion({
   questions,
   className,
-  revealPrompts = false,
 }: {
   questions: Question[];
   className?: string;
-  revealPrompts?: boolean;
 }) {
   const list = useRef<HTMLDivElement>(null);
   const targetOpen = useRef(new WeakMap<HTMLDetailsElement, boolean>());
@@ -82,8 +80,8 @@ export function QuestionsAccordion({
   return (
     <div className={className ? `faq-list ${className}` : "faq-list"} ref={list}>
       {questions.map(({ question, answer }) => (
-        <details key={question} data-reveal={revealPrompts ? undefined : ""}>
-          <summary onClick={toggleQuestion} data-reveal={revealPrompts ? "" : undefined}>{question}<DisclosureIcon /></summary>
+        <details key={question}>
+          <summary onClick={toggleQuestion}>{question}<DisclosureIcon /></summary>
           <div className="faq-answer"><p>{answer}</p></div>
         </details>
       ))}

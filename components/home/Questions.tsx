@@ -11,11 +11,11 @@ const questions = [
 
 export function Questions() {
   return (
-    <section className="questions" data-motion-section="questions" aria-labelledby="questions-title">
+    <section className="questions" aria-labelledby="questions-title">
       <div className="frame">
         <div className="questions-intro">
-          <h2 id="questions-title" data-reveal>Avant de se lancer.</h2>
-          <p data-reveal>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
+          <h2 id="questions-title">Avant de se lancer.</h2>
+          <p>Quelques réponses pour préparer votre échange : périmètre des travaux, lieu du chantier, planning et documents à réunir.</p>
         </div>
 
         <div className="questions-layout">
@@ -26,13 +26,12 @@ export function Questions() {
                 alt="Détail d’une façade de villa en pierre grise et enduit clair"
                 fill
                 sizes="(max-width: 699px) 78vw, (max-width: 1099px) 42vw, 34vw"
-                data-reveal
               />
             </div>
-            <figcaption data-reveal>Une façade contemporaine, entre pierre grise et enduit clair.</figcaption>
+            <figcaption>Une façade contemporaine, entre pierre grise et enduit clair.</figcaption>
           </figure>
 
-          <QuestionsAccordion questions={questions} revealPrompts />
+          <QuestionsAccordion questions={questions} />
         </div>
       </div>
     </section>

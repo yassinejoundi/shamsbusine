@@ -77,15 +77,15 @@ export async function ProjectGallery({
     <section id="projets" className="realisations-gallery frame" aria-labelledby="realisations-gallery-title">
       <div className="realisations-gallery-heading">
         <div>
-          <h2 id="realisations-gallery-title" data-reveal>Du terrain aux détails.</h2>
-          <p data-reveal>Parcourez les photos selon l’espace ou l’étape qui ressemble à votre projet.</p>
+          <h2 id="realisations-gallery-title">Du terrain aux détails.</h2>
+          <p>Parcourez les photos selon l’espace ou l’étape qui ressemble à votre projet.</p>
         </div>
-        <p className="realisations-count" aria-live="polite" data-reveal>{visibleViews.length} {visibleViews.length === 1 ? "vue" : "vues"}</p>
+        <p className="realisations-count" aria-live="polite">{visibleViews.length} {visibleViews.length === 1 ? "vue" : "vues"}</p>
       </div>
       <nav className="realisations-filters" aria-label="Filtrer les réalisations par sujet">
-        <Link href="/realisations/#projets" aria-current={selected === "toutes" ? "page" : undefined} data-reveal>Toutes les vues</Link>
+        <Link href="/realisations/#projets" aria-current={selected === "toutes" ? "page" : undefined}>Toutes les vues</Link>
         {subjects.map(({ id, label }) => (
-          <Link key={id} href={`/realisations/?vue=${id}#projets`} aria-current={selected === id ? "page" : undefined} data-reveal>
+          <Link key={id} href={`/realisations/?vue=${id}#projets`} aria-current={selected === id ? "page" : undefined}>
             {label}
           </Link>
         ))}
@@ -93,7 +93,7 @@ export async function ProjectGallery({
       <div className="realisations-grid">
         {visibleViews.map((view, index) => (
           <figure key={view.src} className={`realisations-item realisations-item--${layouts[index]}`}>
-            <div className={`photo realisations-photo realisations-photo--${view.imageClass}`} data-reveal>
+            <div className={`photo realisations-photo realisations-photo--${view.imageClass}`}>
               <Image
                 src={view.src}
                 alt={view.alt}
@@ -101,7 +101,7 @@ export async function ProjectGallery({
                 sizes={imageSizes[index]}
               />
             </div>
-            <figcaption data-reveal>{view.caption}</figcaption>
+            <figcaption>{view.caption}</figcaption>
           </figure>
         ))}
       </div>

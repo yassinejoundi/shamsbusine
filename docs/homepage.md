@@ -1,12 +1,14 @@
 # Homepage delivery
 
+**3 November 2026 motion update:** Scroll-triggered and page-entry animations were removed across the site. FAQ answer open/close interaction remains animated.
+
 French homepage rebuilt around a stepped “Bâtir. Habiter.” hero, the company's real photography, six service disclosures, a written construction sequence and a practical email brief.
 
 - Seven focused Server Component sections under `components/home/`.
-- Shared Server Component navbar/footer; isolated client menu, enquiry and GSAP behavior.
+- Shared Server Component navbar/footer; isolated client menu, enquiry and FAQ behavior.
 - Work Sans, the existing logo, warm plaster, charcoal and amber quote actions.
 - Font Awesome icons; no new dependencies, generated assets or invented project claims.
-- Scoped GSAP / ScrollTrigger opacity entrances; native scrolling and reduced-motion cleanup.
+- No scroll-triggered or page-entry animations; the FAQ interaction respects reduced motion.
 - Homepage anchors remain in place until destination routes exist.
 
 Direction, seed, source choices and implementation boundaries: [Redesign brief](homepage-redesign.md).

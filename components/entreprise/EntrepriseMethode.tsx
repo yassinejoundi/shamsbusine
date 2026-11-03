@@ -18,16 +18,16 @@ export function EntrepriseMethode() {
     <section id="methode" className="entreprise-methode" aria-labelledby="entreprise-methode-title">
       <div className="frame">
         <div className="entreprise-methode-intro">
-          <h2 id="entreprise-methode-title" data-reveal>
+          <h2 id="entreprise-methode-title">
             Un chantier, un fil conducteur.
           </h2>
-          <p data-reveal>
+          <p>
             Étude du besoin, organisation du chantier et points de contrôle structurent chaque étape.
           </p>
         </div>
         <ol className="entreprise-stages">
           {stages.map(({ title, description }) => (
-            <li key={title} data-reveal>
+            <li key={title}>
               <h3>{title}</h3>
               <p>{description}</p>
             </li>

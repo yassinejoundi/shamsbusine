@@ -17,11 +17,11 @@ const stages = [
 
 export function ProjectProcess() {
   return (
-    <section className="process" data-motion-section="process" aria-labelledby="process-title">
+    <section className="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
-          <h2 id="process-title" data-reveal>Un chantier,<br />un fil conducteur.</h2>
-          <p data-reveal>De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
+          <h2 id="process-title">Un chantier,<br />un fil conducteur.</h2>
+          <p>De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
         </div>
 
         <div className="process-layout">
@@ -32,17 +32,16 @@ export function ProjectProcess() {
                 alt="Deux techniciens en tenue jaune, vus de dos, observent un chantier."
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
-                data-reveal
               />
             </div>
-            <figcaption data-reveal>Visuel illustratif — une équipe sur le terrain.</figcaption>
+            <figcaption>Visuel illustratif — une équipe sur le terrain.</figcaption>
           </figure>
 
           <ol className="process-steps">
             {stages.map(({ title, text }) => (
               <li key={title}>
-                <h3 data-reveal>{title}</h3>
-                <p data-reveal>{text}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </li>
             ))}
           </ol>

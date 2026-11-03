@@ -336,7 +336,7 @@ textarea::placeholder { color: var(--secondary); }
   .quote-form .button:hover .arrow-icon { transform: translateX(.25rem); }
 }
 @media (prefers-reduced-motion: reduce) {
-  /* ScrollTrigger can restore a cached inline scroll behavior after refresh. */
+  /* Keep anchor navigation immediate for visitors who prefer reduced motion. */
   html { scroll-behavior: auto !important; }
 }
 @media (hover: hover) {

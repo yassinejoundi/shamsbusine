@@ -52,13 +52,13 @@ const services: Service[] = [
 
 export function Services() {
   return (
-    <section className="services section-space" id="services" data-motion-section="services" aria-labelledby="services-title">
+    <section className="services section-space" id="services" aria-labelledby="services-title">
       <div className="frame">
         <div className="section-intro services-intro">
-          <h2 id="services-title" data-reveal>Des métiers<br />complémentaires.</h2>
+          <h2 id="services-title">Des métiers<br />complémentaires.</h2>
           <div>
-            <p data-reveal>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
-            <Link href="/services" className="text-link" data-reveal>Explorer nos services</Link>
+            <p>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
+            <Link href="/services" className="text-link">Explorer nos services</Link>
           </div>
         </div>
 
@@ -71,14 +71,14 @@ export function Services() {
               {image && (
                 <figure className="service-tile__figure">
                   <div className={`photo service-tile__photo service-tile__photo--${image.kind}`}>
-                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" data-reveal />
+                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1099px) 100vw, 58vw" />
                   </div>
-                  {image.caption && <figcaption data-reveal>{image.caption}</figcaption>}
+                  {image.caption && <figcaption>{image.caption}</figcaption>}
                 </figure>
               )}
               <div className="service-tile__body">
-                <h3 data-reveal>{title}</h3>
-                <p data-reveal>{text}</p>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             </li>
           ))}

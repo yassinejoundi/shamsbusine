@@ -14,9 +14,9 @@ export function ServiceQuestions() {
     <section className="services-questions" aria-labelledby="faq-heading">
       <div className="frame services-questions-layout">
         <div className="services-questions-intro">
-          <h2 id="faq-heading" data-reveal>Vos questions</h2>
-          <p data-reveal>Quelques repères pour préparer votre échange avec notre équipe.</p>
-          <a className="text-link services-questions-action" href="#enquiry-heading" data-reveal>Parler de mon projet <Arrow /></a>
+          <h2 id="faq-heading">Vos questions</h2>
+          <p>Quelques repères pour préparer votre échange avec notre équipe.</p>
+          <a className="text-link services-questions-action" href="#enquiry-heading">Parler de mon projet <Arrow /></a>
         </div>
         <QuestionsAccordion className="services-faq" questions={questions} />
       </div>

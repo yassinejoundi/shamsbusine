@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageMotion } from "@/components/site/PageMotion";
 import { EntrepriseHero } from "@/components/entreprise/EntrepriseHero";
 import { EntrepriseApproche } from "@/components/entreprise/EntrepriseApproche";
 import { EntrepriseMoyens } from "@/components/entreprise/EntrepriseMoyens";
@@ -24,16 +23,14 @@ export const metadata: Metadata = {
 
 export default function EntreprisePage() {
   return (
-    <PageMotion>
-      <main id="contenu" className="entreprise-page" tabIndex={-1}>
-        <EntrepriseHero />
-        <EntrepriseApproche />
-        <EntrepriseMoyens />
-        <EntrepriseGalerie />
-        <EntrepriseMethode />
-        <EntreprisePartenaires />
-        <EntrepriseEnquiry />
-      </main>
-    </PageMotion>
+    <main id="contenu" className="entreprise-page" tabIndex={-1}>
+      <EntrepriseHero />
+      <EntrepriseApproche />
+      <EntrepriseMoyens />
+      <EntrepriseGalerie />
+      <EntrepriseMethode />
+      <EntreprisePartenaires />
+      <EntrepriseEnquiry />
+    </main>
   );
 }

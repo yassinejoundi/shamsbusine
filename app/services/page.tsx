@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageMotion } from "@/components/site/PageMotion";
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServiceScopes } from "@/components/services/ServiceScopes";
 import { ProjectStageGuide } from "@/components/services/ProjectStageGuide";
@@ -23,16 +22,14 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <PageMotion>
-      <main id="contenu" className="services-page" tabIndex={-1}>
-        <ServicesHero />
-        <ServiceScopes />
-        <ProjectStageGuide />
-        <ServiceProjects />
-        <ServiceProcess />
-        <ServiceQuestions />
-        <ServiceEnquiry />
-      </main>
-    </PageMotion>
+    <main id="contenu" className="services-page" tabIndex={-1}>
+      <ServicesHero />
+      <ServiceScopes />
+      <ProjectStageGuide />
+      <ServiceProjects />
+      <ServiceProcess />
+      <ServiceQuestions />
+      <ServiceEnquiry />
+    </main>
   );
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageMotion } from "@/components/site/PageMotion";
 import { ContactEnquiry } from "@/components/contact/ContactEnquiry";
 import { ContactHero } from "@/components/contact/ContactHero";
 
@@ -18,11 +17,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <PageMotion>
-      <main id="contenu" className="contact-page" tabIndex={-1}>
-        <ContactHero />
-        <ContactEnquiry />
-      </main>
-    </PageMotion>
+    <main id="contenu" className="contact-page" tabIndex={-1}>
+      <ContactHero />
+      <ContactEnquiry />
+    </main>
   );
 }
