@@ -81,8 +81,8 @@ export function QuestionsAccordion({
     <div className={className ? `faq-list ${className}` : "faq-list"} ref={list}>
       {questions.map(({ question, answer }) => (
         <details key={question}>
-          <summary onClick={toggleQuestion}>{question}<DisclosureIcon /></summary>
-          <div className="faq-answer"><p>{answer}</p></div>
+          <summary onClick={toggleQuestion} data-scroll-item>{question}<DisclosureIcon /></summary>
+          <div className="faq-answer"><p data-scroll-item="answer">{answer}</p></div>
         </details>
       ))}
     </div>

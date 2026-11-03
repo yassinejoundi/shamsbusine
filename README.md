@@ -20,7 +20,7 @@ npm run start
 
 The Node test command uses the built-in TypeScript support in Node 22.18+.
 
-The homepage is composed in `app/page.tsx`; the services overview is in `app/services/page.tsx`. Shared navigation, footer and the FAQ accordion live in `components/site/`. The site has no scroll-triggered or page-entry animations. Focused page sections live in `components/home/` and `components/services/`. Work Sans is served locally, with its license in `app/fonts/OFL.txt`. Selected company photographs and their original source URLs are recorded in `public/images/sources.json`.
+The homepage is composed in `app/page.tsx`; the services overview is in `app/services/page.tsx`. Shared navigation, footer and the FAQ accordion live in `components/site/`. Section-specific, transform-only GSAP scroll entrances cover homepage content; other routes remain static and reduced-motion preferences are respected. Focused page sections live in `components/home/` and `components/services/`. Work Sans is served locally, with its license in `app/fonts/OFL.txt`. Selected company photographs and their original source URLs are recorded in `public/images/sources.json`.
 
 Local project handoffs: `.project/website-structure.md` and `.project/website-design.md`. The `.project` directory is intentionally ignored by Git. Review evidence is kept in `.project/review/`.
 

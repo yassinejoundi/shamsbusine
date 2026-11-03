@@ -1,5 +1,9 @@
 # Homepage interface review — 25 October 2026
 
+## Motion follow-up — 3 November 2026
+
+Homepage scroll motion now uses section-specific, one-time transform entrances with no opacity or fade. The production preview was inspected at desktop, tablet, 390px and 320px widths; the first FAQ disclosure expanded successfully, and the browser console had no errors. `npm run lint`, `npm run build` and `git diff --check` passed. This follow-up covers the motion change and responsive rendering; the broader checks below describe the 25 October baseline.
+
 ## Scope and coverage
 
 Rendered French homepage, all seven sections, navigation, footer, native disclosures and email-brief form. Next.js 16.4.3, React Server Components, global CSS tokens, local Work Sans, Font Awesome and GSAP. Conventions inspected: `AGENTS.md`, `.project/website-structure.md`, `.project/website-design.md` and `docs/homepage-redesign.md`. No other routes or submission backend are in scope.
