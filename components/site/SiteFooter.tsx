@@ -3,6 +3,7 @@ import Link from "next/link";
 import { contact, navigation } from "@/lib/site";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { getCloudinaryImage } from "@/lib/cms/content";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,7 @@ export function SiteFooter() {
         <div className="footer-main">
           <div className="footer-identity">
             <Link href="/" className="footer-logo" aria-label="Shams Busine, accueil">
-              <Image src="/images/shamsbusine-logo.png" width={106} height={88} alt="" />
+              <Image src={getCloudinaryImage("shared/shamsbusine-logo")} width={106} height={88} alt="" />
             </Link>
             <p>Construction & rénovation.<br />Marrakech, Maroc.</p>
           </div>

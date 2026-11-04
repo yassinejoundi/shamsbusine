@@ -2,14 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faCommentDots, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { contact } from "@/lib/site";
 import { QuoteForm } from "./QuoteForm";
+import { cmsText, type CmsValues } from "@/lib/cms/content";
 
-export function QuoteSection() {
+export function QuoteSection({ content }: { content: CmsValues }) {
   return (
     <section className="quote-section" id="devis" aria-labelledby="quote-title">
       <div className="frame quote-layout">
         <div className="quote-copy" data-reveal="left">
-          <h2 id="quote-title">Bâtissons<br />la suite.</h2>
-          <p>Construction, rénovation ou aménagement : racontez-nous votre besoin pour préciser ensemble les prochaines étapes.</p>
+          <h2 id="quote-title">{cmsText(content, "quote.title1")}<br />{cmsText(content, "quote.title2")}</h2>
+          <p>{cmsText(content, "quote.intro")}</p>
           <div className="contact-links">
             <a href={contact.phoneHref}><FontAwesomeIcon icon={faPhone} aria-hidden="true" /> {contact.phone}</a>
             <a href={contact.whatsapp}><FontAwesomeIcon icon={faCommentDots} aria-hidden="true" /> Échanger sur WhatsApp</a>
@@ -25,10 +26,23 @@ export function QuoteSection() {
         </div>
         <div className="quote-form-panel" data-reveal="wipe-right" data-reveal-delay="1">
           <div className="quote-form-heading">
-            <h3 id="quote-form-title">Les détails du projet</h3>
-            <p>Décrivez votre projet. Vous pouvez joindre des plans ou des photos.</p>
+            <h3 id="quote-form-title">{cmsText(content, "quote.formTitle")}</h3>
+            <p>{cmsText(content, "quote.formIntro")}</p>
           </div>
-          <QuoteForm />
+          <QuoteForm copy={{
+            formLabel: cmsText(content, "quote.formLabel"),
+            nameLabel: cmsText(content, "quote.nameLabel"),
+            cityLabel: cmsText(content, "quote.cityLabel"),
+            phoneLabel: cmsText(content, "quote.phoneLabel"),
+            emailLabel: cmsText(content, "quote.emailLabel"),
+            typeLabel: cmsText(content, "quote.typeLabel"),
+            typePlaceholder: cmsText(content, "quote.typePlaceholder"),
+            descriptionLabel: cmsText(content, "quote.descriptionLabel"),
+            descriptionPlaceholder: cmsText(content, "quote.descriptionPlaceholder"),
+            attachmentsLabel: cmsText(content, "quote.attachmentsLabel"),
+            attachmentsNote: cmsText(content, "quote.attachmentsNote"),
+            submitLabel: cmsText(content, "quote.submitLabel"),
+          }} />
         </div>
       </div>
     </section>

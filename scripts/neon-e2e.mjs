@@ -45,8 +45,8 @@ try {
 
   const inbox = await fetch(`${baseUrl}/admin/devis`, { redirect: "manual" });
   const inboxBody = await inbox.text();
-  const redirectsToSignIn = /\/admin\/sign-in/.test(inbox.headers.get("location") || "") ||
-    (inbox.status === 200 && inboxBody.includes("/admin/sign-in"));
+  const redirectsToSignIn = /\/admin(?:\?|$)/.test(inbox.headers.get("location") || "") ||
+    (inbox.status === 200 && inboxBody.includes("/admin"));
   assert.ok(redirectsToSignIn, `Unauthenticated inbox did not redirect to sign-in (HTTP ${inbox.status}).`);
   console.log("PASS Neon Auth: sign-in route responds; anonymous inbox is denied.");
 

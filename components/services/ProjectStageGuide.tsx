@@ -1,38 +1,23 @@
 import { Arrow } from "@/components/site/Arrow";
+import { cmsText, type CmsValues } from "@/lib/cms/content";
 
-const stages = [
-  {
-    href: "#conseil-etudes-suivi",
-    title: "Je prépare mon projet",
-    detail: "Études, chiffrage et organisation",
-  },
-  {
-    href: "#gros-oeuvre",
-    title: "Je veux construire",
-    detail: "Fondations, structure et maçonnerie",
-  },
-  {
-    href: "#renovation-finitions",
-    title: "Je transforme un lieu",
-    detail: "Rénovation, réaménagement et finitions",
-  },
-];
+const stageLinks = ["#conseil-etudes-suivi", "#gros-oeuvre", "#renovation-finitions"];
 
-export function ProjectStageGuide() {
+export function ProjectStageGuide({ content }: { content: CmsValues }) {
   return (
     <section className="section-space services-stage" aria-labelledby="stage-heading">
       <div className="frame">
         <div className="services-stage-intro">
-          <h2 id="stage-heading" data-reveal="left">Où en est<br />votre projet&nbsp;?</h2>
-          <p data-reveal="right">Chaque projet a son point de départ. Choisissez celui qui vous ressemble pour découvrir les métiers concernés.</p>
+          <h2 id="stage-heading" data-reveal="left">{cmsText(content, "stage.title1")}<br />{cmsText(content, "stage.title2")}</h2>
+          <p data-reveal="right">{cmsText(content, "stage.intro")}</p>
         </div>
         <nav aria-label="Choisir un point de départ">
           <ul className="services-stage-links">
-            {stages.map((stage, index) => (
-              <li key={stage.href} data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={String(index)}>
-                <a href={stage.href}>
-                  <span className="services-stage-title">{stage.title}</span>
-                  <span className="services-stage-detail">{stage.detail}</span>
+            {stageLinks.map((href, index) => (
+              <li key={href} data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={String(index)}>
+                <a href={href}>
+                  <span className="services-stage-title">{cmsText(content, `stage.${index}.title`)}</span>
+                  <span className="services-stage-detail">{cmsText(content, `stage.${index}.detail`)}</span>
                   <Arrow />
                 </a>
               </li>

@@ -1,35 +1,22 @@
-const stages = [
-  {
-    title: "Étudier et chiffrer.",
-    description: "Analyser le besoin, étudier les aspects techniques et préparer un devis détaillé.",
-  },
-  {
-    title: "Réaliser et coordonner.",
-    description: "Organiser les travaux et coordonner les corps de métier selon le périmètre retenu.",
-  },
-  {
-    title: "Contrôler et réceptionner.",
-    description: "Suivre les points de contrôle et préparer la réception des travaux.",
-  },
-] as const;
+import { cmsText, type CmsValues } from "@/lib/cms/content";
 
-export function EntrepriseMethode() {
+export function EntrepriseMethode({ content }: { content: CmsValues }) {
   return (
     <section id="methode" className="entreprise-methode" aria-labelledby="entreprise-methode-title">
       <div className="frame">
         <div className="entreprise-methode-intro">
           <h2 id="entreprise-methode-title" data-reveal="left">
-            Un chantier, un fil conducteur.
+            {cmsText(content, "method.title")}
           </h2>
           <p data-reveal="right">
-            Étude du besoin, organisation du chantier et points de contrôle structurent chaque étape.
+            {cmsText(content, "method.intro")}
           </p>
         </div>
         <ol className="entreprise-stages">
-        {stages.map(({ title, description }, index) => (
-          <li key={title} data-reveal="right" data-reveal-delay={String(index)}>
-              <h3>{title}</h3>
-              <p>{description}</p>
+        {[0, 1, 2].map((index) => (
+          <li key={index} data-reveal="right" data-reveal-delay={String(index)}>
+              <h3>{cmsText(content, `method.${index}.title`)}</h3>
+              <p>{cmsText(content, `method.${index}.description`)}</p>
             </li>
           ))}
         </ol>

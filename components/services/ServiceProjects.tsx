@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
-export function ServiceProjects() {
+export function ServiceProjects({ content }: { content: CmsValues }) {
   return (
     <section className="frame section-space services-projects" aria-labelledby="projects-heading">
       <div className="section-intro services-projects-intro">
-        <h2 id="projects-heading" data-reveal="left">La matière<br />en lumière.</h2>
+        <h2 id="projects-heading" data-reveal="left">{cmsText(content, "projects.title1")}<br />{cmsText(content, "projects.title2")}</h2>
         <div className="services-projects-lead" data-reveal="right">
-          <p>Des façades aux détails intérieurs, quelques vues des projets de Shams Busine.</p>
-          <Link className="text-link" href="/realisations">Parcourir les réalisations</Link>
+          <p>{cmsText(content, "projects.intro")}</p>
+          <Link className="text-link" href="/realisations">{cmsText(content, "projects.action")}</Link>
         </div>
       </div>
 
@@ -16,40 +17,40 @@ export function ServiceProjects() {
         <figure className="services-project-featured" data-reveal="wipe-right">
           <div className="photo services-project-photo services-project-photo-main">
             <Image
-              src="/images/services-project-villa.webp"
-              alt="Façade de villa aux teintes terre cuite, bordée de végétation."
+              src={cmsImage(content, "projects.0.image")}
+              alt={cmsText(content, "projects.0.alt")}
               fill
               sizes="(max-width: 699px) 100vw, (max-width: 1099px) 66vw, 64vw"
             />
           </div>
-          <figcaption>Une façade aux tons chauds, entre lignes nettes et végétation.</figcaption>
-          <Link className="text-link services-project-link" href="#gros-oeuvre">Voir le gros œuvre</Link>
+          <figcaption>{cmsText(content, "projects.0.caption")}</figcaption>
+          <Link className="text-link services-project-link" href="#gros-oeuvre">{cmsText(content, "projects.0.link")}</Link>
         </figure>
 
         <figure className="services-project-secondary" data-reveal="wipe-left" data-reveal-delay="1">
           <div className="photo services-project-photo services-project-photo-interior">
             <Image
-              src="/images/services-project-interior.webp"
-              alt="Mur intérieur texturé et fenêtre ouverte sur la végétation."
+              src={cmsImage(content, "projects.1.image")}
+              alt={cmsText(content, "projects.1.alt")}
               fill
               sizes="(max-width: 699px) 90vw, (max-width: 1099px) 34vw, 32vw"
             />
           </div>
-          <figcaption>Texture murale et lumière de fenêtre.</figcaption>
-          <Link className="text-link services-project-link" href="#renovation-finitions">Voir la rénovation et les finitions</Link>
+          <figcaption>{cmsText(content, "projects.1.caption")}</figcaption>
+          <Link className="text-link services-project-link" href="#renovation-finitions">{cmsText(content, "projects.1.link")}</Link>
         </figure>
 
         <figure className="services-project-tertiary" data-reveal="wipe-right" data-reveal-delay="2">
           <div className="photo services-project-photo services-project-photo-cour">
             <Image
-              src="/images/services-project-cour.webp"
-              alt="Cour couverte aux murs couleur terre cuite, ouverte sur un palmier."
+              src={cmsImage(content, "projects.2.image")}
+              alt={cmsText(content, "projects.2.alt")}
               fill
               sizes="(max-width: 699px) 100vw, (max-width: 1099px) 34vw, 32vw"
             />
           </div>
-          <figcaption>Une cour ombragée ouverte sur le jardin.</figcaption>
-          <Link className="text-link services-project-link" href="#services-specialises">Voir les services spécialisés</Link>
+          <figcaption>{cmsText(content, "projects.2.caption")}</figcaption>
+          <Link className="text-link services-project-link" href="#services-specialises">{cmsText(content, "projects.2.link")}</Link>
         </figure>
       </div>
     </section>

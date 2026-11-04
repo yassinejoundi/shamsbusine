@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
 type Service = {
   title: string;
@@ -12,53 +13,25 @@ type Service = {
   };
 };
 
-const services: Service[] = [
-  {
-    title: "Gros œuvre",
-    text: "Terrassement, fondations, assainissement, béton armé et maçonnerie. Les travaux de structure qui donnent sa forme au bâtiment.",
-    image: {
-      src: "/images/services-structure.webp",
-      alt: "Échafaudages et dalle en béton sur un chantier de construction.",
-      caption: "Une structure en cours de construction.",
-      kind: "structure",
-    },
-  },
-  {
-    title: "Étanchéité",
-    text: "Protection des toitures, terrasses et sous-sols. Diagnostic des supports, choix du système et mise en œuvre adaptés aux contraintes du projet.",
-  },
-  {
-    title: "Second œuvre",
-    text: "Plomberie, réseaux sanitaires, électricité, courants faibles, chauffage, ventilation et climatisation. Des installations coordonnées avec les autres corps de métier.",
-  },
-  {
-    title: "Rénovation & finitions",
-    text: "Transformation des espaces, carrelage et marbre, peinture, plâtrerie, cloisons et faux-plafonds. Le soin des matières jusqu’aux derniers détails.",
-    image: {
-      src: "/images/services-finitions.webp",
-      alt: "Plafond en bois aux lignes géométriques dans un intérieur clair.",
-      kind: "finishes",
-    },
-  },
-  {
-    title: "Études & suivi",
-    text: "Faisabilité, études techniques, chiffrage détaillé et planification. Coordination du chantier, contrôle qualité et accompagnement jusqu’à la réception.",
-  },
-  {
-    title: "Travaux spécialisés",
-    text: "Menuiseries bois et aluminium, métallerie, terrains de padel et aménagements extérieurs. Précisons ensemble les besoins propres à votre projet.",
-  },
-];
-
-export function Services() {
+export function Services({ content }: { content: CmsValues }) {
+  const services: Service[] = [0, 1, 2, 3, 4, 5].map((index) => ({
+    title: cmsText(content, `services.item${index}.title`),
+    text: cmsText(content, `services.item${index}.text`),
+    image: index === 0 || index === 3 ? {
+      src: cmsImage(content, `services.item${index}.image`),
+      alt: cmsText(content, `services.item${index}.alt`),
+      caption: index === 0 ? cmsText(content, "services.item0.caption") : undefined,
+      kind: index === 0 ? "structure" as const : "finishes" as const,
+    } : undefined,
+  }));
   return (
     <section className="services section-space" id="services" aria-labelledby="services-title">
       <div className="frame">
         <div className="section-intro services-intro">
-          <h2 id="services-title" data-reveal="left">Des métiers<br />complémentaires.</h2>
+          <h2 id="services-title" data-reveal="left">{cmsText(content, "services.title1")}<br />{cmsText(content, "services.title2")}</h2>
           <div data-reveal="right" data-reveal-delay="1">
-            <p>Construire un bâtiment, rénover un intérieur ou préparer un chantier. Retrouvez les compétences utiles à votre projet.</p>
-            <Link href="/services" className="text-link">Explorer nos services</Link>
+            <p>{cmsText(content, "services.intro")}</p>
+            <Link href="/services" className="text-link">{cmsText(content, "services.action")}</Link>
           </div>
         </div>
 

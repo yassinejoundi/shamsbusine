@@ -1,29 +1,29 @@
 import Image from "next/image";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
-export function EntrepriseApproche() {
+export function EntrepriseApproche({ content }: { content: CmsValues }) {
   return (
     <section id="equipe" className="entreprise-approche" aria-labelledby="entreprise-approche-title">
       <div className="frame">
         <div className="entreprise-approche-intro">
-          <h2 id="entreprise-approche-title" data-reveal="left">Le chantier avance en équipe.</h2>
+          <h2 id="entreprise-approche-title" data-reveal="left">{cmsText(content, "approach.title")}</h2>
           <p data-reveal="right">
-            Ingénieurs BTP, techniciens spécialisés, chefs de chantier et ouvriers qualifiés
-            réunissent leurs compétences autour de chaque projet.
+            {cmsText(content, "approach.intro")}
           </p>
         </div>
         <figure className="entreprise-approche-figure" data-reveal="wipe-left">
           <div className="photo entreprise-approche-photo">
             <Image
-              src="/images/entreprise-approche.webp"
-              alt="Trois personnes travaillent autour d’un échafaudage sur un chantier de construction."
+              src={cmsImage(content, "approach.image")}
+              alt={cmsText(content, "approach.imageAlt")}
               fill
               sizes="(max-width: 699px) 100vw, 91vw"
             />
           </div>
-          <figcaption>Une structure en cours de réalisation, avec échafaudage.</figcaption>
+          <figcaption>{cmsText(content, "approach.caption")}</figcaption>
         </figure>
         <p className="entreprise-approche-note" data-reveal="right" data-reveal-delay="1">
-          La confiance, la qualité et la sécurité guident les échanges et le travail sur site.
+          {cmsText(content, "approach.note")}
         </p>
       </div>
     </section>

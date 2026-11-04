@@ -1,40 +1,30 @@
 import Image from "next/image";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
-const stages = [
-  {
-    title: "Étudier & chiffrer",
-    text: "Nous échangeons autour de votre besoin, de vos plans et des contraintes du site. L’étude technique prépare un devis détaillé et un planning adapté.",
-  },
-  {
-    title: "Réaliser & coordonner",
-    text: "Les travaux s’organisent selon le périmètre retenu. Les corps de métier sont coordonnés et les échanges accompagnent l’avancement du chantier.",
-  },
-  {
-    title: "Contrôler & réceptionner",
-    text: "Les ouvrages sont contrôlés, les finitions examinées et la réception des travaux préparée avec vous.",
-  },
-];
-
-export function ProjectProcess() {
+export function ProjectProcess({ content }: { content: CmsValues }) {
+  const stages = [0, 1, 2].map((index) => ({
+    title: cmsText(content, `process.step${index}.title`),
+    text: cmsText(content, `process.step${index}.text`),
+  }));
   return (
     <section className="process" aria-labelledby="process-title">
       <div className="frame">
         <div className="process-intro">
-          <h2 id="process-title" data-reveal="left">Un chantier,<br />un fil conducteur.</h2>
-          <p data-reveal="right">De l’analyse du besoin aux contrôles de fin de chantier, chaque étape prépare la suivante.</p>
+          <h2 id="process-title" data-reveal="left">{cmsText(content, "process.title1")}<br />{cmsText(content, "process.title2")}</h2>
+          <p data-reveal="right">{cmsText(content, "process.intro")}</p>
         </div>
 
         <div className="process-layout">
           <figure className="process-figure" data-reveal="wipe-left">
             <div className="photo process-photo">
               <Image
-                src="/images/techniciens-chantier.webp"
-                alt="Deux techniciens en tenue jaune, vus de dos, observent un chantier."
+                src={cmsImage(content, "process.image")}
+                alt={cmsText(content, "process.imageAlt")}
                 fill
                 sizes="(max-width: 699px) 100vw, (max-width: 1099px) 44vw, 40vw"
               />
             </div>
-            <figcaption>Visuel illustratif : une équipe sur le terrain.</figcaption>
+            <figcaption>{cmsText(content, "process.imageCaption")}</figcaption>
           </figure>
 
           <ol className="process-steps">

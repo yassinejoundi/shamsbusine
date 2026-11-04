@@ -7,12 +7,27 @@ import { Arrow } from "@/components/site/Arrow";
 import { isValidPhone, projectTypes } from "@/lib/enquiry-validation";
 import { contact } from "@/lib/site";
 
-export function QuoteForm() {
+export type QuoteFormCopy = {
+  formLabel: string;
+  nameLabel: string;
+  cityLabel: string;
+  phoneLabel: string;
+  emailLabel: string;
+  typeLabel: string;
+  typePlaceholder: string;
+  descriptionLabel: string;
+  descriptionPlaceholder: string;
+  attachmentsLabel: string;
+  attachmentsNote: string;
+  submitLabel: string;
+};
+
+export function QuoteForm({ copy }: { copy: QuoteFormCopy }) {
   const [notice, setNotice] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
-    <form className="quote-form" aria-label="Demande de devis" encType="multipart/form-data" onInput={(event) => {
+    <form className="quote-form" aria-label={copy.formLabel} encType="multipart/form-data" onInput={(event) => {
       const field = event.target;
       if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
         field.setCustomValidity("");
@@ -54,18 +69,18 @@ export function QuoteForm() {
       }
     }}>
       <div className="form-row">
-        <label><span className="form-label-text">Votre nom <span className="required-mark" aria-hidden="true">*</span></span><input name="name" autoComplete="name" required maxLength={100} /></label>
-        <label><span className="form-label-text">Ville du projet <span className="required-mark" aria-hidden="true">*</span></span><input name="city" autoComplete="address-level2" required maxLength={100} /></label>
+        <label><span className="form-label-text">{copy.nameLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="name" autoComplete="name" required maxLength={100} /></label>
+        <label><span className="form-label-text">{copy.cityLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="city" autoComplete="address-level2" required maxLength={100} /></label>
       </div>
       <div className="form-row">
-        <label><span className="form-label-text">Votre téléphone <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={24} /></label>
-        <label><span className="form-label-text">Votre adresse e-mail <span className="required-mark" aria-hidden="true">*</span></span><input name="email" type="email" autoComplete="email" required maxLength={254} /></label>
+        <label><span className="form-label-text">{copy.phoneLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={24} /></label>
+        <label><span className="form-label-text">{copy.emailLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="email" type="email" autoComplete="email" required maxLength={254} /></label>
       </div>
-      <label><span className="form-label-text">Type de projet <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required><option value="" disabled>Choisissez un type de projet</option>{projectTypes.map((type) => <option key={type}>{type}</option>)}</select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>
-      <label><span className="form-label-text">Décrivez votre projet <span className="required-mark" aria-hidden="true">*</span></span><textarea name="description" rows={4} required maxLength={2000} placeholder="Nature des travaux, état du projet, plans disponibles…" /></label>
-      <label><span className="form-label-text">Plans ou photos (facultatif)</span><input name="documents" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp" multiple aria-describedby="upload-note" /></label>
-      <p className="form-note" id="upload-note">Jusqu’à 3 fichiers PDF, JPG, PNG ou WebP, 5 Mo par fichier et 10 Mo au total. Vos coordonnées et pièces jointes seront stockées pour traiter votre demande. N’envoyez pas de document sensible.</p>
-      <button type="submit" className="button" aria-describedby="upload-note" disabled={isSubmitting}>{isSubmitting ? "Envoi en cours…" : "Envoyer ma demande"} <Arrow /></button>
+      <label><span className="form-label-text">{copy.typeLabel} <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required><option value="" disabled>{copy.typePlaceholder}</option>{projectTypes.map((type) => <option key={type}>{type}</option>)}</select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>
+      <label><span className="form-label-text">{copy.descriptionLabel} <span className="required-mark" aria-hidden="true">*</span></span><textarea name="description" rows={4} required maxLength={2000} placeholder={copy.descriptionPlaceholder} /></label>
+      <label><span className="form-label-text">{copy.attachmentsLabel}</span><input name="documents" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp" multiple aria-describedby="upload-note" /></label>
+      <p className="form-note" id="upload-note">{copy.attachmentsNote}</p>
+      <button type="submit" className="button" aria-describedby="upload-note" disabled={isSubmitting}>{isSubmitting ? "Envoi en cours…" : copy.submitLabel} <Arrow /></button>
       <p className="form-status" role="status" aria-live="polite">{notice}</p>
       <noscript><p className="form-note">Pour nous contacter sans JavaScript, écrivez à <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p></noscript>
     </form>

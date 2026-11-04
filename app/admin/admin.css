@@ -17,7 +17,41 @@
 .admin-attachments { display: grid; gap: .5rem; margin-block-start: 1rem; padding: 0; list-style: none; }
 .admin-attachments li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; }
 .admin-empty { margin-block-start: 2rem; }
+.admin-login-panel { max-width: 46rem; margin-inline: auto; padding: clamp(1.5rem, 5vw, 3.5rem); background: var(--surface); }
+.admin-login-panel h1 { max-width: 12ch; font-size: clamp(2.5rem, 6vw, 5rem); }
+.admin-eyebrow { margin-block-end: .75rem; color: var(--secondary); font-size: .9rem; font-weight: 600; letter-spacing: .04em; }
+.admin-eyebrow a, .admin-intro a { text-decoration: underline; text-underline-offset: .2em; }
+.admin-tools { display: flex; flex-wrap: wrap; gap: .75rem; margin-block-end: 1.5rem; }
+.admin-tools a { display: inline-flex; min-height: 44px; align-items: center; padding-inline: 1rem; background: var(--surface); text-decoration: underline; text-underline-offset: .2em; }
+.admin-page-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 0; padding: 0; list-style: none; }
+.admin-page-list a { display: flex; min-height: 84px; flex-direction: column; justify-content: center; gap: .25rem; padding: 1rem 1.25rem; background: var(--surface); font-size: 1.125rem; font-weight: 500; }
+.admin-page-route { color: var(--secondary); font-size: .875rem; font-weight: 400; }
+.admin-notice, .admin-error { margin-block-end: 1.5rem; padding: 1rem 1.25rem; background: var(--surface); }
+.admin-error { border-inline-start: 4px solid #9b332c; }
+.admin-cms-form { display: grid; gap: 1.25rem; }
+.admin-cms-section { min-width: 0; margin: 0; padding: clamp(1rem, 3vw, 1.75rem); border: 0; background: var(--surface); }
+.admin-cms-section legend { padding: 0; font-size: clamp(1.35rem, 2.4vw, 1.8rem); font-weight: 500; letter-spacing: -.03em; }
+.admin-cms-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block-start: 1rem; }
+.admin-cms-field { display: grid; align-content: start; gap: .45rem; min-width: 0; }
+.admin-cms-field label { font-size: .9375rem; font-weight: 500; }
+.admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid var(--input-edge); border-radius: 0; background: var(--paper); color: var(--ink); line-height: 1.4; }
+.admin-cms-field textarea { resize: vertical; }
+.admin-cms-limit { color: var(--secondary); font-size: .8125rem; }
+.admin-cms-image-field { grid-template-columns: minmax(0, 1fr) minmax(90px, 160px); align-items: center; }
+.admin-cms-image-field label { grid-column: 1 / -1; }
+.admin-cms-image-field select { grid-column: 1; }
+.admin-cms-preview { width: 100%; height: auto; max-height: 96px; object-fit: cover; background: var(--paper); }
+.admin-cms-form > .button { justify-self: start; cursor: pointer; }
 @media (max-width: 600px) {
   .admin-heading { align-items: flex-start; flex-direction: column; }
   .admin-enquiry-heading { align-items: flex-start; flex-direction: column; }
+  .admin-page-list, .admin-cms-fields { grid-template-columns: minmax(0, 1fr); }
+  .admin-cms-image-field { grid-template-columns: minmax(0, 1fr) 7rem; }
+}
+@media (forced-colors: active) {
+  .admin-cms-field :where(textarea, select):focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+    border-color: CanvasText;
+  }
 }

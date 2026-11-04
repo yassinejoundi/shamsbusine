@@ -1,23 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/site/Arrow";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
-export function ServicesHero() {
+export function ServicesHero({ content }: { content: CmsValues }) {
   return (
     <section className="frame services-hero" aria-labelledby="services-heading">
-      <h1 id="services-heading" data-reveal="type">De la structure<br />aux finitions.</h1>
+      <h1 id="services-heading" data-reveal="type">{cmsText(content, "hero.title1")}<br />{cmsText(content, "hero.title2")}</h1>
       <div className="services-hero-copy" data-reveal="right">
-        <p>Nos services de construction et de rénovation à Marrakech. Des compétences réunies, du premier ouvrage au dernier détail.</p>
-        <Link href="/contact/#devis" className="button">Demander un devis <Arrow /></Link>
-        <a href="#metiers" className="text-link">Découvrir les métiers</a>
+        <p>{cmsText(content, "hero.intro")}</p>
+        <Link href="/contact/#devis" className="button">{cmsText(content, "hero.quoteAction")} <Arrow /></Link>
+        <a href="#metiers" className="text-link">{cmsText(content, "hero.secondaryAction")}</a>
       </div>
       <figure className="services-hero-figure" data-reveal="wipe-left">
         <div className="photo services-hero-photo">
-          <Image src="/images/services-hero-villa-salim.webp" alt="Façade contemporaine en chantier, avec balcons en béton, échafaudage et enduits inachevés" fill sizes="(max-width: 699px) 100vw, 72vw" preload />
+          <Image src={cmsImage(content, "hero.image")} alt={cmsText(content, "hero.imageAlt")} fill sizes="(max-width: 699px) 100vw, 72vw" preload />
         </div>
-        <figcaption>La structure d’abord. Les espaces de vie ensuite.</figcaption>
+        <figcaption>{cmsText(content, "hero.imageCaption")}</figcaption>
       </figure>
-      <p className="services-hero-note" data-reveal="left" data-reveal-delay="1">Un projet complet ou un besoin précis. Le périmètre se définit avec vous.</p>
+      <p className="services-hero-note" data-reveal="left" data-reveal-delay="1">{cmsText(content, "hero.note")}</p>
     </section>
   );
 }

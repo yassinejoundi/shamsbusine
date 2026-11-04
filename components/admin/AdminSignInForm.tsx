@@ -24,7 +24,7 @@ export function AdminSignInForm() {
           setNotice("Connexion impossible. Vérifiez vos identifiants ou contactez l’administrateur.");
           return;
         }
-        router.replace("/admin/devis");
+        router.replace("/admin/pages");
         router.refresh();
       } catch {
         setNotice("Le service de connexion est momentanément indisponible.");

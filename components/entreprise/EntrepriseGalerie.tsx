@@ -1,48 +1,32 @@
 import Image from "next/image";
+import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
 
-const photographs = [
-  {
-    src: "/images/entreprise-facade-terracotta.webp",
-    alt: "Villa contemporaine à la façade terracotta, aux baies vitrées et au jardin planté.",
-    caption: "Façade terracotta, verre et végétation.",
-    className: "entreprise-gallery-feature",
-    sizes: "(max-width: 699px) 100vw, (max-width: 899px) 100vw, 50vw",
-  },
-  {
-    src: "/images/entreprise-bois-pierre.webp",
-    alt: "Façade contemporaine en bois et pierre donnant sur un bassin en cours d’aménagement.",
-    caption: "Le bois et la pierre au bord du bassin.",
-    className: "entreprise-gallery-matiere",
-    sizes: "(max-width: 699px) 88vw, (max-width: 899px) 46vw, 46vw",
-  },
-  {
-    src: "/images/entreprise-cour-terracotta.webp",
-    alt: "Cour terracotta ouverte sur une piscine étroite, bordée de palmiers.",
-    caption: "Une cour ouverte autour de la piscine.",
-    className: "entreprise-gallery-cour",
-    sizes: "(max-width: 699px) 88vw, (max-width: 899px) 46vw, 46vw",
-  },
-] as const;
+const galleryClasses = ["entreprise-gallery-feature", "entreprise-gallery-matiere", "entreprise-gallery-cour"];
+const gallerySizes = [
+  "(max-width: 699px) 100vw, (max-width: 899px) 100vw, 50vw",
+  "(max-width: 699px) 88vw, (max-width: 899px) 46vw, 46vw",
+  "(max-width: 699px) 88vw, (max-width: 899px) 46vw, 46vw",
+];
 
-export function EntrepriseGalerie() {
+export function EntrepriseGalerie({ content }: { content: CmsValues }) {
   return (
     <section className="entreprise-gallery" aria-labelledby="entreprise-gallery-title">
       <div className="frame">
         <div className="entreprise-gallery-intro">
           <h2 id="entreprise-gallery-title" data-reveal="left">
-            Des lieux, des lignes, des matières.
+            {cmsText(content, "gallery.title")}
           </h2>
           <p data-reveal="right">
-            Façades, jardins et espaces de vie issus des réalisations Shams Busine.
+            {cmsText(content, "gallery.intro")}
           </p>
         </div>
         <div className="entreprise-gallery-grid">
-          {photographs.map(({ src, alt, caption, className, sizes }, index) => (
-            <figure className={className} key={src} data-reveal={index % 2 === 0 ? "wipe-right" : "wipe-left"} data-reveal-delay={String(index)}>
+          {[0, 1, 2].map((index) => (
+            <figure className={galleryClasses[index]} key={index} data-reveal={index % 2 === 0 ? "wipe-right" : "wipe-left"} data-reveal-delay={String(index)}>
               <div className="photo entreprise-gallery-photo">
-                <Image src={src} alt={alt} fill sizes={sizes} />
+                <Image src={cmsImage(content, `gallery.${index}.image`)} alt={cmsText(content, `gallery.${index}.alt`)} fill sizes={gallerySizes[index]} />
               </div>
-              <figcaption>{caption}</figcaption>
+              <figcaption>{cmsText(content, `gallery.${index}.caption`)}</figcaption>
             </figure>
           ))}
         </div>

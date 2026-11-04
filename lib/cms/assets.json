@@ -1,0 +1,636 @@
+{
+  "assets": [
+    {
+      "localPath": "/images/chantier-maconnerie.webp",
+      "folder": "home",
+      "publicId": "home/chantier-maconnerie",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808366/home/chantier-maconnerie.webp",
+      "source": {
+        "file": "/images/chantier-maconnerie.webp",
+        "original": "media/projects/villa-nouria/12.png",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/12.png",
+        "project_pages": "villa-nouria"
+      }
+    },
+    {
+      "localPath": "/images/chantier-maconnerie.webp",
+      "folder": "realisations",
+      "publicId": "realisations/chantier-maconnerie",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808367/realisations/chantier-maconnerie.webp",
+      "source": {
+        "file": "/images/chantier-maconnerie.webp",
+        "original": "media/projects/villa-nouria/12.png",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/12.png",
+        "project_pages": "villa-nouria"
+      }
+    },
+    {
+      "localPath": "/images/chantier-structure.webp",
+      "folder": "home",
+      "publicId": "home/chantier-structure",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808368/home/chantier-structure.webp",
+      "source": {
+        "file": "/images/chantier-structure.webp",
+        "original": "media/projects/villa-azouzi-tameslouht/tameslouht-10.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-10.jpg",
+        "project_pages": "villa-azouzi-tameslouht"
+      }
+    },
+    {
+      "localPath": "/images/chantier-structure.webp",
+      "folder": "realisations",
+      "publicId": "realisations/chantier-structure",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808369/realisations/chantier-structure.webp",
+      "source": {
+        "file": "/images/chantier-structure.webp",
+        "original": "media/projects/villa-azouzi-tameslouht/tameslouht-10.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-10.jpg",
+        "project_pages": "villa-azouzi-tameslouht"
+      }
+    },
+    {
+      "localPath": "/images/company-team.webp",
+      "folder": "home",
+      "publicId": "home/company-team",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808370/home/company-team.webp",
+      "source": {
+        "file": "/images/company-team.webp",
+        "generated_by": "OpenAI ImageGen; official navbar logo composited with Sharp",
+        "role": "Illustrative generated image of two workers in branded yellow workwear; not verified Shams Busine staff or a specific project.",
+        "prompt": "Photorealistic editorial image for the company-capability section: two construction technicians viewed from behind, in golden-yellow jackets, reviewing a plan inside an unfinished concrete building. No faces, city scenery or visible text. The official Shams Busine navbar logo was composited onto both jacket backs to preserve brand accuracy."
+      }
+    },
+    {
+      "localPath": "/images/contact-villa-facade.webp",
+      "folder": "contact",
+      "publicId": "contact/contact-villa-facade",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808371/contact/contact-villa-facade.webp",
+      "source": {
+        "file": "/images/contact-villa-facade.webp",
+        "original": "media/projects/villa-6/DSC1463.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1463.jpg",
+        "project_pages": "villa-6"
+      }
+    },
+    {
+      "localPath": "/images/contact-villa-piscine.webp",
+      "folder": "contact",
+      "publicId": "contact/contact-villa-piscine",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808373/contact/contact-villa-piscine.webp",
+      "source": {
+        "file": "/images/contact-villa-piscine.webp",
+        "original": "media/projects/villa-6/DSC1469.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1469.jpg",
+        "project_pages": "villa-6"
+      }
+    },
+    {
+      "localPath": "/images/detail-finitions.webp",
+      "folder": "home",
+      "publicId": "home/detail-finitions",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808374/home/detail-finitions.webp",
+      "source": {
+        "file": "/images/detail-finitions.webp",
+        "original": "media/projects/villa-4/DSC1007.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1007.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/detail-finitions.webp",
+      "folder": "realisations",
+      "publicId": "realisations/detail-finitions",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808375/realisations/detail-finitions.webp",
+      "source": {
+        "file": "/images/detail-finitions.webp",
+        "original": "media/projects/villa-4/DSC1007.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1007.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/entreprise-approche.webp",
+      "folder": "entreprise",
+      "publicId": "entreprise/entreprise-approche",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808376/entreprise/entreprise-approche.webp",
+      "source": {
+        "file": "/images/entreprise-approche.webp",
+        "original": "media/projects/villa-azouzi-tameslouht/tameslouht-17.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-17.jpg",
+        "project_pages": "villa-azouzi-tameslouht"
+      }
+    },
+    {
+      "localPath": "/images/entreprise-bois-pierre.webp",
+      "folder": "entreprise",
+      "publicId": "entreprise/entreprise-bois-pierre",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808377/entreprise/entreprise-bois-pierre.webp",
+      "source": {
+        "file": "/images/entreprise-bois-pierre.webp",
+        "original": "media/projects/villa-4/DSC1093.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1093.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/entreprise-cour-terracotta.webp",
+      "folder": "entreprise",
+      "publicId": "entreprise/entreprise-cour-terracotta",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808378/entreprise/entreprise-cour-terracotta.webp",
+      "source": {
+        "file": "/images/entreprise-cour-terracotta.webp",
+        "original": "media/projects/villa-6/DSC1468.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1468.jpg",
+        "project_pages": "villa-6"
+      }
+    },
+    {
+      "localPath": "/images/entreprise-facade-terracotta.webp",
+      "folder": "entreprise",
+      "publicId": "entreprise/entreprise-facade-terracotta",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808379/entreprise/entreprise-facade-terracotta.webp",
+      "source": {
+        "file": "/images/entreprise-facade-terracotta.webp",
+        "original": "media/projects/villa-6/DSC1415-1.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1415-1.jpg",
+        "project_pages": "villa-6"
+      }
+    },
+    {
+      "localPath": "/images/escalier-interieur.webp",
+      "folder": "home",
+      "publicId": "home/escalier-interieur",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808380/home/escalier-interieur.webp",
+      "source": {
+        "file": "/images/escalier-interieur.webp",
+        "original": "media/projects/villa-3/DSC1326.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1326.jpg",
+        "project_pages": "villa-3"
+      }
+    },
+    {
+      "localPath": "/images/escalier-interieur.webp",
+      "folder": "realisations",
+      "publicId": "realisations/escalier-interieur",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808381/realisations/escalier-interieur.webp",
+      "source": {
+        "file": "/images/escalier-interieur.webp",
+        "original": "media/projects/villa-3/DSC1326.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1326.jpg",
+        "project_pages": "villa-3"
+      }
+    },
+    {
+      "localPath": "/images/faq-villa-detail.jpg",
+      "folder": "home",
+      "publicId": "home/faq-villa-detail",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808382/home/faq-villa-detail.jpg",
+      "source": {
+        "file": "/images/faq-villa-detail.jpg",
+        "original": "media/projects/villa-salim/DSC1498.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/DSC1498.jpg",
+        "project_pages": "villa-salim"
+      }
+    },
+    {
+      "localPath": "/images/materials-study.webp",
+      "folder": "entreprise",
+      "publicId": "entreprise/materials-study",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808383/entreprise/materials-study.webp",
+      "source": {
+        "file": "/images/materials-study.webp",
+        "generated_by": "OpenAI ImageGen",
+        "role": "Atmospheric material still life in the Entreprise hero; not a project photograph.",
+        "prompt": "Use case: photorealistic-natural. Asset type: secondary editorial image for the Entreprise hero on a French construction company's website. Primary request: create an atmospheric material study that complements authentic photographs of an actual masonry site. Scene/backdrop: a quiet, warm off-white plaster surface in soft Marrakech afternoon light. Subject: a small, carefully composed still life of genuine construction material samples: rough pale limestone, raw red-clay brick, plaster, cast concrete, and a short piece of natural timber. Style/medium: photorealistic architectural editorial photography; tactile grain, honest imperfections, crisp detail, restrained and premium. Composition/framing: compact square composition, materials arranged in an uneven stepped cluster, close crop, readable textures at small web size. Lighting/mood: directional raking daylight and gentle real shadows; calm, considered, sunlit. Color palette: plaster, pale stone, charcoal-gray concrete, restrained natural brick, muted timber. Materials/textures: porous stone, rough brick, powdery plaster, board-formed concrete, visible wood grain. Constraints: this is a generic still life, not a photograph of a Shams Busine project or job site; no building, room, construction site, workers, tools, scaffolding, machinery, crane, or architecture in frame. Avoid: text, letters, numbers, logos, watermark, gradients, artificial-looking 3D, decorative props."
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-3d-concept.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-3d-concept",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808384/entreprise/partner-3d-concept.png",
+      "source": {
+        "file": "/images/partners/partner-3d-concept.png",
+        "original": "7.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/7.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "3D Concept"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-agence-architecture.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-agence-architecture",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808384/entreprise/partner-agence-architecture.png",
+      "source": {
+        "file": "/images/partners/partner-agence-architecture.png",
+        "original": "1.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/1.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Agence d’architecture"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-art-beton.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-art-beton",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808385/entreprise/partner-art-beton.png",
+      "source": {
+        "file": "/images/partners/partner-art-beton.png",
+        "original": "4.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/4.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "ART BÉTON — études et travaux béton"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-association-alnadi.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-association-alnadi",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808386/entreprise/partner-association-alnadi.png",
+      "source": {
+        "file": "/images/partners/partner-association-alnadi.png",
+        "original": "Design-sans-titre-11.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-11.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Association Al Nadi Al Baydaoui de Marrakech"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-beldi-fusion-kitchen.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-beldi-fusion-kitchen",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808386/entreprise/partner-beldi-fusion-kitchen.png",
+      "source": {
+        "file": "/images/partners/partner-beldi-fusion-kitchen.png",
+        "original": "15.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/15.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Beldi Fusion Kitchen"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-carriprefa.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-carriprefa",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808387/entreprise/partner-carriprefa.png",
+      "source": {
+        "file": "/images/partners/partner-carriprefa.png",
+        "original": "14.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/14.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Carripréfa"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-chaoua-briques.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-chaoua-briques",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808388/entreprise/partner-chaoua-briques.png",
+      "source": {
+        "file": "/images/partners/partner-chaoua-briques.png",
+        "original": "17.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/17.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Chaoua Briques"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-cogetis.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-cogetis",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808388/entreprise/partner-cogetis.png",
+      "source": {
+        "file": "/images/partners/partner-cogetis.png",
+        "original": "9.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/9.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Cogetis — systèmes d’étanchéité"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-labo-control.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-labo-control",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808389/entreprise/partner-labo-control.png",
+      "source": {
+        "file": "/images/partners/partner-labo-control.png",
+        "original": "6.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/6.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Labo Control — laboratoire d’essais, analyses et de contrôle"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-lpae.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-lpae",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808389/entreprise/partner-lpae.png",
+      "source": {
+        "file": "/images/partners/partner-lpae.png",
+        "original": "3.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/3.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Laboratoire privé d’analyses et d’essais, L.P.A.E. Agadir"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-magriser.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-magriser",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808390/entreprise/partner-magriser.png",
+      "source": {
+        "file": "/images/partners/partner-magriser.png",
+        "original": "8.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/8.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Magriser — systèmes d’irrigation"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-mega-engineering.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-mega-engineering",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808390/entreprise/partner-mega-engineering.png",
+      "source": {
+        "file": "/images/partners/partner-mega-engineering.png",
+        "original": "2.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/2.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Mega Engineering"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-menara-prefa.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-menara-prefa",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808391/entreprise/partner-menara-prefa.png",
+      "source": {
+        "file": "/images/partners/partner-menara-prefa.png",
+        "original": "Design-sans-titre-32.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-32.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Ménara Préfa"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-ministere-education.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-ministere-education",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808392/entreprise/partner-ministere-education.png",
+      "source": {
+        "file": "/images/partners/partner-ministere-education.png",
+        "original": "Design-sans-titre-12.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/Design-sans-titre-12.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Royaume du Maroc — ministère de l’Éducation nationale, du Préscolaire et des Sports"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-planete-montessori.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-planete-montessori",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808392/entreprise/partner-planete-montessori.png",
+      "source": {
+        "file": "/images/partners/partner-planete-montessori.png",
+        "original": "18.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/18.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Planète Montessori International School"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-sonasid.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-sonasid",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808393/entreprise/partner-sonasid.png",
+      "source": {
+        "file": "/images/partners/partner-sonasid.png",
+        "original": "16.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/16.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Sonasid"
+      }
+    },
+    {
+      "localPath": "/images/partners/partner-tecnitas.png",
+      "folder": "entreprise",
+      "publicId": "entreprise/partner-tecnitas",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808393/entreprise/partner-tecnitas.png",
+      "source": {
+        "file": "/images/partners/partner-tecnitas.png",
+        "original": "5.png",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/5.png",
+        "source_page": "https://shamsbusine.com/contact-page-copy/",
+        "partner": "Tecnitas"
+      }
+    },
+    {
+      "localPath": "/images/services-finitions.webp",
+      "folder": "services",
+      "publicId": "services/services-finitions",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808394/services/services-finitions.webp",
+      "source": {
+        "file": "/images/services-finitions.webp",
+        "original": "media/projects/villa-4/DSC1041.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1041.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/services-hero-villa-salim.webp",
+      "folder": "services",
+      "publicId": "services/services-hero-villa-salim",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808395/services/services-hero-villa-salim.webp",
+      "source": {
+        "file": "/images/services-hero-villa-salim.webp",
+        "original": "media/projects/villa-salim/DSC1493.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/05/DSC1493.jpg",
+        "project_pages": "villa-salim"
+      }
+    },
+    {
+      "localPath": "/images/services-project-cour.webp",
+      "folder": "services",
+      "publicId": "services/services-project-cour",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808396/services/services-project-cour.webp",
+      "source": {
+        "file": "/images/services-project-cour.webp",
+        "original": "media/projects/projet-publique1/projet-public-1.jpeg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/projet-public-1.jpeg",
+        "project_pages": "projet-publique1"
+      }
+    },
+    {
+      "localPath": "/images/services-project-interior.webp",
+      "folder": "services",
+      "publicId": "services/services-project-interior",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808397/services/services-project-interior.webp",
+      "source": {
+        "file": "/images/services-project-interior.webp",
+        "original": "media/projects/villa-3/DSC1328.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1328.jpg",
+        "project_pages": "villa-3"
+      }
+    },
+    {
+      "localPath": "/images/services-project-villa.webp",
+      "folder": "services",
+      "publicId": "services/services-project-villa",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808398/services/services-project-villa.webp",
+      "source": {
+        "file": "/images/services-project-villa.webp",
+        "original": "media/projects/villa-6/DSC1422.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1422.jpg",
+        "project_pages": "villa-6"
+      }
+    },
+    {
+      "localPath": "/images/services-structure.webp",
+      "folder": "services",
+      "publicId": "services/services-structure",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808399/services/services-structure.webp",
+      "source": {
+        "file": "/images/services-structure.webp",
+        "original": "media/projects/villa-azouzi-tameslouht/tameslouht-28.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-28.jpg",
+        "project_pages": "villa-azouzi-tameslouht"
+      }
+    },
+    {
+      "localPath": "/images/shamsbusine-logo.png",
+      "folder": "shared",
+      "publicId": "shared/shamsbusine-logo",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808400/shared/shamsbusine-logo.png",
+      "source": {
+        "file": "/images/shamsbusine-logo.png",
+        "original": "media/brand/shamsbusine-logo.png"
+      }
+    },
+    {
+      "localPath": "/images/souihla-perspective.jpeg",
+      "folder": "entreprise",
+      "publicId": "entreprise/souihla-perspective",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808402/entreprise/souihla-perspective.jpg",
+      "source": {
+        "file": "/images/souihla-perspective.jpeg",
+        "original": "media/projects/_shared/WhatsApp-Image-2026-04-04-at-11.55.22-3-e1776432639957.jpeg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-04-at-11.55.22-3-e1776432639957.jpeg",
+        "project_pages": "realisation-construction-shams-busine; villa-2; villa-touristique",
+        "role": "Architectural perspective shown as a rendering, not site photography."
+      }
+    },
+    {
+      "localPath": "/images/techniciens-chantier.webp",
+      "folder": "home",
+      "publicId": "home/techniciens-chantier",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808403/home/techniciens-chantier.webp",
+      "source": {
+        "file": "/images/techniciens-chantier.webp",
+        "generated_by": "OpenAI ImageGen; navbar logo composited with Sharp",
+        "role": "Illustrative generated image of workers in yellow workwear with the official Shams Busine logo; not verified Shams Busine staff or a specific project.",
+        "prompt": "Photorealistic architectural editorial image of two construction technicians from behind, in yellow high-visibility jackets, inside an active worksite with no city scenery or visible faces. The official navbar logo was composited onto the jacket backs to preserve brand accuracy."
+      }
+    },
+    {
+      "localPath": "/images/villa-exterieur.webp",
+      "folder": "home",
+      "publicId": "home/villa-exterieur",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808404/home/villa-exterieur.webp",
+      "source": {
+        "file": "/images/villa-exterieur.webp",
+        "original": "media/projects/villa-4/DSC0991.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC0991.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/villa-exterieur.webp",
+      "folder": "realisations",
+      "publicId": "realisations/villa-exterieur",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808406/realisations/villa-exterieur.webp",
+      "source": {
+        "file": "/images/villa-exterieur.webp",
+        "original": "media/projects/villa-4/DSC0991.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC0991.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/villa-jardin.webp",
+      "folder": "home",
+      "publicId": "home/villa-jardin",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808407/home/villa-jardin.webp",
+      "source": {
+        "file": "/images/villa-jardin.webp",
+        "original": "media/projects/creation-shams-copy/DSC1212.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1212.jpg",
+        "project_pages": "creation-shams-copy"
+      }
+    },
+    {
+      "localPath": "/images/villa-jardin.webp",
+      "folder": "realisations",
+      "publicId": "realisations/villa-jardin",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808409/realisations/villa-jardin.webp",
+      "source": {
+        "file": "/images/villa-jardin.webp",
+        "original": "media/projects/creation-shams-copy/DSC1212.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1212.jpg",
+        "project_pages": "creation-shams-copy"
+      }
+    },
+    {
+      "localPath": "/images/services-finitions.webp",
+      "folder": "home",
+      "publicId": "home/services-finitions",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808511/home/services-finitions.webp",
+      "source": {
+        "file": "/images/services-finitions.webp",
+        "original": "media/projects/villa-4/DSC1041.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/04/DSC1041.jpg",
+        "project_pages": "villa-4"
+      }
+    },
+    {
+      "localPath": "/images/services-structure.webp",
+      "folder": "home",
+      "publicId": "home/services-structure",
+      "secureUrl": "https://res.cloudinary.com/vkzyyxnw/image/upload/v1793808512/home/services-structure.webp",
+      "source": {
+        "file": "/images/services-structure.webp",
+        "original": "media/projects/villa-azouzi-tameslouht/tameslouht-28.jpg",
+        "sourceMapping": ".project/metadata/project-images.csv",
+        "source_url": "https://shamsbusine.com/wp-content/uploads/2026/06/tameslouht-28.jpg",
+        "project_pages": "villa-azouzi-tameslouht"
+      }
+    }
+  ]
+}

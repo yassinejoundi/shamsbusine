@@ -3,13 +3,10 @@ import { connection } from "next/server";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
 import { AdminSignOutButton } from "@/components/admin/AdminSignOutButton";
-import { auth } from "@/lib/auth/server";
+import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
-
-import "../admin.css";
 
 export const metadata: Metadata = {
   title: "Demandes de devis | Shams Busine",
@@ -39,19 +36,7 @@ export default function EnquiriesPage() {
 
 async function EnquiriesContent() {
   await connection();
-  const { data } = await auth.getSession();
-  if (!data?.user) redirect("/admin/sign-in");
-
-  const role = (data.user as typeof data.user & { role?: string | string[] }).role;
-  if (role !== "admin" && !(Array.isArray(role) && role.includes("admin"))) {
-    return (
-      <main id="contenu" className="frame admin-page" tabIndex={-1}>
-        <h1>Accès réservé</h1>
-        <p className="admin-intro">Ce compte n’a pas le rôle administrateur requis pour consulter les demandes.</p>
-        <AdminSignOutButton />
-      </main>
-    );
-  }
+  await requireAdmin();
 
   const sql = getNeonDatabase();
   const rows = await sql`
