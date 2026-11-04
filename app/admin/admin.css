@@ -1,0 +1,23 @@
+.admin-page { min-height: 60vh; padding-block: clamp(3rem, 8vw, 7rem); }
+.admin-page > h1, .admin-heading h1 { max-width: 18ch; font-size: clamp(2.5rem, 6vw, 5rem); }
+.admin-intro { margin-block-start: 1rem; color: var(--secondary); }
+.admin-sign-in-form { max-width: 36rem; margin-block-start: 2rem; }
+.admin-sign-in-form .button { justify-content: center; }
+.admin-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-block-end: 3rem; }
+.admin-sign-out { min-height: 44px; cursor: pointer; border: 0; background: transparent; }
+.admin-enquiries { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.admin-enquiry { min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); background: var(--surface); }
+.admin-enquiry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.admin-enquiry h2 { font-size: clamp(1.35rem, 2.5vw, 2rem); }
+.admin-enquiry time, .admin-attachments span { color: var(--secondary); font-size: .875rem; }
+.admin-enquiry > p { margin-block-start: .8rem; }
+.admin-contact { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; margin-block-start: .75rem; font-style: normal; }
+.admin-contact a, .admin-attachments a { text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+.admin-description { white-space: pre-wrap; }
+.admin-attachments { display: grid; gap: .5rem; margin-block-start: 1rem; padding: 0; list-style: none; }
+.admin-attachments li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; }
+.admin-empty { margin-block-start: 2rem; }
+@media (max-width: 600px) {
+  .admin-heading { align-items: flex-start; flex-direction: column; }
+  .admin-enquiry-heading { align-items: flex-start; flex-direction: column; }
+}

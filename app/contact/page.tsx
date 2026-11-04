@@ -6,7 +6,7 @@ import "./contact.css";
 
 export const metadata: Metadata = {
   title: "Contact & devis | Construction à Marrakech | Shams Busine",
-  description: "Parlez de votre projet de construction ou de rénovation à Marrakech. Contactez Shams Busine ou préparez un e-mail avec les premiers détails de votre chantier.",
+  description: "Décrivez votre projet de construction ou de rénovation à Marrakech et joignez vos plans ou photos pour demander un devis à Shams Busine.",
   openGraph: {
     title: "Contact & devis | Shams Busine",
     description: "Un premier échange pour cadrer vos travaux de construction ou de rénovation à Marrakech.",

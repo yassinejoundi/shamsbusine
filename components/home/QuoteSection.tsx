@@ -26,7 +26,7 @@ export function QuoteSection() {
         <div className="quote-form-panel" data-reveal="wipe-right" data-reveal-delay="1">
           <div className="quote-form-heading">
             <h3 id="quote-form-title">Les détails du projet</h3>
-            <p>Tous les champs sont nécessaires pour préparer votre demande.</p>
+            <p>Décrivez votre projet. Vous pouvez joindre des plans ou des photos.</p>
           </div>
           <QuoteForm />
         </div>
