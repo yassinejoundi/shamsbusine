@@ -1,17 +1,24 @@
 .admin-shell {
+  height: 100dvh;
   min-height: 100dvh;
   display: grid;
   grid-template-columns: 236px minmax(0, 1fr);
+  overflow: hidden;
   background: var(--ground);
   color: var(--ink);
 }
 
 .admin-sidebar {
+  height: 100dvh;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 1.5rem 1.125rem;
+  border-inline-end: 1px solid var(--surface);
+  background: var(--paper);
 }
 
 .admin-sidebar-header { display: grid; gap: 1.25rem; }
@@ -29,10 +36,11 @@
   font-size: .9375rem;
   font-weight: 500;
 }
-.admin-nav-link[aria-current="page"] { border-inline-start-color: var(--ink); background: var(--paper); color: var(--ink); }
+.admin-nav-link[aria-current="page"] { border-inline-start-color: var(--ink); background: var(--surface); color: var(--ink); }
 .admin-sign-out { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--secondary); cursor: pointer; font-size: .875rem; }
-.admin-workspace { min-width: 0; margin: 8px 8px 8px 0; border: 1px solid var(--surface); border-radius: 16px; background: var(--paper); }
+.admin-workspace { min-width: 0; height: calc(100dvh - 16px); margin: 8px 8px 8px 0; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--paper); border-radius: 16px; background: var(--surface); }
 .admin-page { min-height: calc(100dvh - 18px); padding: clamp(1.25rem, 3.5vw, 3rem); }
+.admin-workspace > .admin-page { min-height: 100%; }
 .admin-page > h1, .admin-heading h1 { max-width: 26ch; font-size: 1.75rem; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
 .admin-intro { max-width: 65ch; margin-block-start: .5rem; color: var(--secondary); font-size: .9375rem; line-height: 1.5; }
 .admin-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-block-end: 2rem; }
@@ -94,16 +102,17 @@
 .admin-cms-form > .button { justify-self: start; cursor: pointer; }
 
 @media (max-width: 880px) {
-  .admin-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
-  .admin-sidebar { gap: .75rem; padding: .75rem 1rem 0; }
+  .admin-shell { height: auto; min-height: 100dvh; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); overflow: visible; }
+  .admin-sidebar { height: auto; gap: .75rem; overflow: visible; padding: .75rem 1rem 0; border-inline-end: 0; border-block-end: 1px solid var(--surface); }
   .admin-sidebar-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .admin-brand { grid-template-columns: auto auto; align-items: center; gap: .65rem; }
   .admin-brand img { width: min(7.5rem, 38vw); }
   .admin-nav-list { display: flex; flex-wrap: wrap; gap: .25rem .5rem; }
   .admin-nav-link { min-height: 44px; padding-inline: .65rem; border-inline-start: 0; border-block-end: 2px solid transparent; }
   .admin-nav-link[aria-current="page"] { border-block-end-color: var(--ink); background: transparent; }
-  .admin-workspace { margin: 8px; }
+  .admin-workspace { height: auto; min-height: calc(100dvh - 118px); margin: 8px; overflow: visible; }
   .admin-page { min-height: calc(100dvh - 118px); }
+  .admin-workspace > .admin-page { min-height: calc(100dvh - 118px); }
 }
 
 @media (max-width: 600px) {
