@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 236px minmax(0, 1fr);
   overflow: hidden;
-  background: var(--ground);
+  background: var(--paper);
   color: var(--ink);
 }
 
