@@ -1,55 +1,146 @@
-.admin-page { min-height: 60vh; padding-block: clamp(3rem, 8vw, 7rem); }
-.admin-page > h1, .admin-heading h1 { max-width: 18ch; font-size: clamp(2.5rem, 6vw, 5rem); }
-.admin-intro { margin-block-start: 1rem; color: var(--secondary); }
-.admin-sign-in-form { max-width: 36rem; margin-block-start: 2rem; }
-.admin-sign-in-form .button { justify-content: center; }
-.admin-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-block-end: 3rem; }
-.admin-sign-out { min-height: 44px; cursor: pointer; border: 0; background: transparent; }
-.admin-enquiries { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
-.admin-enquiry { min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); background: var(--surface); }
+.admin-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  background: var(--ground);
+  color: var(--ink);
+}
+
+.admin-sidebar {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 1.125rem;
+}
+
+.admin-sidebar-header { display: grid; gap: 1.25rem; }
+.admin-brand { display: grid; justify-items: start; gap: .5rem; width: fit-content; min-height: 44px; }
+.admin-brand img { display: block; width: min(9rem, 100%); height: auto; }
+.admin-brand span { color: var(--secondary); font-size: .8125rem; font-weight: 500; }
+.admin-nav-list { display: grid; gap: .375rem; margin: 0; padding: 0; list-style: none; }
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .625rem .75rem;
+  border-inline-start: 2px solid transparent;
+  color: var(--secondary);
+  font-size: .9375rem;
+  font-weight: 500;
+}
+.admin-nav-link[aria-current="page"] { border-inline-start-color: var(--ink); background: var(--paper); color: var(--ink); }
+.admin-sign-out { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--secondary); cursor: pointer; font-size: .875rem; }
+.admin-workspace { min-width: 0; margin: 8px 8px 8px 0; border: 1px solid var(--surface); border-radius: 16px; background: var(--paper); }
+.admin-page { min-height: calc(100dvh - 18px); padding: clamp(1.25rem, 3.5vw, 3rem); }
+.admin-page > h1, .admin-heading h1 { max-width: 26ch; font-size: 1.75rem; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
+.admin-intro { max-width: 65ch; margin-block-start: .5rem; color: var(--secondary); font-size: .9375rem; line-height: 1.5; }
+.admin-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-block-end: 2rem; }
+.admin-eyebrow { margin-block-end: .6rem; color: var(--secondary); font-size: .8125rem; font-weight: 500; }
+.admin-eyebrow a, .admin-intro a { text-decoration: underline; text-underline-offset: .2em; }
+
+.admin-page-list { margin: 1.5rem 0 0; padding: 0; border-block-start: 1px solid var(--surface); list-style: none; }
+.admin-page-list li { border-block-end: 1px solid var(--surface); }
+.admin-page-list a { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; min-height: 72px; padding: .875rem .25rem; }
+.admin-page-title { display: block; font-weight: 500; }
+.admin-page-route { display: block; margin-block-start: .125rem; color: var(--secondary); font-size: .8125rem; overflow-wrap: anywhere; }
+.admin-page-edit { color: var(--ink); font-size: .875rem; font-weight: 500; white-space: nowrap; }
+
+.admin-enquiries { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+.admin-enquiry { min-width: 0; padding: clamp(1rem, 2.5vw, 1.5rem); background: var(--ground); }
 .admin-enquiry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-.admin-enquiry h2 { font-size: clamp(1.35rem, 2.5vw, 2rem); }
-.admin-enquiry time, .admin-attachments span { color: var(--secondary); font-size: .875rem; }
-.admin-enquiry > p { margin-block-start: .8rem; }
-.admin-contact { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; margin-block-start: .75rem; font-style: normal; }
+.admin-enquiry h2 { font-size: 1.125rem; line-height: 1.3; font-weight: 600; letter-spacing: -.01em; }
+.admin-enquiry time, .admin-attachments span { color: var(--secondary); font-size: .8125rem; }
+.admin-enquiry > p { margin-block-start: .75rem; }
+.admin-contact { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-block-start: .75rem; font-style: normal; }
 .admin-contact a, .admin-attachments a { text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
-.admin-description { white-space: pre-wrap; }
+.admin-description { white-space: pre-wrap; overflow-wrap: anywhere; }
 .admin-attachments { display: grid; gap: .5rem; margin-block-start: 1rem; padding: 0; list-style: none; }
 .admin-attachments li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; }
 .admin-empty { margin-block-start: 2rem; }
-.admin-login-panel { max-width: 46rem; margin-inline: auto; padding: clamp(1.5rem, 5vw, 3.5rem); background: var(--surface); }
-.admin-login-panel h1 { max-width: 12ch; font-size: clamp(2.5rem, 6vw, 5rem); }
-.admin-eyebrow { margin-block-end: .75rem; color: var(--secondary); font-size: .9rem; font-weight: 600; letter-spacing: .04em; }
-.admin-eyebrow a, .admin-intro a { text-decoration: underline; text-underline-offset: .2em; }
-.admin-tools { display: flex; flex-wrap: wrap; gap: .75rem; margin-block-end: 1.5rem; }
-.admin-tools a { display: inline-flex; min-height: 44px; align-items: center; padding-inline: 1rem; background: var(--surface); text-decoration: underline; text-underline-offset: .2em; }
-.admin-page-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 0; padding: 0; list-style: none; }
-.admin-page-list a { display: flex; min-height: 84px; flex-direction: column; justify-content: center; gap: .25rem; padding: 1rem 1.25rem; background: var(--surface); font-size: 1.125rem; font-weight: 500; }
-.admin-page-route { color: var(--secondary); font-size: .875rem; font-weight: 400; }
-.admin-notice, .admin-error { margin-block-end: 1.5rem; padding: 1rem 1.25rem; background: var(--surface); }
-.admin-error { border-inline-start: 4px solid #9b332c; }
-.admin-cms-form { display: grid; gap: 1.25rem; }
-.admin-cms-section { min-width: 0; margin: 0; padding: clamp(1rem, 3vw, 1.75rem); border: 0; background: var(--surface); }
-.admin-cms-section legend { padding: 0; font-size: clamp(1.35rem, 2.4vw, 1.8rem); font-weight: 500; letter-spacing: -.03em; }
+
+.admin-login-panel { max-width: 40rem; margin: clamp(2rem, 10vh, 6rem) auto; padding: clamp(1.5rem, 5vw, 3rem); border: 1px solid var(--surface); background: var(--paper); }
+.admin-login-panel h1 { max-width: 15ch; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -.035em; }
+.admin-login-panel .admin-eyebrow { margin-block-end: .75rem; }
+.admin-sign-in-form { max-width: 36rem; margin-block-start: 2rem; }
+.admin-sign-in-form .button { justify-content: center; }
+.admin-sign-in-form .form-status { min-height: 1.5em; }
+
+.admin-notice, .admin-error { margin-block-end: 1.25rem; padding: .875rem 1rem; background: var(--ground); }
+.admin-notice { border-inline-start: 3px solid var(--ink); }
+.admin-error { border-inline-start: 3px solid #9b332c; }
+.admin-cms-form { display: grid; gap: 1rem; }
+.admin-cms-section { min-width: 0; margin: 0; padding: 1.25rem 0; border: 0; border-block-start: 1px solid var(--surface); background: transparent; }
+.admin-cms-section legend { padding: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; }
 .admin-cms-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block-start: 1rem; }
 .admin-cms-field { display: grid; align-content: start; gap: .45rem; min-width: 0; }
-.admin-cms-field label { font-size: .9375rem; font-weight: 500; }
-.admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid var(--input-edge); border-radius: 0; background: var(--paper); color: var(--ink); line-height: 1.4; }
+.admin-cms-field label { font-size: .875rem; font-weight: 500; }
+.admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid var(--input-edge); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.4; }
 .admin-cms-field textarea { resize: vertical; }
 .admin-cms-limit { color: var(--secondary); font-size: .8125rem; }
 .admin-cms-image-field { grid-template-columns: minmax(0, 1fr) minmax(90px, 160px); align-items: center; }
 .admin-cms-image-field label { grid-column: 1 / -1; }
 .admin-cms-image-field select { grid-column: 1; }
-.admin-cms-preview { width: 100%; height: auto; max-height: 96px; object-fit: cover; background: var(--paper); }
+.admin-cms-preview { grid-column: 2; grid-row: 2 / 4; width: 100%; height: auto; max-height: 120px; object-fit: cover; background: var(--ground); }
+.admin-image-upload { grid-column: 1; grid-row: 3 / 5; display: grid; align-content: start; gap: .5rem; min-width: 0; }
+.admin-image-upload > label { font-size: .875rem; font-weight: 500; }
+.admin-upload-file { min-height: 44px; padding: .45rem; font-size: .875rem; }
+.admin-upload-help, .admin-upload-status, .admin-upload-note { max-width: 65ch; color: var(--secondary); font-size: .8125rem; line-height: 1.5; overflow-wrap: anywhere; }
+.admin-upload-button { justify-self: start; min-height: 44px; padding: .625rem .875rem; border: 1px solid var(--input-edge); background: var(--paper); color: var(--ink); font-size: .875rem; font-weight: 500; cursor: pointer; }
+.admin-upload-button:disabled { cursor: not-allowed; opacity: .6; }
+.admin-upload-status { min-height: 1.5em; }
+.admin-upload-status.is-error { color: #9b332c; }
+.admin-upload-note { grid-column: 1 / -1; }
 .admin-cms-form > .button { justify-self: start; cursor: pointer; }
-@media (max-width: 600px) {
-  .admin-heading { align-items: flex-start; flex-direction: column; }
-  .admin-enquiry-heading { align-items: flex-start; flex-direction: column; }
-  .admin-page-list, .admin-cms-fields { grid-template-columns: minmax(0, 1fr); }
-  .admin-cms-image-field { grid-template-columns: minmax(0, 1fr) 7rem; }
+
+@media (max-width: 880px) {
+  .admin-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .admin-sidebar { gap: .75rem; padding: .75rem 1rem 0; }
+  .admin-sidebar-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .admin-brand { grid-template-columns: auto auto; align-items: center; gap: .65rem; }
+  .admin-brand img { width: min(7.5rem, 38vw); }
+  .admin-nav-list { display: flex; flex-wrap: wrap; gap: .25rem .5rem; }
+  .admin-nav-link { min-height: 44px; padding-inline: .65rem; border-inline-start: 0; border-block-end: 2px solid transparent; }
+  .admin-nav-link[aria-current="page"] { border-block-end-color: var(--ink); background: transparent; }
+  .admin-workspace { margin: 8px; }
+  .admin-page { min-height: calc(100dvh - 118px); }
 }
+
+@media (max-width: 600px) {
+  .admin-heading { flex-direction: column; gap: .5rem; margin-block-end: 1.5rem; }
+  .admin-page-list { margin-block-start: 1.125rem; }
+  .admin-cms-fields { grid-template-columns: minmax(0, 1fr); }
+  .admin-enquiry-heading { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .admin-cms-image-field { grid-template-columns: minmax(0, 1fr); }
+  .admin-cms-image-field select, .admin-cms-image-field .admin-image-upload,
+  .admin-cms-image-field .admin-cms-preview, .admin-cms-image-field .admin-upload-note {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .admin-cms-preview { width: min(100%, 18rem); }
+}
+
+@media (max-width: 360px) {
+  .admin-sidebar { padding-inline: .75rem; }
+  .admin-brand { grid-template-columns: auto; gap: .2rem; }
+  .admin-nav-list { gap: 0 .25rem; }
+  .admin-nav-link { padding-inline: .5rem; font-size: .875rem; }
+  .admin-page-edit { font-size: .8125rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .admin-nav-link, .admin-page-list a, .admin-sign-out, .admin-upload-button { transition: background-color 140ms ease, color 140ms ease; }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .admin-nav-link:hover, .admin-page-list a:hover, .admin-upload-button:not(:disabled):hover { color: var(--ink); }
+  .admin-sign-out:hover { color: var(--ink); }
+}
+
 @media (forced-colors: active) {
-  .admin-cms-field :where(textarea, select):focus-visible {
+  .admin-nav-link:focus-visible, .admin-brand:focus-visible, .admin-sign-out:focus-visible,
+  .admin-page-list a:focus-visible, .admin-upload-button:focus-visible,
+  .admin-cms-field :where(input, textarea, select):focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 2px;
     border-color: CanvasText;

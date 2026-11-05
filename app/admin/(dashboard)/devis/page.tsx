@@ -3,7 +3,6 @@ import { connection } from "next/server";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { Suspense } from "react";
-import { AdminSignOutButton } from "@/components/admin/AdminSignOutButton";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
@@ -63,9 +62,8 @@ async function EnquiriesContent() {
       <header className="admin-heading">
         <div>
           <h1>Demandes de devis</h1>
-          <p className="admin-intro">Les 100 demandes les plus récentes.</p>
+          <p className="admin-intro">Les demandes reçues pour vos projets de construction et de rénovation.</p>
         </div>
-        <AdminSignOutButton />
       </header>
       {enquiries.length ? (
         <ol className="admin-enquiries">

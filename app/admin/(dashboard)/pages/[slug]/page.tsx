@@ -4,7 +4,6 @@ import { connection } from "next/server";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { AdminCmsForm } from "@/components/admin/AdminCmsForm";
-import { AdminSignOutButton } from "@/components/admin/AdminSignOutButton";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getCmsContent, getCmsImageAssets } from "@/lib/cms/content";
 import { cmsPageBySlug } from "@/lib/cms/schema";
@@ -48,9 +47,8 @@ async function CmsPageEditorContent({
         <div>
           <p className="admin-eyebrow"><Link href="/admin/pages">Contenu du site</Link> / {page.title}</p>
           <h1>Modifier {page.title}</h1>
-          <p className="admin-intro">Page publique : <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>. Texte limité par champ; images choisies dans Cloudinary.</p>
+          <p className="admin-intro">Page publique : <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>. Enregistrez vos modifications pour les publier.</p>
         </div>
-        <AdminSignOutButton />
       </header>
       {status.saved === "1" && <p className="admin-notice" role="status">Modifications enregistrées.</p>}
       {status.error === "invalid" && <p className="admin-error" role="alert">Vérifiez les champs obligatoires et leurs limites avant de réessayer.</p>}

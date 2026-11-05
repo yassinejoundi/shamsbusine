@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense } from "react";
-import { AdminSignOutButton } from "@/components/admin/AdminSignOutButton";
 import { cmsPages } from "@/lib/cms/schema";
 import { requireAdmin } from "@/lib/auth/admin";
 
@@ -27,21 +26,19 @@ async function AdminPagesContent() {
     <main id="contenu" className="frame admin-page" tabIndex={-1}>
       <header className="admin-heading">
         <div>
-          <p className="admin-eyebrow">Espace de gestion</p>
           <h1>Contenu du site</h1>
-          <p className="admin-intro">Choisissez une page. Chaque champ respecte une limite adaptée à sa place.</p>
+          <p className="admin-intro">Modifiez les textes et les images affichés sur les pages du site.</p>
         </div>
-        <AdminSignOutButton />
       </header>
-      <nav className="admin-tools" aria-label="Outils d’administration">
-        <Link href="/admin/devis">Demandes de devis</Link>
-      </nav>
       <ul className="admin-page-list">
         {cmsPages.map((page) => (
           <li key={page.slug}>
             <Link href={`/admin/pages/${page.slug}`}>
-              <span>{page.title}</span>
-              <span className="admin-page-route">{page.route}</span>
+              <span>
+                <span className="admin-page-title">{page.title}</span>
+                <span className="admin-page-route">{page.route}</span>
+              </span>
+              <span className="admin-page-edit">Modifier</span>
             </Link>
           </li>
         ))}
