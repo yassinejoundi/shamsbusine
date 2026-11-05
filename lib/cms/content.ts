@@ -1,8 +1,10 @@
 import "server-only";
 import { connection } from "next/server";
 import { neon } from "@neondatabase/serverless";
+import { v2 as cloudinary } from "cloudinary";
 import assetIndex from "./assets.json";
 import { cmsPageBySlug, defaultCmsContent, type CmsPage } from "./schema";
+import { isAnyCmsUploadedImageId, isCmsImageAssetId, isCmsUploadedImageId } from "./asset-ids";
 
 type Asset = (typeof assetIndex.assets)[number];
 const assets = assetIndex.assets as Asset[];
@@ -19,13 +21,27 @@ export function cmsImage(content: CmsValues, key: string) {
 }
 
 export function getCloudinaryImage(publicId: string) {
-  return assetById.get(publicId)?.secureUrl ?? "";
+  if (assetById.has(publicId)) return assetById.get(publicId)?.secureUrl ?? "";
+  if (!process.env.CLOUDINARY_URL || !isAnyCmsUploadedImageId(publicId)) return "";
+  return cloudinary.url(publicId, { secure: true, format: "webp" });
 }
 
-export function getCmsImageAssets(page: CmsPage) {
-  return assets
+export function getCmsImageAssets(page: CmsPage, content: CmsValues) {
+  const existing = assets
     .filter((asset) => asset.folder === page.slug || asset.folder === "shared")
     .map(({ publicId, localPath, secureUrl }) => ({ publicId, localPath, secureUrl }));
+  const currentUploads = [...new Set(page.sections.flatMap((section) => section.fields)
+    .filter((field) => field.kind === "image")
+    .map((field) => content[field.key] ?? "")
+    .filter((publicId) => isCmsUploadedImageId(publicId, page.slug)))];
+  return [
+    ...existing,
+    ...currentUploads.map((publicId) => ({
+      publicId,
+      localPath: `Image importée · ${publicId.slice(-6)}.webp`,
+      secureUrl: getCloudinaryImage(publicId),
+    })),
+  ];
 }
 
 export async function getCmsContent(slug: string): Promise<CmsValues> {
@@ -47,7 +63,7 @@ export async function getCmsContent(slug: string): Promise<CmsValues> {
       const value = (stored as Record<string, unknown>)[field.key];
       if (typeof value !== "string") continue;
       if (field.kind === "image") {
-        if (assetById.has(value)) merged[field.key] = value;
+        if (isCmsImageAssetId(value, page.slug)) merged[field.key] = value;
       } else if (value.trim().length > 0 && value.length <= field.maxLength) {
         merged[field.key] = value;
       }

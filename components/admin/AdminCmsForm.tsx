@@ -1,9 +1,7 @@
-import Image from "next/image";
 import type { CmsPage } from "@/lib/cms/schema";
 import type { CmsValues } from "@/lib/cms/content";
+import { AdminCmsImageField, type CmsImageOption } from "@/components/admin/AdminCmsImageField";
 import { saveCmsPage } from "@/app/admin/pages/[slug]/actions";
-
-type ImageOption = { publicId: string; localPath: string; secureUrl: string };
 
 export function AdminCmsForm({
   page,
@@ -12,7 +10,7 @@ export function AdminCmsForm({
 }: {
   page: CmsPage;
   content: CmsValues;
-  images: ImageOption[];
+  images: CmsImageOption[];
 }) {
   return (
     <form action={saveCmsPage} className="admin-cms-form">
@@ -25,28 +23,15 @@ export function AdminCmsForm({
               const value = content[field.key] ?? field.defaultValue;
               const id = `${page.slug}-${field.key}`;
               if (field.kind === "image") {
-                const selected = images.find((asset) => asset.publicId === value) ?? images[0];
                 return (
-                  <div className="admin-cms-field admin-cms-image-field" key={field.key}>
-                    <label htmlFor={id}>{field.label}</label>
-                    <select id={id} name={field.key} defaultValue={selected?.publicId ?? ""} required>
-                      {images.map((asset) => (
-                        <option value={asset.publicId} key={asset.publicId}>
-                          {asset.localPath.split("/").at(-1)}
-                        </option>
-                      ))}
-                    </select>
-                    {selected && (
-                      <Image
-                        className="admin-cms-preview"
-                        src={selected.secureUrl}
-                        alt=""
-                        width={240}
-                        height={150}
-                        sizes="240px"
-                      />
-                    )}
-                  </div>
+                  <AdminCmsImageField
+                    key={field.key}
+                    pageSlug={page.slug}
+                    fieldKey={field.key}
+                    label={field.label}
+                    selectedId={value}
+                    images={images}
+                  />
                 );
               }
               const rows = field.maxLength > 150 ? 4 : field.maxLength > 50 ? 2 : 1;

@@ -39,7 +39,8 @@ async function CmsPageEditorContent({
   const [{ slug }, status] = await Promise.all([params, searchParams]);
   const page = cmsPageBySlug[slug];
   if (!page) notFound();
-  const [content, images] = await Promise.all([getCmsContent(slug), getCmsImageAssets(page)]);
+  const content = await getCmsContent(slug);
+  const images = getCmsImageAssets(page, content);
 
   return (
     <main id="contenu" className="frame admin-page" tabIndex={-1}>

@@ -2,13 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import assetIndex from "@/lib/cms/assets.json";
 import { cmsPageBySlug } from "@/lib/cms/schema";
 import { cmsPagePath } from "@/lib/cms/content";
+import { isCmsImageAssetId } from "@/lib/cms/asset-ids";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
-
-const assetIds = new Set(assetIndex.assets.map((asset) => asset.publicId));
 
 export async function saveCmsPage(formData: FormData) {
   const user = await requireAdmin();
@@ -21,7 +19,7 @@ export async function saveCmsPage(formData: FormData) {
     const raw = formData.get(field.key);
     if (typeof raw !== "string" || raw.length === 0) redirect(`/admin/pages/${page.slug}?error=invalid`);
     if (field.kind === "image") {
-      if (!assetIds.has(raw)) redirect(`/admin/pages/${page.slug}?error=invalid`);
+      if (!isCmsImageAssetId(raw, page.slug)) redirect(`/admin/pages/${page.slug}?error=invalid`);
     } else if (!raw.trim() || raw.length > field.maxLength) {
       redirect(`/admin/pages/${page.slug}?error=invalid`);
     }
