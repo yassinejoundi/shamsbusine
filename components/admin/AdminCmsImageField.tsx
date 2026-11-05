@@ -60,12 +60,14 @@ export function AdminCmsImageField({
   label,
   selectedId,
   images,
+  onDirtyChange,
 }: {
   pageSlug: string;
   fieldKey: string;
   label: string;
   selectedId: string;
   images: CmsImageOption[];
+  onDirtyChange: () => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [options, setOptions] = useState(images);
@@ -108,6 +110,7 @@ export function AdminCmsImageField({
       const uploadedAsset = result.asset;
       setOptions((current) => [...current.filter((asset) => asset.publicId !== uploadedAsset.publicId), uploadedAsset]);
       setValue(uploadedAsset.publicId);
+      onDirtyChange();
       setFile(null);
       if (inputRef.current) inputRef.current.value = "";
       setStatus(`Image importée (${readableSize(optimized.size)}). Enregistrez la page pour la publier.`);
@@ -134,7 +137,10 @@ export function AdminCmsImageField({
   return (
     <div className="admin-cms-field admin-cms-image-field" aria-busy={isUploading}>
       <label htmlFor={id}>{label}</label>
-      <select id={id} name={fieldKey} value={value} onChange={(event) => setValue(event.currentTarget.value)} required>
+      <select id={id} name={fieldKey} value={value} onChange={(event) => {
+        setValue(event.currentTarget.value);
+        onDirtyChange();
+      }} required>
         {options.map((asset) => (
           <option value={asset.publicId} key={asset.publicId}>
             {asset.localPath.split("/").at(-1)}

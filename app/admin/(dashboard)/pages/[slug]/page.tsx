@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { AdminCmsForm } from "@/components/admin/AdminCmsForm";
+import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getCmsContent, getCmsImageAssets } from "@/lib/cms/content";
 import { cmsPageBySlug } from "@/lib/cms/schema";
@@ -15,28 +16,20 @@ export const metadata: Metadata = {
 
 export default function CmsPageEditor({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ saved?: string; error?: string }>;
 }) {
   return (
     <Suspense fallback={<main id="contenu" className="frame admin-page" tabIndex={-1}><p role="status">Chargement de la page…</p></main>}>
-      <CmsPageEditorContent params={params} searchParams={searchParams} />
+      <CmsPageEditorContent params={params} />
     </Suspense>
   );
 }
 
-async function CmsPageEditorContent({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ saved?: string; error?: string }>;
-}) {
+async function CmsPageEditorContent({ params }: { params: Promise<{ slug: string }> }) {
   await connection();
   await requireAdmin();
-  const [{ slug }, status] = await Promise.all([params, searchParams]);
+  const { slug } = await params;
   const page = cmsPageBySlug[slug];
   if (!page) notFound();
   const content = await getCmsContent(slug);
@@ -44,16 +37,17 @@ async function CmsPageEditorContent({
 
   return (
     <main id="contenu" className="frame admin-page" tabIndex={-1}>
+      <AdminBreadcrumb items={[
+        { label: "Espace de gestion", href: "/admin" },
+        { label: "Contenu du site", href: "/admin/pages" },
+        { label: page.title, current: true },
+      ]} />
       <header className="admin-heading">
         <div>
-          <p className="admin-eyebrow"><Link href="/admin/pages">Contenu du site</Link> / {page.title}</p>
-          <h1>Modifier {page.title}</h1>
-          <p className="admin-intro">Page publique : <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>. Enregistrez vos modifications pour les publier.</p>
+          <h1>{page.title}</h1>
+          <p className="admin-intro">Modifiez les textes et les images publiés sur <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>.</p>
         </div>
       </header>
-      {status.saved === "1" && <p className="admin-notice" role="status">Modifications enregistrées.</p>}
-      {status.error === "invalid" && <p className="admin-error" role="alert">Vérifiez les champs obligatoires et leurs limites avant de réessayer.</p>}
-      {status.error === "save" && <p className="admin-error" role="alert">Enregistrement impossible. Vérifiez la connexion à la base Neon, puis réessayez.</p>}
       <AdminCmsForm page={page} content={content} images={images} />
     </main>
   );

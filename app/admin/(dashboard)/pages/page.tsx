@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { Suspense } from "react";
 import { cmsPages } from "@/lib/cms/schema";
 import { requireAdmin } from "@/lib/auth/admin";
+import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
 
 export const metadata: Metadata = {
   title: "Pages du site | Shams Busine",
@@ -24,10 +25,14 @@ async function AdminPagesContent() {
 
   return (
     <main id="contenu" className="frame admin-page" tabIndex={-1}>
+      <AdminBreadcrumb items={[
+        { label: "Espace de gestion", href: "/admin" },
+        { label: "Contenu du site", current: true },
+      ]} />
       <header className="admin-heading">
         <div>
           <h1>Contenu du site</h1>
-          <p className="admin-intro">Modifiez les textes et les images affichés sur les pages du site.</p>
+          <p className="admin-intro">Choisissez une page pour modifier les textes et images affichés sur le site.</p>
         </div>
       </header>
       <ul className="admin-page-list">

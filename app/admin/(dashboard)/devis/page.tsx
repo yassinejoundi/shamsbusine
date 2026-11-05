@@ -3,6 +3,7 @@ import { connection } from "next/server";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { Suspense } from "react";
+import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
@@ -27,7 +28,7 @@ type Enquiry = {
 
 export default function EnquiriesPage() {
   return (
-    <Suspense fallback={<main id="contenu" className="frame admin-page">Chargement des demandes…</main>}>
+    <Suspense fallback={<main id="contenu" className="frame admin-page" tabIndex={-1}>Chargement des demandes…</main>}>
       <EnquiriesContent />
     </Suspense>
   );
@@ -59,10 +60,14 @@ async function EnquiriesContent() {
 
   return (
     <main id="contenu" className="frame admin-page" tabIndex={-1}>
+      <AdminBreadcrumb items={[
+        { label: "Espace de gestion", href: "/admin" },
+        { label: "Demandes de devis", current: true },
+      ]} />
       <header className="admin-heading">
         <div>
           <h1>Demandes de devis</h1>
-          <p className="admin-intro">Les demandes reçues pour vos projets de construction et de rénovation.</p>
+          <p className="admin-intro">Consultez les demandes reçues et téléchargez les plans ou photos joints.</p>
         </div>
       </header>
       {enquiries.length ? (
