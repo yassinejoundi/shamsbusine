@@ -7,7 +7,7 @@ import { Arrow } from "@/components/site/Arrow";
 import { isValidPhone, projectTypes } from "@/lib/enquiry-validation";
 import { contact } from "@/lib/site";
 
-export type QuoteFormCopy = {
+type QuoteFormCopy = {
   formLabel: string;
   nameLabel: string;
   cityLabel: string;
@@ -22,7 +22,23 @@ export type QuoteFormCopy = {
   submitLabel: string;
 };
 
-export function QuoteForm({ copy }: { copy: QuoteFormCopy }) {
+const quoteFormCopy: QuoteFormCopy = {
+  formLabel: "Demande de devis",
+  nameLabel: "Votre nom",
+  cityLabel: "Ville du projet",
+  phoneLabel: "Votre téléphone",
+  emailLabel: "Votre adresse e-mail",
+  typeLabel: "Type de projet",
+  typePlaceholder: "Choisissez un type de projet",
+  descriptionLabel: "Décrivez votre projet",
+  descriptionPlaceholder: "Nature des travaux, état du projet, plans disponibles…",
+  attachmentsLabel: "Plans ou photos (facultatif)",
+  attachmentsNote: "Jusqu’à 3 fichiers PDF, JPG, PNG ou WebP, 5 Mo par fichier et 10 Mo au total. Vos coordonnées et pièces jointes seront stockées pour traiter votre demande. N’envoyez pas de document sensible.",
+  submitLabel: "Envoyer ma demande",
+};
+
+export function QuoteForm() {
+  const copy = quoteFormCopy;
   const [notice, setNotice] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 

@@ -31,7 +31,7 @@ function HomeContent({ content }: { content: CmsValues }) {
       <ProjectProcess content={content} />
       <Company content={content} />
       <Questions content={content} />
-      <QuoteSection content={content} />
+      <QuoteSection />
     </main>
   );
 }

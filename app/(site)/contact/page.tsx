@@ -35,7 +35,7 @@ function ContactContent({ content }: { content: CmsValues }) {
   return (
     <main id="contenu" className="contact-page" tabIndex={-1}>
       <ContactHero content={content} />
-      <ContactEnquiry content={content} />
+      <ContactEnquiry />
     </main>
   );
 }
