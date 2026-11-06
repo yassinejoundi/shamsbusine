@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { AdminCmsForm } from "@/components/admin/AdminCmsForm";
 import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
-import { requireAdmin } from "@/lib/auth/admin";
+import { requireAdminForRender } from "@/lib/auth/admin";
 import { getCmsContent, getCmsImageAssets } from "@/lib/cms/content";
 import { cmsPageBySlug } from "@/lib/cms/schema";
 
@@ -28,7 +28,7 @@ export default function CmsPageEditor({
 
 async function CmsPageEditorContent({ params }: { params: Promise<{ slug: string }> }) {
   await connection();
-  await requireAdmin();
+  await requireAdminForRender();
   const { slug } = await params;
   const page = cmsPageBySlug[slug];
   if (!page) notFound();

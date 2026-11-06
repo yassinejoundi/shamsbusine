@@ -4,7 +4,7 @@ import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { Suspense } from "react";
 import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
-import { requireAdmin } from "@/lib/auth/admin";
+import { requireAdminForRender } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
 
@@ -36,7 +36,7 @@ export default function EnquiriesPage() {
 
 async function EnquiriesContent() {
   await connection();
-  await requireAdmin();
+  await requireAdminForRender();
 
   const sql = getNeonDatabase();
   const rows = await sql`

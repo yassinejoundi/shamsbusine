@@ -1,6 +1,6 @@
 import "server-only";
 import { redirect } from "next/navigation";
-import { auth } from "./server";
+import { auth, authForServerComponents } from "./server";
 
 type AuthUser = NonNullable<NonNullable<Awaited<ReturnType<typeof auth.getSession>>["data"]>["user"]> & {
   role?: string | string[];
@@ -15,8 +15,21 @@ export async function getAdminSession(): Promise<AuthUser | null> {
   return data?.user ? data.user as AuthUser : null;
 }
 
-export async function requireAdmin() {
-  const user = await getAdminSession();
+export async function getAdminSessionForRender(): Promise<AuthUser | null> {
+  const { data } = await authForServerComponents.getSession();
+  return data?.user ? data.user as AuthUser : null;
+}
+
+export function requireAdmin() {
+  return requireAdminWith(getAdminSession);
+}
+
+export function requireAdminForRender() {
+  return requireAdminWith(getAdminSessionForRender);
+}
+
+async function requireAdminWith(getSession: () => Promise<AuthUser | null>) {
+  const user = await getSession();
   if (!user) redirect("/admin");
   if (!isAdmin(user)) redirect("/admin?access=denied");
   return user;

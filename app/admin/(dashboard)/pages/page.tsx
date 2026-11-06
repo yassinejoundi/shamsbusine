@@ -3,7 +3,7 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense } from "react";
 import { cmsPages } from "@/lib/cms/schema";
-import { requireAdmin } from "@/lib/auth/admin";
+import { requireAdminForRender } from "@/lib/auth/admin";
 import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function AdminPagesIndex() {
 
 async function AdminPagesContent() {
   await connection();
-  await requireAdmin();
+  await requireAdminForRender();
 
   return (
     <main id="contenu" className="frame admin-page" tabIndex={-1}>

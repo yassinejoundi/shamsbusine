@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { AdminSignInForm } from "@/components/admin/AdminSignInForm";
 import { AdminSignOutButton } from "@/components/admin/AdminSignOutButton";
-import { getAdminSession, isAdmin } from "@/lib/auth/admin";
+import { getAdminSessionForRender, isAdmin } from "@/lib/auth/admin";
 
 export const metadata: Metadata = {
   title: "Connexion administrateur | Shams Busine",
@@ -25,7 +25,7 @@ export default function AdminLoginPage({
 
 async function AdminLoginContent({ searchParams }: { searchParams: Promise<{ access?: string }> }) {
   await connection();
-  const user = await getAdminSession();
+  const user = await getAdminSessionForRender();
   const { access } = await searchParams;
   if (user && isAdmin(user)) redirect("/admin/pages");
   if (user) {

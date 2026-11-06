@@ -1,4 +1,6 @@
 import "server-only";
+import { headers } from "next/headers";
+import { createAuthServer, extractNeonAuthCookies } from "@neon/auth/server";
 import { createNeonAuth } from "@neon/auth/next/server";
 
 const baseUrl = process.env.NEON_AUTH_BASE_URL;
@@ -11,4 +13,22 @@ if (!baseUrl || !cookieSecret) {
 export const auth = createNeonAuth({
   baseUrl,
   cookies: { secret: cookieSecret },
+});
+
+export const authForServerComponents = createAuthServer({
+  baseUrl,
+  cookieSecret,
+  context: async () => {
+    const requestHeaders = await headers();
+    return {
+      getCookies: () => extractNeonAuthCookies(requestHeaders),
+      // Server Components cannot persist refreshed cookies.
+      setCookie: () => {},
+      getHeader: (name) => requestHeaders.get(name),
+      getOrigin: () => requestHeaders.get("origin")
+        || requestHeaders.get("referer")?.split("/").slice(0, 3).join("/")
+        || "",
+      getFramework: () => "nextjs",
+    };
+  },
 });
