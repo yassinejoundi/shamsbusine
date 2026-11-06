@@ -155,7 +155,11 @@ function AdminCmsSectionForm({
                   onDirtyChange={handleChange}
                   onFileChange={(file, onUploaded) => handleImageFileChange(field.key, file, onUploaded)}
                 />
-                {metadataFields.map(renderTextField)}
+                {metadataFields.length > 0 && (
+                  <div className="admin-cms-image-meta">
+                    {metadataFields.map(renderTextField)}
+                  </div>
+                )}
               </div>
             );
           })}
