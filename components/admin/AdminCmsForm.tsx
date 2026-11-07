@@ -4,6 +4,7 @@ import { startTransition, useActionState, useEffect, useRef, useState, type Form
 import type { CmsPage, CmsSection } from "@/lib/cms/schema";
 import type { CmsValues } from "@/lib/cms/content";
 import { AdminCmsImageField, uploadCmsImage, type CmsImageOption } from "@/components/admin/AdminCmsImageField";
+import { AdminCmsPartnersForm } from "@/components/admin/AdminCmsPartnersForm";
 import { useAdminUnsavedChanges } from "@/components/admin/AdminUnsavedChangesProvider";
 import { saveCmsSection } from "@/app/admin/pages/[slug]/actions";
 
@@ -30,7 +31,9 @@ export function AdminCmsForm({
   return (
     <div className="admin-cms-form">
       {page.sections.map((section) => (
-        <AdminCmsSectionForm key={section.id} page={page} section={section} content={content} images={images} />
+        page.slug === "entreprise" && section.id === "partners"
+          ? <AdminCmsPartnersForm key={section.id} page={page} section={section} content={content} images={images} />
+          : <AdminCmsSectionForm key={section.id} page={page} section={section} content={content} images={images} />
       ))}
     </div>
   );

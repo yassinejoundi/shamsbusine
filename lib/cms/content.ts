@@ -5,6 +5,7 @@ import { v2 as cloudinary } from "cloudinary";
 import assetIndex from "./assets.json";
 import { cmsPageBySlug, defaultCmsContent, type CmsPage } from "./schema";
 import { isAnyCmsUploadedImageId, isCmsImageAssetId, isCmsUploadedImageId } from "./asset-ids";
+import { defaultEntreprisePartners, isValidCmsPartners, parseCmsPartners } from "./partners";
 
 type Asset = (typeof assetIndex.assets)[number];
 const assets = assetIndex.assets as Asset[];
@@ -33,6 +34,9 @@ export function getCmsImageAssets(page: CmsPage, content: CmsValues) {
   const currentUploads = [...new Set(page.sections.flatMap((section) => section.fields)
     .filter((field) => field.kind === "image")
     .map((field) => content[field.key] ?? "")
+    .concat(page.slug === "entreprise"
+      ? (parseCmsPartners(content["partners.items"] ?? "") ?? []).map((partner) => partner.image)
+      : [])
     .filter((publicId) => isCmsUploadedImageId(publicId, page.slug)))];
   return [
     ...existing,
@@ -61,6 +65,30 @@ export async function getCmsContent(slug: string): Promise<CmsValues> {
     const merged = { ...defaults };
     for (const field of page.sections.flatMap((group) => group.fields)) {
       const value = (stored as Record<string, unknown>)[field.key];
+      if (field.kind === "partner-list") {
+        const partners = typeof value === "string" ? parseCmsPartners(value) : null;
+        if (partners && isValidCmsPartners(partners, (image) => isCmsImageAssetId(image, page.slug))) {
+          merged[field.key] = JSON.stringify(partners);
+          continue;
+        }
+        if (page.slug === "entreprise") {
+          const legacyPartners = defaultEntreprisePartners.map((partner, index) => {
+            const legacyName = (stored as Record<string, unknown>)[`partner.${index}.name`];
+            const legacyImage = (stored as Record<string, unknown>)[`partner.${index}.image`];
+            return {
+              ...partner,
+              name: typeof legacyName === "string" && legacyName.trim() && legacyName.length <= 100
+                ? legacyName
+                : partner.name,
+              image: typeof legacyImage === "string" && isCmsImageAssetId(legacyImage, page.slug)
+                ? legacyImage
+                : partner.image,
+            };
+          });
+          merged[field.key] = JSON.stringify(legacyPartners);
+        }
+        continue;
+      }
       if (typeof value !== "string") continue;
       if (field.kind === "image") {
         if (isCmsImageAssetId(value, page.slug)) merged[field.key] = value;

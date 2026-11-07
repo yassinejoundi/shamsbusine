@@ -1,7 +1,9 @@
+import { defaultEntreprisePartners } from "./partners";
+
 export type CmsField = {
   key: string;
   label: string;
-  kind: "text" | "image";
+  kind: "text" | "image" | "partner-list";
   maxLength: number;
   defaultValue: string;
 };
@@ -11,6 +13,7 @@ export type CmsPage = { slug: string; title: string; route: string; sections: Cm
 
 const text = (key: string, label: string, maxLength: number, defaultValue: string): CmsField => ({ key, label, kind: "text", maxLength, defaultValue });
 const image = (key: string, label: string, defaultValue: string): CmsField => ({ key, label, kind: "image", maxLength: 0, defaultValue });
+const partnerList = (key: string, defaultValue: string): CmsField => ({ key, label: "Partenaires", kind: "partner-list", maxLength: 0, defaultValue });
 const section = (id: string, title: string, fields: CmsField[]): CmsSection => ({ id, title, fields });
 
 export const cmsPages: CmsPage[] = [
@@ -142,23 +145,7 @@ export const cmsPages: CmsPage[] = [
       ]),
       section("partners", "Partenaires", [
         text("partners.title", "Titre", 48, "Nos partenaires."), text("partners.intro", "Présentation", 200, "Ils nous font confiance pour leurs projets de construction."),
-        text("partner.0.name", "Partenaire 1, nom", 100, "Agence d’architecture"), image("partner.0.image", "Partenaire 1, logo", "entreprise/partner-agence-architecture"),
-        text("partner.1.name", "Partenaire 2, nom", 100, "Sonasid"), image("partner.1.image", "Partenaire 2, logo", "entreprise/partner-sonasid"),
-        text("partner.2.name", "Partenaire 3, nom", 100, "Ménara Préfa"), image("partner.2.image", "Partenaire 3, logo", "entreprise/partner-menara-prefa"),
-        text("partner.3.name", "Partenaire 4, nom", 100, "Beldi Fusion Kitchen"), image("partner.3.image", "Partenaire 4, logo", "entreprise/partner-beldi-fusion-kitchen"),
-        text("partner.4.name", "Partenaire 5, nom", 100, "Chaoua Briques"), image("partner.4.image", "Partenaire 5, logo", "entreprise/partner-chaoua-briques"),
-        text("partner.5.name", "Partenaire 6, nom", 100, "Royaume du Maroc, ministère de l’Éducation nationale, du Préscolaire et des Sports"), image("partner.5.image", "Partenaire 6, logo", "entreprise/partner-ministere-education"),
-        text("partner.6.name", "Partenaire 7, nom", 100, "Planète Montessori International School"), image("partner.6.image", "Partenaire 7, logo", "entreprise/partner-planete-montessori"),
-        text("partner.7.name", "Partenaire 8, nom", 100, "Mega Engineering"), image("partner.7.image", "Partenaire 8, logo", "entreprise/partner-mega-engineering"),
-        text("partner.8.name", "Partenaire 9, nom", 100, "Association Al Nadi Al Baydaoui de Marrakech"), image("partner.8.image", "Partenaire 9, logo", "entreprise/partner-association-alnadi"),
-        text("partner.9.name", "Partenaire 10, nom", 100, "Laboratoire privé d’analyses et d’essais, L.P.A.E. Agadir"), image("partner.9.image", "Partenaire 10, logo", "entreprise/partner-lpae"),
-        text("partner.10.name", "Partenaire 11, nom", 100, "ART BÉTON, études et travaux béton"), image("partner.10.image", "Partenaire 11, logo", "entreprise/partner-art-beton"),
-        text("partner.11.name", "Partenaire 12, nom", 100, "Tecnitas"), image("partner.11.image", "Partenaire 12, logo", "entreprise/partner-tecnitas"),
-        text("partner.12.name", "Partenaire 13, nom", 100, "Labo Control, laboratoire d’essais, analyses et de contrôle"), image("partner.12.image", "Partenaire 13, logo", "entreprise/partner-labo-control"),
-        text("partner.13.name", "Partenaire 14, nom", 100, "3D Concept"), image("partner.13.image", "Partenaire 14, logo", "entreprise/partner-3d-concept"),
-        text("partner.14.name", "Partenaire 15, nom", 100, "Magriser, systèmes d’irrigation"), image("partner.14.image", "Partenaire 15, logo", "entreprise/partner-magriser"),
-        text("partner.15.name", "Partenaire 16, nom", 100, "Cogetis, systèmes d’étanchéité"), image("partner.15.image", "Partenaire 16, logo", "entreprise/partner-cogetis"),
-        text("partner.16.name", "Partenaire 17, nom", 100, "Carripréfa"), image("partner.16.image", "Partenaire 17, logo", "entreprise/partner-carriprefa"),
+        partnerList("partners.items", JSON.stringify(defaultEntreprisePartners)),
       ]),
       section("enquiry", "Prendre contact", [
         text("enquiry.title", "Titre", 48, "Parlons de votre projet."), text("enquiry.intro", "Présentation", 220, "Indiquez la ville, les travaux envisagés et le stade d’avancement pour cadrer le premier échange."), text("enquiry.action", "Libellé du bouton", 36, "Demander un devis"),

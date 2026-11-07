@@ -43,9 +43,12 @@ export async function POST(request: Request) {
     : undefined;
   const imageField = page?.sections.flatMap((section) => section.fields)
     .find((field) => field.key === fieldKey && field.kind === "image");
+  const isPartnerImage = page?.slug === "entreprise"
+    && typeof fieldKey === "string"
+    && /^partner\.[a-z0-9-]{1,64}\.image$/i.test(fieldKey);
   const file = formData.get("file");
 
-  if (!page || !imageField || !(file instanceof File)) return errorResponse("invalid", 400);
+  if (!page || (!imageField && !isPartnerImage) || !(file instanceof File)) return errorResponse("invalid", 400);
   if (file.type !== "image/webp") return errorResponse("format", 415);
   if (file.size === 0 || file.size > maxUploadBytes) return errorResponse("size", 413);
 

@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { cmsPageBySlug } from "@/lib/cms/schema";
 import { cmsPagePath } from "@/lib/cms/content";
 import { isCmsImageAssetId } from "@/lib/cms/asset-ids";
+import { defaultEntreprisePartners, isValidCmsPartners, parseCmsPartners } from "@/lib/cms/partners";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 
@@ -26,6 +27,19 @@ export async function saveCmsSection(_previousState: CmsSectionSaveState, formDa
   for (const field of section.fields) {
     const raw = formData.get(field.key);
     if (typeof raw !== "string" || raw.length === 0) return { status: "invalid", sectionId };
+    if (field.kind === "partner-list") {
+      const partners = parseCmsPartners(raw);
+      if (!partners || !isValidCmsPartners(partners, (image) => isCmsImageAssetId(image, page.slug))) {
+        return { status: "invalid", sectionId };
+      }
+      sectionContent[field.key] = JSON.stringify(partners);
+      partners.forEach((partner, index) => {
+        if (index >= defaultEntreprisePartners.length || !partner.name.trim() || !partner.image) return;
+        sectionContent[`partner.${index}.name`] = partner.name;
+        sectionContent[`partner.${index}.image`] = partner.image;
+      });
+      continue;
+    }
     if (field.kind === "image") {
       if (!isCmsImageAssetId(raw, page.slug)) return { status: "invalid", sectionId };
     } else if (!raw.trim() || raw.length > field.maxLength) {
