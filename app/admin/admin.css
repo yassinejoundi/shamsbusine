@@ -1,21 +1,19 @@
 .admin-shell {
-  height: 100dvh;
   min-height: 100dvh;
   display: grid;
   grid-template-columns: 236px minmax(0, 1fr);
-  overflow: hidden;
   background: var(--paper);
   color: var(--ink);
 }
 
 .admin-sidebar {
-  height: 100dvh;
+  align-self: start;
+  min-height: 100dvh;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  overflow: visible;
   padding: 1.5rem 1.125rem;
   border-inline-end: 1px solid var(--surface);
   background: var(--ground);
@@ -45,9 +43,8 @@
 .admin-sidebar-action { display: flex; align-items: center; gap: .65rem; width: 100%; min-height: 44px; padding: .625rem .75rem; border: 1px solid var(--input-edge); background: transparent; color: var(--ink); font-family: inherit; font-size: .875rem; font-weight: 500; line-height: 1.25; text-align: start; text-decoration: none; cursor: pointer; }
 .admin-sign-out { justify-content: flex-start; }
 .admin-action-icon { display: block; flex: 0 0 1rem; width: 1rem; height: 1rem; }
-.admin-workspace { min-width: 0; height: 100dvh; overflow-y: auto; overscroll-behavior: contain; background: var(--paper); }
-.admin-page { min-height: calc(100dvh - 18px); padding: clamp(1.25rem, 3.5vw, 3rem); }
-.admin-workspace > .admin-page { min-height: 100%; }
+.admin-workspace { min-width: 0; background: var(--paper); }
+.admin-page { padding: clamp(1.25rem, 3.5vw, 3rem); }
 .admin-page > h1, .admin-heading h1 { max-width: 26ch; font-size: 1.75rem; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
 .admin-intro { max-width: 65ch; margin-block-start: .5rem; color: var(--secondary); font-size: .9375rem; line-height: 1.5; }
 .admin-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-block-end: 2rem; }
@@ -125,8 +122,8 @@
 .admin-unsaved-actions .button { min-height: 44px; padding: .625rem .875rem; cursor: pointer; }
 
 @media (max-width: 880px) {
-  .admin-shell { height: auto; min-height: 100dvh; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); overflow: visible; }
-  .admin-sidebar { height: auto; gap: .75rem; overflow: visible; padding: .75rem 1rem; border-inline-end: 0; border-block-end: 1px solid var(--surface); }
+  .admin-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; }
+  .admin-sidebar { min-height: 0; gap: .75rem; padding: .75rem 1rem; border-inline-end: 0; border-block-end: 1px solid var(--surface); }
   .admin-sidebar-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .admin-brand { grid-template-columns: auto auto; align-items: center; gap: .65rem; }
   .admin-brand img { width: min(7.5rem, 38vw); }
@@ -138,9 +135,6 @@
   .admin-subnav-link { min-height: 40px; margin-inline-start: 0; padding-inline: .55rem; border-inline-start: 0; border-block-end: 2px solid transparent; }
   .admin-subnav-link[aria-current="page"] { border-inline-start: 0; border-block-end-color: var(--accent); background: transparent; }
   .admin-sidebar-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; margin-block-start: 0; padding-block-start: .25rem; }
-  .admin-workspace { height: auto; min-height: 60dvh; overflow: visible; }
-  .admin-page { min-height: 60dvh; }
-  .admin-workspace > .admin-page { min-height: 60dvh; }
 }
 
 @media (max-width: 600px) {
