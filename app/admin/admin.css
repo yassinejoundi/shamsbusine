@@ -7,6 +7,8 @@
 }
 
 .admin-sidebar {
+  position: sticky;
+  top: 0;
   align-self: start;
   min-height: 100dvh;
   min-width: 0;
@@ -123,7 +125,7 @@
 
 @media (max-width: 880px) {
   .admin-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; }
-  .admin-sidebar { min-height: 0; gap: .75rem; padding: .75rem 1rem; border-inline-end: 0; border-block-end: 1px solid var(--surface); }
+  .admin-sidebar { position: static; min-height: 0; gap: .75rem; padding: .75rem 1rem; border-inline-end: 0; border-block-end: 1px solid var(--surface); }
   .admin-sidebar-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .admin-brand { grid-template-columns: auto auto; align-items: center; gap: .65rem; }
   .admin-brand img { width: min(7.5rem, 38vw); }
