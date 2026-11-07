@@ -97,7 +97,7 @@
 .admin-cms-limit { color: var(--secondary); font-size: .8125rem; }
 .admin-cms-image-row { display: grid; grid-column: 1 / -1; gap: 1rem; align-items: start; padding-block: 1.25rem; border-block-start: 1px solid rgb(36 41 35 / 18%); }
 .admin-cms-image-row.has-one-meta, .admin-cms-image-row.has-two-meta { grid-template-columns: minmax(180px, 240px) minmax(0, 1fr); }
-.admin-cms-image-row.no-meta { grid-template-columns: minmax(0, 1fr); }
+.admin-cms-image-row.no-meta { grid-template-columns: minmax(0, 15rem); }
 .admin-cms-image-meta { display: grid; gap: 1rem; min-width: 0; }
 .admin-cms-image-field { display: grid; align-content: start; gap: .5rem; min-width: 0; }
 .admin-image-title { margin: 0; font-size: .875rem; font-weight: 500; }
