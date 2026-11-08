@@ -65,7 +65,15 @@ export async function saveCmsSection(_previousState: CmsSectionSaveState, formDa
       SET content = COALESCE(site_content.content, '{}'::jsonb) || EXCLUDED.content,
           updated_at = now(), updated_by = EXCLUDED.updated_by
     `;
-  } catch {
+  } catch (error) {
+    const databaseError = error && typeof error === "object" ? error as { code?: unknown; constraint?: unknown; message?: unknown } : {};
+    console.error("CMS section save failed", {
+      pageSlug: page.slug,
+      sectionId,
+      code: typeof databaseError.code === "string" ? databaseError.code : "unknown",
+      constraint: typeof databaseError.constraint === "string" ? databaseError.constraint : undefined,
+      message: typeof databaseError.message === "string" ? databaseError.message : "Unknown database error",
+    });
     return { status: "save", sectionId };
   }
 

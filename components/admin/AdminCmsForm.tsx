@@ -196,7 +196,7 @@ function AdminCmsSectionForm({
       {uploadError && <p className="admin-save-error" role="alert">{uploadError}</p>}
       {state.status === "saved" && !changedAfterSave && !isBusy && <p className="admin-save-status" role="status">Modifications enregistrées.</p>}
       {state.status === "invalid" && <p className="admin-save-error" role="alert">Vérifiez les champs obligatoires et leurs limites avant de réessayer.</p>}
-      {state.status === "save" && <p className="admin-save-error" role="alert">Enregistrement impossible. Vérifiez la connexion à la base Neon, puis réessayez.</p>}
+      {state.status === "save" && <p className="admin-save-error" role="alert">Enregistrement impossible. Réessayez. Si le problème persiste, contactez l’administrateur.</p>}
       <button className="button admin-section-save" type="submit" disabled={isBusy}>
         {isUploadingImages ? "Optimisation et enregistrement…" : isPending ? "Enregistrement…" : "Enregistrer les modifications"}
       </button>

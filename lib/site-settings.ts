@@ -19,7 +19,7 @@ export const defaultSiteSettings: SiteSettings = {
   phoneHref: contact.phoneHref,
   email: contact.email,
   whatsapp: contact.whatsapp,
-  address: "",
+  address: contact.address,
   socialLinks,
 };
 

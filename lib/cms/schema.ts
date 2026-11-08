@@ -188,7 +188,7 @@ export const cmsPages: CmsPage[] = [
         text("site.phone", "Téléphone", 30, contact.phone, { inputType: "tel" }),
         text("site.email", "Adresse e-mail", 254, contact.email, { inputType: "email" }),
         text("site.whatsapp", "Lien WhatsApp", 300, contact.whatsapp, { inputType: "url", optional: true }),
-        text("site.address", "Adresse", 300, "", { optional: true }),
+        text("site.address", "Adresse", 300, contact.address, { optional: true }),
       ], "Ces informations apparaissent dans les blocs de contact du site."),
     ],
   },
