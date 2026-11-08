@@ -105,7 +105,7 @@
 .admin-cms-field { display: grid; align-content: start; gap: .45rem; min-width: 0; }
 .admin-cms-field-full { grid-column: 1 / -1; }
 .admin-cms-field label { font-size: .875rem; font-weight: 500; }
-.admin-cms-field input, .admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.4; }
+.admin-cms-field input:not(.admin-upload-file), .admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.4; }
 .admin-cms-field :where(input, textarea, select):focus-visible { border: 2px solid var(--ink); outline: none; }
 .admin-partner-name { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; }
 .admin-cms-field textarea { resize: vertical; }
