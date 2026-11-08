@@ -5,6 +5,8 @@ import { cmsPageBySlug } from "@/lib/cms/schema";
 import { cmsPagePath } from "@/lib/cms/content";
 import { isCmsImageAssetId } from "@/lib/cms/asset-ids";
 import { defaultEntreprisePartners, isValidCmsPartners, parseCmsPartners } from "@/lib/cms/partners";
+import { isValidCmsTextFieldValue } from "@/lib/cms/field-validation";
+import { parseCmsSocialLinks } from "@/lib/cms/social-links";
 import { requireAdmin } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 
@@ -26,7 +28,7 @@ export async function saveCmsSection(_previousState: CmsSectionSaveState, formDa
   const sectionContent: Record<string, string> = {};
   for (const field of section.fields) {
     const raw = formData.get(field.key);
-    if (typeof raw !== "string" || raw.length === 0) return { status: "invalid", sectionId };
+    if (typeof raw !== "string") return { status: "invalid", sectionId };
     if (field.kind === "partner-list") {
       const partners = parseCmsPartners(raw);
       if (!partners || !isValidCmsPartners(partners, (image) => isCmsImageAssetId(image, page.slug))) {
@@ -40,9 +42,15 @@ export async function saveCmsSection(_previousState: CmsSectionSaveState, formDa
       });
       continue;
     }
+    if (field.kind === "social-list") {
+      const links = parseCmsSocialLinks(raw);
+      if (!links || raw.length > field.maxLength) return { status: "invalid", sectionId };
+      sectionContent[field.key] = JSON.stringify(links);
+      continue;
+    }
     if (field.kind === "image") {
       if (!isCmsImageAssetId(raw, page.slug)) return { status: "invalid", sectionId };
-    } else if (!raw.trim() || raw.length > field.maxLength) {
+    } else if (!isValidCmsTextFieldValue(field, raw)) {
       return { status: "invalid", sectionId };
     }
     sectionContent[field.key] = raw;
@@ -61,7 +69,12 @@ export async function saveCmsSection(_previousState: CmsSectionSaveState, formDa
     return { status: "save", sectionId };
   }
 
-  revalidatePath(cmsPagePath(page.slug));
-  revalidatePath(`/admin/pages/${page.slug}`);
+  if (page.scope === "global") {
+    revalidatePath("/", "layout");
+    revalidatePath(`/admin/pages/${page.slug}`);
+  } else {
+    revalidatePath(cmsPagePath(page.slug));
+    revalidatePath(`/admin/pages/${page.slug}`);
+  }
   return { status: "saved", sectionId };
 }

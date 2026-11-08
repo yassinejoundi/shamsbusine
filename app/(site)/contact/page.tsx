@@ -4,6 +4,7 @@ import { ContactEnquiry } from "@/components/contact/ContactEnquiry";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { getCmsContent, type CmsValues } from "@/lib/cms/content";
 import { cmsPageBySlug, defaultCmsContent } from "@/lib/cms/schema";
+import { defaultSiteSettings, getSiteSettings, type SiteSettings } from "@/lib/site-settings";
 
 import "./contact.css";
 
@@ -20,22 +21,22 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Suspense fallback={<ContactContent content={defaultCmsContent(cmsPageBySlug.contact)} />}>
+    <Suspense fallback={<ContactContent content={defaultCmsContent(cmsPageBySlug.contact)} settings={defaultSiteSettings} />}>
       <ContactFromCms />
     </Suspense>
   );
 }
 
 async function ContactFromCms() {
-  const content = await getCmsContent("contact");
-  return <ContactContent content={content} />;
+  const [content, settings] = await Promise.all([getCmsContent("contact"), getSiteSettings()]);
+  return <ContactContent content={content} settings={settings} />;
 }
 
-function ContactContent({ content }: { content: CmsValues }) {
+function ContactContent({ content, settings }: { content: CmsValues; settings: SiteSettings }) {
   return (
     <main id="contenu" className="contact-page" tabIndex={-1}>
-      <ContactHero content={content} />
-      <ContactEnquiry />
+      <ContactHero content={content} settings={settings} />
+      <ContactEnquiry contactEmail={settings.email} />
     </main>
   );
 }

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Arrow } from "@/components/site/Arrow";
 import { isValidPhone, projectTypes } from "@/lib/enquiry-validation";
-import { contact } from "@/lib/site";
 
 type QuoteFormCopy = {
   formLabel: string;
@@ -37,7 +36,7 @@ const quoteFormCopy: QuoteFormCopy = {
   submitLabel: "Envoyer ma demande",
 };
 
-export function QuoteForm() {
+export function QuoteForm({ contactEmail }: { contactEmail: string }) {
   const copy = quoteFormCopy;
   const [notice, setNotice] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,7 +97,7 @@ export function QuoteForm() {
       <p className="form-note" id="upload-note">{copy.attachmentsNote}</p>
       <button type="submit" className="button" aria-describedby="upload-note" disabled={isSubmitting}>{isSubmitting ? "Envoi en cours…" : copy.submitLabel} <Arrow /></button>
       <p className="form-status" role="status" aria-live="polite">{notice}</p>
-      <noscript><p className="form-note">Pour nous contacter sans JavaScript, écrivez à <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p></noscript>
+      <noscript><p className="form-note">Pour nous contacter sans JavaScript, écrivez à <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p></noscript>
     </form>
   );
 }

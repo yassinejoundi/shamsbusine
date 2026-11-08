@@ -88,16 +88,35 @@
 .admin-notice { border-inline-start: 3px solid var(--ink); }
 .admin-error { border-inline-start: 3px solid #9b332c; }
 .admin-cms-form { display: grid; gap: 1rem; }
+.admin-site-settings { gap: 1.5rem; }
 .admin-cms-section-form { display: grid; gap: .75rem; min-width: 0; }
+.admin-site-settings-row { grid-template-columns: minmax(12rem, .55fr) minmax(0, 1.45fr); align-items: start; gap: 1rem; }
+.admin-site-settings-guide { padding-block-start: .75rem; }
+.admin-site-settings-guide h2 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.admin-site-settings-guide p { margin-block-start: .45rem; color: var(--secondary); font-size: .875rem; line-height: 1.5; }
+.admin-site-settings-legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; }
+.admin-site-settings .admin-cms-section { background: var(--ground); }
+.admin-site-settings .admin-cms-preview { aspect-ratio: 3 / 1; object-fit: contain; background: var(--paper); }
+.admin-site-settings-row .admin-section-save { grid-column: 2; }
 .admin-cms-section { min-width: 0; margin: 0; padding: clamp(1.125rem, 2.5vw, 2rem); border: 0; background: var(--surface); }
 .admin-cms-section legend { padding: 0 .4rem; font-size: 1.125rem; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; }
 .admin-cms-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block-start: 1rem; }
 .admin-cms-field { display: grid; align-content: start; gap: .45rem; min-width: 0; }
 .admin-cms-field label { font-size: .875rem; font-weight: 500; }
-.admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.4; }
+.admin-cms-field input, .admin-cms-field textarea, .admin-cms-field select { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; line-height: 1.4; }
+.admin-cms-field :where(input, textarea, select):focus-visible { border: 2px solid var(--ink); outline: none; }
 .admin-partner-name { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid rgb(36 41 35 / 30%); border-radius: 0; background: var(--paper); color: var(--ink); font-size: 1rem; }
 .admin-cms-field textarea { resize: vertical; }
 .admin-cms-limit { color: var(--secondary); font-size: .8125rem; }
+.admin-cms-social-links { display: grid; grid-column: 1 / -1; gap: .75rem; min-width: 0; margin: 0; padding: 1rem; border: 1px solid var(--surface); background: var(--ground); }
+.admin-cms-social-links legend { padding-inline: .4rem; font-size: .9375rem; font-weight: 500; }
+.admin-social-rows { display: grid; gap: .75rem; }
+.admin-social-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto; align-items: end; gap: .75rem; padding-block-end: .75rem; border-block-end: 1px solid var(--surface); }
+.admin-social-remove, .admin-add-social { min-height: 44px; padding: .625rem .875rem; border: 1px solid var(--input-edge); background: var(--paper); color: var(--ink); font-family: inherit; font-size: .875rem; font-weight: 500; cursor: pointer; }
+.admin-add-social { justify-self: start; }
+.admin-add-social:disabled { cursor: not-allowed; opacity: .65; }
+.admin-social-remove:focus-visible, .admin-add-social:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.admin-social-preview { margin: 0; color: var(--secondary); font-size: .875rem; }
 .admin-partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1rem; width: 100%; margin-block-start: 1rem; }
 .admin-partner-card { display: grid; align-content: start; gap: 1rem; min-width: 0; padding: 1rem; border: 1px solid var(--surface); background: var(--ground); }
 .admin-partner-card.is-hidden { border-style: dashed; }
@@ -155,8 +174,12 @@
   .admin-heading { flex-direction: column; gap: .5rem; margin-block-end: 1.5rem; }
   .admin-page-list { margin-block-start: 1.125rem; }
   .admin-cms-fields { grid-template-columns: minmax(0, 1fr); }
+  .admin-site-settings-row { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .admin-site-settings-guide { padding-block-start: .25rem; }
+  .admin-site-settings-row .admin-section-save { grid-column: 1; }
   .admin-enquiry-heading { align-items: flex-start; flex-direction: column; gap: .35rem; }
   .admin-cms-image-row.has-one-meta, .admin-cms-image-row.has-two-meta { grid-template-columns: minmax(0, 1fr); }
+  .admin-social-row { grid-template-columns: minmax(0, 1fr); }
   .admin-cms-preview { width: min(100%, 18rem); }
   .admin-image-select { width: min(100%, 18rem); }
   .admin-unsaved-actions { flex-direction: column-reverse; }
@@ -184,7 +207,7 @@
   .admin-nav-link:focus-visible, .admin-subnav-link:focus-visible, .admin-brand:focus-visible, .admin-sidebar-action:focus-visible,
   .admin-page-list a:focus-visible, .admin-upload-file:focus-visible + .admin-image-select,
   .admin-cms-field :where(input, textarea, select):focus-visible,
-  .admin-partner-toggle:focus-visible, .admin-add-partner:focus-visible {
+  .admin-partner-toggle:focus-visible, .admin-add-partner:focus-visible, .admin-social-remove:focus-visible, .admin-add-social:focus-visible {
     outline: 2px solid CanvasText;
     outline-offset: 2px;
     border-color: CanvasText;

@@ -1,20 +1,24 @@
 import { defaultEntreprisePartners } from "./partners";
+import { contact, socialLinks } from "../site";
 
 export type CmsField = {
   key: string;
   label: string;
-  kind: "text" | "image" | "partner-list";
+  kind: "text" | "image" | "partner-list" | "social-list";
   maxLength: number;
   defaultValue: string;
+  optional?: boolean;
+  inputType?: "text" | "email" | "tel" | "url";
 };
 
-export type CmsSection = { id: string; title: string; fields: CmsField[] };
-export type CmsPage = { slug: string; title: string; route: string; sections: CmsSection[] };
+export type CmsSection = { id: string; title: string; description?: string; fields: CmsField[] };
+export type CmsPage = { slug: string; title: string; route: string; scope?: "global"; sections: CmsSection[] };
 
-const text = (key: string, label: string, maxLength: number, defaultValue: string): CmsField => ({ key, label, kind: "text", maxLength, defaultValue });
+const text = (key: string, label: string, maxLength: number, defaultValue: string, options: Pick<CmsField, "inputType" | "optional"> = {}): CmsField => ({ key, label, kind: "text", maxLength, defaultValue, ...options });
 const image = (key: string, label: string, defaultValue: string): CmsField => ({ key, label, kind: "image", maxLength: 0, defaultValue });
 const partnerList = (key: string, defaultValue: string): CmsField => ({ key, label: "Partenaires", kind: "partner-list", maxLength: 0, defaultValue });
-const section = (id: string, title: string, fields: CmsField[]): CmsSection => ({ id, title, fields });
+const socialList = (key: string, defaultValue: string): CmsField => ({ key, label: "Réseaux sociaux", kind: "social-list", maxLength: 10_000, defaultValue });
+const section = (id: string, title: string, fields: CmsField[], description?: string): CmsSection => ({ id, title, fields, description });
 
 export const cmsPages: CmsPage[] = [
   {
@@ -170,6 +174,22 @@ export const cmsPages: CmsPage[] = [
       section("enquiry", "Prendre contact", [
         text("enquiry.title", "Titre", 48, "Un projet à faire avancer ?"), text("enquiry.intro", "Présentation", 220, "Pour un premier échange utile, indiquez la ville, les travaux envisagés et l’étape où vous en êtes."), text("enquiry.action", "Libellé du bouton", 36, "Décrire mon projet"), text("gallery.loading", "Message de chargement", 80, "Chargement des vues de projets…"),
       ]),
+    ],
+  },
+  {
+    slug: "site-settings", title: "Informations du site", route: "/", scope: "global", sections: [
+      section("identity", "Logo du site", [
+        image("site.logo", "Logo principal", "shared/shamsbusine-logo"),
+      ], "Ce logo apparaît dans l’en-tête et le pied de page."),
+      section("social", "Réseaux sociaux", [
+        socialList("site.socialLinks", JSON.stringify(socialLinks)),
+      ], "Gérez les profils publics de Shams Busine."),
+      section("contact", "Coordonnées", [
+        text("site.phone", "Téléphone", 30, contact.phone, { inputType: "tel" }),
+        text("site.email", "Adresse e-mail", 254, contact.email, { inputType: "email" }),
+        text("site.whatsapp", "Lien WhatsApp", 300, contact.whatsapp, { inputType: "url", optional: true }),
+        text("site.address", "Adresse", 300, "", { optional: true }),
+      ], "Ces informations apparaissent dans les blocs de contact du site."),
     ],
   },
 ];

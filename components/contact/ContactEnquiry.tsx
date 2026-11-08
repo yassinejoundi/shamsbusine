@@ -1,6 +1,6 @@
 import { QuoteForm } from "@/components/home/QuoteForm";
 
-export function ContactEnquiry() {
+export function ContactEnquiry({ contactEmail }: { contactEmail: string }) {
   return (
     <section id="devis" className="contact-enquiry" aria-labelledby="contact-enquiry-title">
       <div className="frame contact-enquiry-layout">
@@ -10,7 +10,7 @@ export function ContactEnquiry() {
         </div>
         <div className="contact-enquiry-form" aria-labelledby="contact-form-title" data-reveal="wipe-right" data-reveal-delay="1">
           <h3 id="contact-form-title">Décrire mon projet</h3>
-          <QuoteForm />
+          <QuoteForm contactEmail={contactEmail} />
         </div>
       </div>
     </section>

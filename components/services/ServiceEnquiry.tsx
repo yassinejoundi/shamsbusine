@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Arrow } from "@/components/site/Arrow";
-import { contact } from "@/lib/site";
 import { cmsText, type CmsValues } from "@/lib/cms/content";
+import type { SiteSettings } from "@/lib/site-settings";
 
-export function ServiceEnquiry({ content }: { content: CmsValues }) {
+export function ServiceEnquiry({ content, settings }: { content: CmsValues; settings: SiteSettings }) {
   return (
     <section className="services-enquiry" aria-labelledby="enquiry-heading">
       <div className="frame services-enquiry-layout">
@@ -21,8 +21,8 @@ export function ServiceEnquiry({ content }: { content: CmsValues }) {
           <div className="services-enquiry-contact">
             <Link href="/contact/#devis" className="button services-quote-action">{cmsText(content, "enquiry.action")} <Arrow /></Link>
             <address>
-              <a href={contact.phoneHref}>{contact.phone}</a>
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              <a href={settings.phoneHref}>{settings.phone}</a>
+              <a href={`mailto:${settings.email}`}>{settings.email}</a>
             </address>
           </div>
         </div>

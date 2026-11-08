@@ -4,13 +4,14 @@ import { navigation } from "@/lib/site";
 import { Arrow } from "./Arrow";
 import { MobileMenu } from "./MobileMenu";
 import { NavigationLink } from "./NavigationLink";
-import { getCloudinaryImage } from "@/lib/cms/content";
+import { defaultSiteSettings, getSiteSettings } from "@/lib/site-settings";
 
-export function SiteNavbar() {
+export async function SiteNavbar() {
+  const settings = await getSiteSettings();
   return (
     <header className="site-header frame">
       <NavigationLink href="/" className="brand" aria-label="Shams Busine, accueil">
-        <Image src={getCloudinaryImage("shared/shamsbusine-logo")} width={106} height={88} alt="" />
+        <Image src={settings.logo} width={106} height={88} alt="" />
       </NavigationLink>
       <nav className="desktop-nav" aria-label="Navigation principale">
         {navigation.slice(1).map(({ href, label }) => <NavigationLink key={href} href={href}>{label}</NavigationLink>)}
@@ -27,7 +28,7 @@ export function SiteNavbarFallback() {
   return (
     <header className="site-header frame">
       <Link href="/" className="brand" aria-label="Shams Busine, accueil">
-        <Image src={getCloudinaryImage("shared/shamsbusine-logo")} width={106} height={88} alt="" />
+        <Image src={defaultSiteSettings.logo} width={106} height={88} alt="" />
       </Link>
       <nav className="desktop-nav" aria-label="Navigation principale">
         {navigation.slice(1).map(({ href, label }) => <Link key={href} href={href}>{label}</Link>)}

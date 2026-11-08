@@ -32,7 +32,7 @@ async function AdminPagesContent() {
       <header className="admin-heading">
         <div>
           <h1>Contenu du site</h1>
-          <p className="admin-intro">Choisissez une page pour modifier les textes et images affichés sur le site.</p>
+          <p className="admin-intro">Choisissez une page pour modifier son contenu ou les informations partagées par tout le site.</p>
         </div>
       </header>
       <ul className="admin-page-list">
@@ -41,7 +41,7 @@ async function AdminPagesContent() {
             <Link href={`/admin/pages/${page.slug}`}>
               <span>
                 <span className="admin-page-title">{page.title}</span>
-                <span className="admin-page-route">{page.route}</span>
+                <span className="admin-page-route">{page.scope === "global" ? "Toutes les pages" : page.route}</span>
               </span>
               <span className="admin-page-edit">Modifier</span>
             </Link>

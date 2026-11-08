@@ -167,7 +167,7 @@ details > p { padding-block-start: 1rem; max-width: 53ch; }
 .quote-address > svg { margin-block-start: .25rem; color: var(--accent); }
 .quote-address > span { display: grid; gap: .4rem; }
 .quote-address strong { color: var(--accent); font-size: .875rem; font-weight: 600; }
-.quote-address span span { line-height: 1.5; }
+.quote-address span span { line-height: 1.5; white-space: pre-line; }
 .quote-form-panel { padding: clamp(1.5rem, 3vw, 3.25rem); background: var(--ground); color: var(--ink); }
 .quote-form-heading { margin-block-end: 1.75rem; }
 .quote-form-heading h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: -.04em; }
@@ -204,6 +204,7 @@ textarea::placeholder { color: var(--secondary); }
 .footer-social { margin-block-start: .75rem; }
 .footer-social ul { display: flex; flex-wrap: wrap; gap: 0 1rem; margin: 0; padding: 0; list-style: none; }
 .footer-contact .text-link { color: var(--accent); margin-block-end: .5rem; }
+.footer-contact address { max-width: 40ch; margin-block-start: .5rem; font-style: normal; line-height: 1.5; white-space: pre-line; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-block-start: 4rem; }
 .footer-bottom a { min-height: 44px; display: inline-flex; align-items: center; gap: 1rem; }
 

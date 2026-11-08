@@ -45,7 +45,9 @@ async function CmsPageEditorContent({ params }: { params: Promise<{ slug: string
       <header className="admin-heading">
         <div>
           <h1>{page.title}</h1>
-          <p className="admin-intro">Modifiez les textes et les images publiés sur <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>.</p>
+          <p className="admin-intro">{page.scope === "global"
+            ? "Ces coordonnées, réseaux sociaux et ce logo sont partagés sur toutes les pages publiques."
+            : <>Modifiez les textes et les images publiés sur <Link href={page.route} target="_blank" rel="noreferrer">{page.route}</Link>.</>}</p>
         </div>
       </header>
       <AdminCmsForm page={page} content={content} images={images} />

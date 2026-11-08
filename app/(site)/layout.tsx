@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { SiteNavbar, SiteNavbarFallback } from "@/components/site/SiteNavbar";
-import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteFooter, SiteFooterFallback } from "@/components/site/SiteFooter";
 import { ScrollReveals } from "@/components/site/ScrollReveals";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -10,7 +10,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <SiteNavbar />
       </Suspense>
       {children}
-      <SiteFooter />
+      <Suspense fallback={<SiteFooterFallback />}>
+        <SiteFooter />
+      </Suspense>
       <Suspense fallback={null}>
         <ScrollReveals />
       </Suspense>

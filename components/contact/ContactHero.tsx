@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/site/Arrow";
-import { contact } from "@/lib/site";
 import { cmsImage, cmsText, type CmsValues } from "@/lib/cms/content";
+import type { SiteSettings } from "@/lib/site-settings";
 
-export function ContactHero({ content }: { content: CmsValues }) {
+export function ContactHero({ content, settings }: { content: CmsValues; settings: SiteSettings }) {
   return (
     <section className="contact-hero frame" aria-labelledby="contact-title">
       <div className="contact-hero-heading">
@@ -16,8 +16,8 @@ export function ContactHero({ content }: { content: CmsValues }) {
           <p>{cmsText(content, "hero.intro")}</p>
           <Link href="#devis" className="button">{cmsText(content, "hero.action")} <Arrow /></Link>
           <div className="contact-direct-links">
-            <a href={contact.phoneHref}>Appeler · {contact.phone}</a>
-            <a href={`mailto:${contact.email}`}>Écrire · {contact.email}</a>
+            <a href={settings.phoneHref}>Appeler · {settings.phone}</a>
+            <a href={`mailto:${settings.email}`}>Écrire · {settings.email}</a>
           </div>
         </div>
         <div className="contact-hero-visuals">

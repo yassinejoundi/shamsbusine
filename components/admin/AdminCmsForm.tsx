@@ -5,6 +5,7 @@ import type { CmsPage, CmsSection } from "@/lib/cms/schema";
 import type { CmsValues } from "@/lib/cms/content";
 import { AdminCmsImageField, uploadCmsImage, type CmsImageOption } from "@/components/admin/AdminCmsImageField";
 import { AdminCmsPartnersForm } from "@/components/admin/AdminCmsPartnersForm";
+import { AdminCmsSocialLinksField } from "@/components/admin/AdminCmsSocialLinksField";
 import { useAdminUnsavedChanges } from "@/components/admin/AdminUnsavedChangesProvider";
 import { saveCmsSection } from "@/app/admin/pages/[slug]/actions";
 
@@ -29,7 +30,7 @@ export function AdminCmsForm({
   images: CmsImageOption[];
 }) {
   return (
-    <div className="admin-cms-form">
+    <div className={`admin-cms-form${page.scope === "global" ? " admin-site-settings" : ""}`}>
       {page.sections.map((section) => (
         page.slug === "entreprise" && section.id === "partners"
           ? <AdminCmsPartnersForm key={section.id} page={page} section={section} content={content} images={images} />
@@ -117,16 +118,29 @@ function AdminCmsSectionForm({
     return (
       <div className="admin-cms-field" key={field.key}>
         <label htmlFor={id}>{field.label}</label>
-        <textarea
-          id={id}
-          name={field.key}
-          defaultValue={value}
-          rows={rows}
-          maxLength={field.maxLength}
-          required
-          aria-describedby={`${id}-limit`}
-          onChange={handleChange}
-        />
+        {field.inputType ? (
+          <input
+            id={id}
+            name={field.key}
+            type={field.inputType}
+            defaultValue={value}
+            maxLength={field.maxLength}
+            required={!field.optional}
+            aria-describedby={`${id}-limit`}
+            onChange={handleChange}
+          />
+        ) : (
+          <textarea
+            id={id}
+            name={field.key}
+            defaultValue={value}
+            rows={rows}
+            maxLength={field.maxLength}
+            required={!field.optional}
+            aria-describedby={`${id}-limit`}
+            onChange={handleChange}
+          />
+        )}
         <span id={`${id}-limit`} className="admin-cms-limit">Maximum {field.maxLength} caractères</span>
       </div>
     );
@@ -135,15 +149,25 @@ function AdminCmsSectionForm({
   const consumedFieldKeys = new Set<string>();
 
   return (
-    <form action={formAction} className="admin-cms-section-form" aria-busy={isBusy} onSubmit={handleSubmit}>
+    <form action={formAction} className={`admin-cms-section-form${page.scope === "global" ? " admin-site-settings-row" : ""}`} aria-busy={isBusy} onSubmit={handleSubmit}>
       <input type="hidden" name="slug" value={page.slug} />
       <input type="hidden" name="sectionId" value={section.id} />
+      {page.scope === "global" && (
+        <div className="admin-site-settings-guide">
+          <h2>{section.title}</h2>
+          {section.description && <p>{section.description}</p>}
+        </div>
+      )}
       <fieldset className="admin-cms-section" disabled={isBusy}>
-        <legend>{section.title}</legend>
+        <legend className={page.scope === "global" ? "admin-site-settings-legend" : undefined}>{section.title}</legend>
         <div className="admin-cms-fields">
           {section.fields.map((field) => {
             if (consumedFieldKeys.has(field.key)) return null;
-            if (field.kind !== "image") return renderTextField(field);
+            if (field.kind === "text") return renderTextField(field);
+            if (field.kind === "social-list") {
+              return <AdminCmsSocialLinksField key={field.key} name={field.key} label={field.label} value={content[field.key] ?? field.defaultValue} onDirtyChange={handleChange} />;
+            }
+            if (field.kind !== "image") return null;
             const metadataFields = relatedImageFields(field, section.fields);
             metadataFields.forEach((metadata) => consumedFieldKeys.add(metadata.key));
             const rowClass = metadataFields.length === 1 ? "has-one-meta" : metadataFields.length > 1 ? "has-two-meta" : "no-meta";

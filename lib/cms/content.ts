@@ -6,6 +6,8 @@ import assetIndex from "./assets.json";
 import { cmsPageBySlug, defaultCmsContent, type CmsPage } from "./schema";
 import { isAnyCmsUploadedImageId, isCmsImageAssetId, isCmsUploadedImageId } from "./asset-ids";
 import { defaultEntreprisePartners, isValidCmsPartners, parseCmsPartners } from "./partners";
+import { isValidCmsTextFieldValue } from "./field-validation";
+import { parseCmsSocialLinks } from "./social-links";
 
 type Asset = (typeof assetIndex.assets)[number];
 const assets = assetIndex.assets as Asset[];
@@ -89,10 +91,15 @@ export async function getCmsContent(slug: string): Promise<CmsValues> {
         }
         continue;
       }
+      if (field.kind === "social-list") {
+        const links = typeof value === "string" ? parseCmsSocialLinks(value) : null;
+        if (links) merged[field.key] = JSON.stringify(links);
+        continue;
+      }
       if (typeof value !== "string") continue;
       if (field.kind === "image") {
         if (isCmsImageAssetId(value, page.slug)) merged[field.key] = value;
-      } else if (value.trim().length > 0 && value.length <= field.maxLength) {
+      } else if (isValidCmsTextFieldValue(field, value)) {
         merged[field.key] = value;
       }
     }

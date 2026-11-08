@@ -9,6 +9,7 @@ import { ServiceQuestions } from "@/components/services/ServiceQuestions";
 import { ServiceEnquiry } from "@/components/services/ServiceEnquiry";
 import { getCmsContent, type CmsValues } from "@/lib/cms/content";
 import { cmsPageBySlug, defaultCmsContent } from "@/lib/cms/schema";
+import { defaultSiteSettings, getSiteSettings, type SiteSettings } from "@/lib/site-settings";
 
 import "./services.css";
 
@@ -25,18 +26,18 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <Suspense fallback={<ServicesContent content={defaultCmsContent(cmsPageBySlug.services)} />}>
+    <Suspense fallback={<ServicesContent content={defaultCmsContent(cmsPageBySlug.services)} settings={defaultSiteSettings} />}>
       <ServicesFromCms />
     </Suspense>
   );
 }
 
 async function ServicesFromCms() {
-  const content = await getCmsContent("services");
-  return <ServicesContent content={content} />;
+  const [content, settings] = await Promise.all([getCmsContent("services"), getSiteSettings()]);
+  return <ServicesContent content={content} settings={settings} />;
 }
 
-function ServicesContent({ content }: { content: CmsValues }) {
+function ServicesContent({ content, settings }: { content: CmsValues; settings: SiteSettings }) {
   return (
     <main id="contenu" className="services-page" tabIndex={-1}>
       <ServicesHero content={content} />
@@ -45,7 +46,7 @@ function ServicesContent({ content }: { content: CmsValues }) {
       <ServiceProjects content={content} />
       <ServiceProcess content={content} />
       <ServiceQuestions content={content} />
-      <ServiceEnquiry content={content} />
+      <ServiceEnquiry content={content} settings={settings} />
     </main>
   );
 }

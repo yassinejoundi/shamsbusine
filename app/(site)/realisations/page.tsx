@@ -5,6 +5,7 @@ import { Arrow } from "@/components/site/Arrow";
 import { ProjectGallery } from "@/components/realisations/ProjectGallery";
 import { getCmsContent, type CmsValues } from "@/lib/cms/content";
 import { cmsPageBySlug, defaultCmsContent } from "@/lib/cms/schema";
+import { defaultSiteSettings, getSiteSettings, type SiteSettings } from "@/lib/site-settings";
 import "./realisations.css";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RealisationsPage({
   searchParams: Promise<{ vue?: string | string[] }>;
 }) {
   return (
-    <Suspense fallback={<RealisationsContent content={defaultCmsContent(cmsPageBySlug.realisations)} searchParams={searchParams} />}>
+    <Suspense fallback={<RealisationsContent content={defaultCmsContent(cmsPageBySlug.realisations)} settings={defaultSiteSettings} searchParams={searchParams} />}>
       <RealisationsFromCms searchParams={searchParams} />
     </Suspense>
   );
@@ -35,15 +36,17 @@ async function RealisationsFromCms({
 }: {
   searchParams: Promise<{ vue?: string | string[] }>;
 }) {
-  const content = await getCmsContent("realisations");
-  return <RealisationsContent content={content} searchParams={searchParams} />;
+  const [content, settings] = await Promise.all([getCmsContent("realisations"), getSiteSettings()]);
+  return <RealisationsContent content={content} settings={settings} searchParams={searchParams} />;
 }
 
 function RealisationsContent({
   content,
+  settings,
   searchParams,
 }: {
   content: CmsValues;
+  settings: SiteSettings;
   searchParams: Promise<{ vue?: string | string[] }>;
 }) {
   return (
@@ -70,8 +73,8 @@ function RealisationsContent({
             <Link href="/contact/#devis" className="button">
               {content["enquiry.action"]} <Arrow />
             </Link>
-            <a href="tel:+212777543997">+212 777 54 39 97</a>
-            <a href="mailto:info@shamsbusine.com">info@shamsbusine.com</a>
+            <a href={settings.phoneHref}>{settings.phone}</a>
+            <a href={`mailto:${settings.email}`}>{settings.email}</a>
           </div>
         </div>
       </section>
