@@ -8,13 +8,14 @@ export type CmsField = {
   maxLength: number;
   defaultValue: string;
   optional?: boolean;
+  fullWidth?: boolean;
   inputType?: "text" | "email" | "tel" | "url";
 };
 
 export type CmsSection = { id: string; title: string; description?: string; fields: CmsField[] };
 export type CmsPage = { slug: string; title: string; route: string; scope?: "global"; sections: CmsSection[] };
 
-const text = (key: string, label: string, maxLength: number, defaultValue: string, options: Pick<CmsField, "inputType" | "optional"> = {}): CmsField => ({ key, label, kind: "text", maxLength, defaultValue, ...options });
+const text = (key: string, label: string, maxLength: number, defaultValue: string, options: Pick<CmsField, "inputType" | "optional" | "fullWidth"> = {}): CmsField => ({ key, label, kind: "text", maxLength, defaultValue, ...options });
 const image = (key: string, label: string, defaultValue: string): CmsField => ({ key, label, kind: "image", maxLength: 0, defaultValue });
 const partnerList = (key: string, defaultValue: string): CmsField => ({ key, label: "Partenaires", kind: "partner-list", maxLength: 0, defaultValue });
 const socialList = (key: string, defaultValue: string): CmsField => ({ key, label: "Réseaux sociaux", kind: "social-list", maxLength: 10_000, defaultValue });
@@ -185,10 +186,11 @@ export const cmsPages: CmsPage[] = [
         socialList("site.socialLinks", JSON.stringify(socialLinks)),
       ], "Gérez les profils publics de Shams Busine."),
       section("contact", "Coordonnées", [
-        text("site.phone", "Téléphone", 30, contact.phone, { inputType: "tel" }),
+        text("site.phone", "Téléphone", 15, contact.phone, { inputType: "tel" }),
         text("site.email", "Adresse e-mail", 254, contact.email, { inputType: "email" }),
-        text("site.whatsapp", "Lien WhatsApp", 300, contact.whatsapp, { inputType: "url", optional: true }),
-        text("site.address", "Adresse", 300, contact.address, { optional: true }),
+        text("site.whatsappNumber", "Numéro WhatsApp", 15, contact.whatsappNumber, { inputType: "tel", optional: true, fullWidth: true }),
+        text("site.whatsappMessage", "Message WhatsApp", 500, contact.whatsappMessage, { optional: true, fullWidth: true }),
+        text("site.address", "Adresse", 300, contact.address, { optional: true, fullWidth: true }),
       ], "Ces informations apparaissent dans les blocs de contact du site."),
     ],
   },

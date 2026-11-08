@@ -45,6 +45,7 @@ export function QuoteForm({ contactEmail }: { contactEmail: string }) {
     <form className="quote-form" aria-label={copy.formLabel} encType="multipart/form-data" onInput={(event) => {
       const field = event.target;
       if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
+        if (field instanceof HTMLInputElement && field.name === "phone") field.value = field.value.replace(/\D/g, "");
         field.setCustomValidity("");
         if (field instanceof HTMLInputElement && field.name === "phone" && field.value && !isValidPhone(field.value)) {
           field.setCustomValidity("Saisissez un numéro de téléphone valide.");
@@ -88,7 +89,7 @@ export function QuoteForm({ contactEmail }: { contactEmail: string }) {
         <label><span className="form-label-text">{copy.cityLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="city" autoComplete="address-level2" required maxLength={100} /></label>
       </div>
       <div className="form-row">
-        <label><span className="form-label-text">{copy.phoneLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={24} /></label>
+        <label><span className="form-label-text">{copy.phoneLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="phone" type="tel" autoComplete="tel" inputMode="numeric" pattern="(?:[1-9][0-9]{7,14}|0[5-7][0-9]{8})" title="Saisissez 8 à 15 chiffres avec l’indicatif du pays ou un numéro marocain sur 10 chiffres commençant par 05, 06 ou 07." required maxLength={15} /></label>
         <label><span className="form-label-text">{copy.emailLabel} <span className="required-mark" aria-hidden="true">*</span></span><input name="email" type="email" autoComplete="email" required maxLength={254} /></label>
       </div>
       <label><span className="form-label-text">{copy.typeLabel} <span className="required-mark" aria-hidden="true">*</span></span><span className="form-select"><select name="type" defaultValue="" required><option value="" disabled>{copy.typePlaceholder}</option>{projectTypes.map((type) => <option key={type}>{type}</option>)}</select><span className="form-select-arrow" aria-hidden="true"><FontAwesomeIcon icon={faChevronDown} /></span></span></label>

@@ -16,7 +16,7 @@ export function ContactHero({ content, settings }: { content: CmsValues; setting
           <p>{cmsText(content, "hero.intro")}</p>
           <Link href="#devis" className="button">{cmsText(content, "hero.action")} <Arrow /></Link>
           <div className="contact-direct-links">
-            <a href={settings.phoneHref}>Appeler · {settings.phone}</a>
+            <a href={settings.phoneHref}>Appeler · {settings.phoneDisplay}</a>
             <a href={`mailto:${settings.email}`}>Écrire · {settings.email}</a>
           </div>
         </div>

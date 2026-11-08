@@ -30,11 +30,11 @@ function SiteFooterContent({ settings }: { settings: SiteSettings }) {
           </nav>
           <div className="footer-contact">
             <Link className="text-link" href="/contact/#devis">Votre prochain projet</Link>
-            <a href={settings.phoneHref}>{settings.phone}</a>
+            <a href={settings.phoneHref}>{settings.phoneDisplay}</a>
             <a href={`mailto:${settings.email}`}>{settings.email}</a>
             {settings.address && <address>{settings.address}</address>}
             {settings.socialLinks.length > 0 && <nav className="footer-social" aria-label="Réseaux sociaux">
-              <ul>{settings.socialLinks.map(({ href, label }, index) => <li key={`${href}-${index}`}><a href={href}>{label}</a></li>)}</ul>
+              <ul>{settings.socialLinks.map(({ href, label }, index) => <li key={`${href}-${index}`}><a href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} (ouvre dans un nouvel onglet)`}>{label}</a></li>)}</ul>
             </nav>}
           </div>
         </div>

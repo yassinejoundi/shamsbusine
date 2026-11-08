@@ -11,8 +11,8 @@ export function QuoteSection({ settings }: { settings: SiteSettings }) {
           <h2 id="quote-title">Bâtissons<br />la suite.</h2>
           <p>Construction, rénovation ou aménagement : racontez-nous votre besoin pour préciser ensemble les prochaines étapes.</p>
           <div className="contact-links">
-            <a href={settings.phoneHref}><FontAwesomeIcon icon={faPhone} aria-hidden="true" /> {settings.phone}</a>
-            {settings.whatsapp && <a href={settings.whatsapp}><FontAwesomeIcon icon={faCommentDots} aria-hidden="true" /> Échanger sur WhatsApp</a>}
+            <a href={settings.phoneHref}><FontAwesomeIcon icon={faPhone} aria-hidden="true" /> {settings.phoneDisplay}</a>
+            {settings.whatsappHref && <a href={settings.whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Échanger sur WhatsApp (ouvre dans un nouvel onglet)"><FontAwesomeIcon icon={faCommentDots} aria-hidden="true" /> Échanger sur WhatsApp</a>}
             <a href={`mailto:${settings.email}`}><FontAwesomeIcon icon={faEnvelope} aria-hidden="true" /> {settings.email}</a>
           </div>
           {settings.address && <address className="quote-address">

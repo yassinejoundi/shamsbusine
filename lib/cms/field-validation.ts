@@ -1,4 +1,5 @@
 import type { CmsField } from "./schema";
+import { isValidContactNumber } from "../contact-numbers";
 
 export function isValidCmsTextFieldValue(field: CmsField, value: string) {
   if (value.length > field.maxLength) return false;
@@ -8,7 +9,7 @@ export function isValidCmsTextFieldValue(field: CmsField, value: string) {
     case "email":
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
     case "tel":
-      return /^\+?[()\d .-]{6,30}$/.test(value.trim()) && (value.match(/\d/g)?.length ?? 0) >= 6;
+      return isValidContactNumber(value);
     case "url":
       try {
         return new URL(value.trim()).protocol === "https:";

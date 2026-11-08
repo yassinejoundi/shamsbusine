@@ -1,3 +1,5 @@
+import { isValidContactNumber } from "./contact-numbers";
+
 export const projectTypes = [
   "Construction / gros œuvre",
   "Rénovation / finitions",
@@ -8,8 +10,7 @@ export const projectTypes = [
 ] as const;
 
 export function isValidPhone(value: string) {
-  const digits = value.replace(/\D/g, "");
-  return digits.length >= 7 && digits.length <= 15 && /^[+0-9().\s-]+$/.test(value);
+  return isValidContactNumber(value);
 }
 
 export function validateEnquiry(values: {

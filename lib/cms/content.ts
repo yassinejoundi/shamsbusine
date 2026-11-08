@@ -8,6 +8,7 @@ import { isAnyCmsUploadedImageId, isCmsImageAssetId, isCmsUploadedImageId } from
 import { defaultEntreprisePartners, isValidCmsPartners, parseCmsPartners } from "./partners";
 import { isValidCmsTextFieldValue } from "./field-validation";
 import { parseCmsSocialLinks } from "./social-links";
+import { normalizeInternationalNumber, parseLegacyWhatsAppLink } from "../contact-numbers";
 
 type Asset = (typeof assetIndex.assets)[number];
 const assets = assetIndex.assets as Asset[];
@@ -65,6 +66,16 @@ export async function getCmsContent(slug: string): Promise<CmsValues> {
     if (!stored || typeof stored !== "object" || Array.isArray(stored)) return defaults;
 
     const merged = { ...defaults };
+    if (page.slug === "site-settings") {
+      const storedValues = stored as Record<string, unknown>;
+      if (typeof storedValues["site.whatsappNumber"] !== "string" && typeof storedValues["site.whatsapp"] === "string") {
+        const legacyWhatsApp = parseLegacyWhatsAppLink(storedValues["site.whatsapp"]);
+        if (legacyWhatsApp) {
+          merged["site.whatsappNumber"] = legacyWhatsApp.number;
+          merged["site.whatsappMessage"] = legacyWhatsApp.message;
+        }
+      }
+    }
     for (const field of page.sections.flatMap((group) => group.fields)) {
       const value = (stored as Record<string, unknown>)[field.key];
       if (field.kind === "partner-list") {
@@ -97,10 +108,11 @@ export async function getCmsContent(slug: string): Promise<CmsValues> {
         continue;
       }
       if (typeof value !== "string") continue;
+      const normalizedValue = field.inputType === "tel" ? normalizeInternationalNumber(value) : value;
       if (field.kind === "image") {
         if (isCmsImageAssetId(value, page.slug)) merged[field.key] = value;
-      } else if (isValidCmsTextFieldValue(field, value)) {
-        merged[field.key] = value;
+      } else if (isValidCmsTextFieldValue(field, normalizedValue)) {
+        merged[field.key] = normalizedValue;
       }
     }
     return merged;

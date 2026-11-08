@@ -73,7 +73,7 @@ function RealisationsContent({
             <Link href="/contact/#devis" className="button">
               {content["enquiry.action"]} <Arrow />
             </Link>
-            <a href={settings.phoneHref}>{settings.phone}</a>
+            <a href={settings.phoneHref}>{settings.phoneDisplay}</a>
             <a href={`mailto:${settings.email}`}>{settings.email}</a>
           </div>
         </div>

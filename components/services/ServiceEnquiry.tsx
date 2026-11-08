@@ -21,7 +21,7 @@ export function ServiceEnquiry({ content, settings }: { content: CmsValues; sett
           <div className="services-enquiry-contact">
             <Link href="/contact/#devis" className="button services-quote-action">{cmsText(content, "enquiry.action")} <Arrow /></Link>
             <address>
-              <a href={settings.phoneHref}>{settings.phone}</a>
+              <a href={settings.phoneHref}>{settings.phoneDisplay}</a>
               <a href={`mailto:${settings.email}`}>{settings.email}</a>
             </address>
           </div>

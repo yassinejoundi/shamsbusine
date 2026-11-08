@@ -116,7 +116,7 @@ function AdminCmsSectionForm({
     const id = `${page.slug}-${field.key}`;
     const rows = field.maxLength > 150 ? 4 : field.maxLength > 50 ? 2 : 1;
     return (
-      <div className="admin-cms-field" key={field.key}>
+      <div className={`admin-cms-field${field.fullWidth ? " admin-cms-field-full" : ""}`} key={field.key}>
         <label htmlFor={id}>{field.label}</label>
         {field.inputType ? (
           <input
@@ -126,8 +126,14 @@ function AdminCmsSectionForm({
             defaultValue={value}
             maxLength={field.maxLength}
             required={!field.optional}
-            aria-describedby={`${id}-limit`}
-            onChange={handleChange}
+            inputMode={field.inputType === "tel" ? "numeric" : undefined}
+            pattern={field.inputType === "tel" ? "(?:[1-9][0-9]{7,14}|0[5-7][0-9]{8})" : undefined}
+            title={field.inputType === "tel" ? "Saisissez 8 à 15 chiffres avec l’indicatif du pays ou un numéro marocain sur 10 chiffres commençant par 05, 06 ou 07." : undefined}
+            aria-describedby={field.inputType === "tel" ? `${id}-limit ${id}-number-note` : `${id}-limit`}
+            onChange={(event) => {
+              if (field.inputType === "tel") event.currentTarget.value = event.currentTarget.value.replace(/\D/g, "");
+              handleChange();
+            }}
           />
         ) : (
           <textarea
@@ -142,6 +148,7 @@ function AdminCmsSectionForm({
           />
         )}
         <span id={`${id}-limit`} className="admin-cms-limit">Maximum {field.maxLength} caractères</span>
+        {field.inputType === "tel" && <span id={`${id}-number-note`} className="admin-cms-limit">Chiffres uniquement : indicatif international ou numéro marocain sur 10 chiffres.</span>}
       </div>
     );
   }

@@ -1,10 +1,9 @@
 export const contact = {
-  phone: "+212 777 54 39 97",
-  phoneHref: "tel:+212777543997",
+  phone: "212777543997",
   email: "info@shamsbusine.com",
   address: "3e étage, bureau 509, quartier industriel, 2 Rue Sidi Ghanem, Marrakech 40000",
-  // Confirm WhatsApp availability for this archived phone number before launch.
-  whatsapp: "https://wa.me/212777543997",
+  whatsappNumber: "212777543997",
+  whatsappMessage: "",
 };
 
 export const socialLinks = [
