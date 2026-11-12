@@ -4,6 +4,7 @@ import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { Suspense } from "react";
 import { AdminBreadcrumb } from "@/components/admin/AdminBreadcrumb";
+import { AdminEnquiriesInbox, type AdminEnquiry } from "@/components/admin/AdminEnquiriesInbox";
 import { requireAdminForRender } from "@/lib/auth/admin";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
@@ -13,17 +14,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-type Attachment = { key: string; filename: string; size: number };
-type Enquiry = {
-  id: string;
-  name: string;
-  city: string;
-  phone: string;
-  email: string;
-  project_type: string;
-  description: string;
-  attachments: Attachment[];
-  created_at: string;
+type StoredAttachment = { key: string; filename: string; contentType?: string; size: number };
+type EnquiryRow = Omit<AdminEnquiry, "attachments" | "created_at"> & {
+  attachments: StoredAttachment[];
+  created_at: string | Date;
 };
 
 export default function EnquiriesPage() {
@@ -44,18 +38,32 @@ async function EnquiriesContent() {
     FROM quote_enquiries
     ORDER BY created_at DESC
     LIMIT 100
-  ` as Enquiry[];
+  ` as EnquiryRow[];
   const storage = getNeonStorage();
-  const enquiries = await Promise.all(rows.map(async (row) => ({
+
+  const enquiries: AdminEnquiry[] = await Promise.all(rows.map(async (row) => ({
     ...row,
-    attachments: await Promise.all((row.attachments ?? []).map(async (attachment) => ({
-      ...attachment,
-      url: await getSignedUrl(storage, new GetObjectCommand({
-        Bucket: "devis-attachments",
-        Key: attachment.key,
-        ResponseContentDisposition: "attachment",
-      }), { expiresIn: 300 }),
-    }))),
+    created_at: row.created_at instanceof Date ? row.created_at.toISOString() : new Date(row.created_at).toISOString(),
+    attachments: await Promise.all((row.attachments ?? []).map(async (attachment) => {
+      const base = { Bucket: "devis-attachments", Key: attachment.key };
+      const previewUrl = await getSignedUrl(storage, new GetObjectCommand({
+        ...base,
+        ResponseContentDisposition: "inline",
+        ...(attachment.contentType ? { ResponseContentType: attachment.contentType } : {}),
+      }), { expiresIn: 1800 });
+      const downloadUrl = await getSignedUrl(storage, new GetObjectCommand({
+        ...base,
+        ResponseContentDisposition: getDownloadDisposition(attachment.filename),
+      }), { expiresIn: 1800 });
+
+      return {
+        filename: attachment.filename,
+        contentType: attachment.contentType ?? "",
+        size: attachment.size,
+        previewUrl,
+        downloadUrl,
+      };
+    })),
   })));
 
   return (
@@ -67,39 +75,18 @@ async function EnquiriesContent() {
       <header className="admin-heading">
         <div>
           <h1>Demandes de devis</h1>
-          <p className="admin-intro">Consultez les demandes reçues et téléchargez les plans ou photos joints.</p>
+          <p className="admin-intro">Les coordonnées, le brief et les fichiers déposés sont réunis dans chaque demande.</p>
         </div>
       </header>
-      {enquiries.length ? (
-        <ol className="admin-enquiries">
-          {enquiries.map((enquiry) => (
-            <li className="admin-enquiry" key={enquiry.id}>
-              <div className="admin-enquiry-heading">
-                <h2>{enquiry.name}</h2>
-                <time dateTime={enquiry.created_at}>{new Date(enquiry.created_at).toLocaleString("fr-MA", { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Casablanca" })}</time>
-              </div>
-              <p><strong>{enquiry.project_type}</strong> · {enquiry.city}</p>
-              <address className="admin-contact">
-                <a href={`tel:${enquiry.phone.replace(/[^+\d]/g, "")}`}>{enquiry.phone}</a>
-                <a href={`mailto:${enquiry.email}`}>{enquiry.email}</a>
-              </address>
-              <p className="admin-description">{enquiry.description}</p>
-              {enquiry.attachments.length > 0 && (
-                <ul className="admin-attachments">
-                  {enquiry.attachments.map((attachment) => (
-                    <li key={attachment.key}>
-                      <a href={attachment.url} rel="noreferrer">{attachment.filename}</a>
-                      <span>{(attachment.size / 1024 / 1024).toFixed(1)} Mo</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <p className="admin-empty">Aucune demande pour le moment.</p>
-      )}
+      <AdminEnquiriesInbox enquiries={enquiries} />
     </main>
   );
+}
+
+function getDownloadDisposition(filename: string) {
+  const fallback = filename.replace(/[^\x20-\x7e]|["\\]/g, "_");
+  const encoded = encodeURIComponent(filename).replace(/[!'()*]/g, (character) =>
+    `%${character.charCodeAt(0).toString(16).toUpperCase()}`,
+  );
+  return `attachment; filename="${fallback}"; filename*=UTF-8''${encoded}`;
 }
