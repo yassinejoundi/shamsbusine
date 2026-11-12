@@ -22,12 +22,14 @@
 .contact-enquiry-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 8%; align-items: start; }
 .contact-enquiry-copy h2 { max-width: 12ch; font-size: clamp(2.25rem, 3.5vw, 3.5rem); }
 .contact-enquiry-copy p { max-width: 39ch; margin-block-start: 1.5rem; }
+.contact-enquiry-form { padding: clamp(1.5rem, 3vw, 3rem); background: var(--ground); }
 .contact-enquiry-form h3 { margin-block-end: 1.5rem; font-size: clamp(1.75rem, 2.8vw, 2.5rem); }
 @media (max-width: 899px) {
   .contact-hero-content { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .contact-hero-copy { padding-bottom: 0; }
   .contact-hero-visuals { max-width: 760px; justify-self: end; width: 100%; }
   .contact-enquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .contact-enquiry-form { padding: clamp(1.25rem, 4vw, 2rem); }
   .contact-enquiry-copy h2 { max-width: 18ch; }
 }
 @media (max-width: 699px) {

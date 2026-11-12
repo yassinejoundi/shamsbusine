@@ -7,6 +7,14 @@ const signatures: Record<string, (bytes: Uint8Array) => boolean> = {
 
 export const maxAttachmentBytes = 5 * 1024 * 1024;
 export const maxTotalAttachmentBytes = 10 * 1024 * 1024;
+export const maxAttachmentCount = 3;
+
+export function getAttachmentLimitError(files: ReadonlyArray<{ size: number }>) {
+  if (files.length > maxAttachmentCount) return "count";
+  if (files.some((file) => file.size > maxAttachmentBytes)) return "file-size";
+  if (files.reduce((total, file) => total + file.size, 0) > maxTotalAttachmentBytes) return "total-size";
+  return null;
+}
 
 export async function isAllowedAttachment(file: File) {
   const signature = signatures[file.type];

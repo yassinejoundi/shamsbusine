@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { SiteNavbar, SiteNavbarFallback } from "@/components/site/SiteNavbar";
 import { SiteFooter, SiteFooterFallback } from "@/components/site/SiteFooter";
 import { ScrollReveals } from "@/components/site/ScrollReveals";
+import "./quote-form.css";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,0 +1,51 @@
+:root { --danger: #8a231b; }
+
+.quote-form .form-status[role="alert"], .upload-error { color: var(--danger); }
+.upload-group { display: grid; gap: .5rem; min-width: 0; }
+.upload-picker { min-width: 0; }
+.quote-form .upload-input { position: absolute; inset-block-start: 0; inset-inline-start: 0; width: 1px; height: 1px; min-height: 0; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; }
+.upload-control { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 84px; padding: 1rem 1.125rem; border: 1px dashed var(--input-edge); background: var(--paper); color: var(--ink); text-align: start; }
+.upload-control > svg { flex: 0 0 1.25rem; color: var(--secondary); }
+.upload-copy, .upload-file-details { display: grid; gap: .15rem; min-width: 0; }
+.upload-copy { flex: 1; }
+.upload-copy strong { font-weight: 550; }
+.upload-copy > span, .upload-file-size { color: var(--secondary); font-size: .875rem; font-weight: 400; }
+.upload-action { display: inline-flex; align-items: center; justify-content: center; min-width: 7rem; min-height: 44px; padding-inline: .9rem; background: var(--accent); font-weight: 500; text-align: center; }
+.upload-control:disabled { border-style: solid; background: var(--surface); color: var(--secondary); cursor: not-allowed; }
+.upload-control:disabled .upload-action { background: var(--surface); }
+.upload-list { display: grid; gap: .5rem; margin: .25rem 0 0; padding: 0; list-style: none; }
+.upload-file { display: flex; align-items: center; gap: .75rem; min-width: 0; padding-inline: .25rem; }
+.upload-file > svg { flex: 0 0 1rem; color: var(--secondary); }
+.upload-file-details { flex: 1; }
+.upload-file-name { overflow-wrap: anywhere; font-size: .9375rem; font-weight: 500; }
+.upload-remove { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; flex: 0 0 auto; min-width: 44px; min-height: 44px; padding: .5rem; background: transparent; color: var(--ink); font-size: .875rem; text-decoration: underline; text-underline-offset: .2em; }
+.upload-error { min-height: 0; font-size: .875rem; line-height: 1.5; }
+.upload-error:empty { display: none; }
+.upload-live-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; }
+.enquiry-success { position: fixed; inset: 0; width: min(34rem, calc(100vw - 2rem)); max-width: none; max-height: calc(100dvh - 2rem); margin: auto; padding: clamp(1.5rem, 4vw, 2.5rem); overflow-y: auto; overscroll-behavior: contain; border: 0; background: var(--ground); color: var(--ink); }
+.enquiry-success::backdrop { background: rgb(24 29 24 / .68); }
+.enquiry-success h2 { max-width: 18ch; font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.1; letter-spacing: -.04em; }
+.enquiry-success p { max-width: 42ch; margin-block: 1rem 1.5rem; }
+.enquiry-success .button { min-width: 10rem; }
+
+@media (max-width: 699px) {
+  .upload-control { min-height: 76px; gap: .75rem; padding: .875rem; }
+  .upload-action { min-width: 0; padding-inline: .7rem; }
+  .upload-file { align-items: flex-start; gap: .5rem; }
+  .upload-file > svg { margin-block-start: .25rem; }
+  .upload-remove { gap: .25rem; padding-inline: .35rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .upload-control:not(:disabled) { transition: background-color 180ms ease, border-color 180ms ease; }
+  .upload-remove { transition: color 160ms ease; }
+}
+
+@media (hover: hover) {
+  .upload-control:not(:disabled):hover { background: var(--surface); border-color: var(--ink); }
+  .upload-remove:hover { color: var(--danger); }
+}
+
+@media (forced-colors: active) {
+  .upload-control { border: 1px solid ButtonText; }
+}

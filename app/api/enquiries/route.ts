@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import { getNeonDatabase } from "@/lib/neon-database";
 import { getNeonStorage } from "@/lib/neon-storage";
 import { validateEnquiry } from "@/lib/enquiry-validation";
-import { isAllowedAttachment, maxAttachmentBytes, maxTotalAttachmentBytes } from "@/lib/enquiry-files";
+import { getAttachmentLimitError, isAllowedAttachment } from "@/lib/enquiry-files";
 
 const bucket = "devis-attachments";
 const maxBodyBytes = 11 * 1024 * 1024;
@@ -43,8 +43,7 @@ export async function POST(request: Request) {
   }
 
   const files = documentEntries.filter((entry): entry is File => entry instanceof File && entry.size > 0);
-  if (files.length > 3 || files.some((file) => file.size > maxAttachmentBytes) ||
-      files.reduce((total, file) => total + file.size, 0) > maxTotalAttachmentBytes) {
+  if (getAttachmentLimitError(files)) {
     return errorResponse("Joignez jusqu’à 3 fichiers PDF, JPG, PNG ou WebP, dans la limite de 5 Mo par fichier et 10 Mo au total.", 400);
   }
   for (const file of files) {
