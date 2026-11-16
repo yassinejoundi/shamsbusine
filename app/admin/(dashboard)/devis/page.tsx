@@ -22,7 +22,12 @@ type EnquiryRow = Omit<AdminEnquiry, "attachments" | "created_at"> & {
 
 export default function EnquiriesPage() {
   return (
-    <Suspense fallback={<main id="contenu" className="frame admin-page" tabIndex={-1}>Chargement des demandes…</main>}>
+    <Suspense fallback={
+      <main id="contenu" className="frame admin-page admin-devis-page admin-devis-loading" tabIndex={-1} role="status">
+        <h1>Demandes de devis</h1>
+        <p>Chargement des demandes…</p>
+      </main>
+    }>
       <EnquiriesContent />
     </Suspense>
   );
@@ -67,12 +72,12 @@ async function EnquiriesContent() {
   })));
 
   return (
-    <main id="contenu" className="frame admin-page" tabIndex={-1}>
+    <main id="contenu" className="frame admin-page admin-devis-page" tabIndex={-1}>
       <AdminBreadcrumb items={[
         { label: "Espace de gestion", href: "/admin" },
         { label: "Demandes de devis", current: true },
       ]} />
-      <header className="admin-heading">
+      <header className="admin-heading admin-devis-heading">
         <div>
           <h1>Demandes de devis</h1>
           <p className="admin-intro">Les coordonnées, le brief et les fichiers déposés sont réunis dans chaque demande.</p>

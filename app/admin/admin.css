@@ -135,7 +135,7 @@
 .admin-save-status, .admin-save-error { margin: 0; padding: .75rem 1rem; background: var(--ground); font-size: .875rem; }
 .admin-save-error { border-inline-start: 3px solid #9b332c; }
 
-.admin-unsaved-dialog { width: min(32rem, calc(100vw - 2rem)); max-width: none; padding: clamp(1.25rem, 4vw, 2rem); border: 1px solid var(--surface); background: var(--paper); color: var(--ink); box-shadow: 0 1rem 3rem rgb(36 41 35 / 18%); }
+.admin-unsaved-dialog { width: min(32rem, calc(100vw - 2rem)); max-width: none; padding: clamp(1.25rem, 4vw, 2rem); border: 1px solid var(--surface); background: var(--paper); color: var(--ink); box-shadow: 0 1rem 3rem rgb(36 41 35 / 18%); /* taste-skill-ignore: floating confirmation dialog */ }
 .admin-unsaved-dialog::backdrop { background: rgb(36 41 35 / 48%); }
 .admin-unsaved-dialog h2 { max-width: 24ch; font-size: 1.375rem; line-height: 1.25; letter-spacing: -.02em; }
 .admin-unsaved-dialog > p:not(.admin-eyebrow) { margin-block-start: .75rem; color: var(--secondary); font-size: .9375rem; }
@@ -200,5 +200,326 @@
     outline: 2px solid CanvasText;
     outline-offset: 2px;
     border-color: CanvasText;
+  }
+}
+
+/* 360px list + 24px gap + flexible detail closes to the sheet width. */
+.admin-shell:has(.admin-devis-page) { background: var(--ground); }
+.admin-shell:has(.admin-devis-page) .admin-sidebar { border-inline-end: 0; }
+.admin-workspace:has(.admin-devis-page) { background: var(--ground); }
+.admin-workspace > .admin-devis-page.frame {
+  width: auto;
+  max-width: none;
+  min-height: calc(100dvh - 8px);
+  margin: 0 8px 8px 0;
+  padding: clamp(1.25rem, 2.3vw, 2rem);
+  border: 1px solid var(--surface);
+  border-radius: 16px;
+  background: var(--paper);
+}
+
+.admin-devis-page .admin-breadcrumb { margin-block-end: 1rem; font-size: .8125rem; }
+.admin-devis-heading { margin-block-end: 1.5rem; }
+.admin-devis-heading h1, .admin-devis-loading h1, .admin-devis-error h1 {
+  max-width: 32ch;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.admin-devis-heading .admin-intro { margin-block-start: .4rem; font-size: .875rem; }
+.admin-devis-loading p, .admin-devis-error p { margin-block-start: .5rem; color: var(--secondary); font-size: .9375rem; }
+.admin-devis-error .admin-devis-retry { margin-block-start: 1rem; }
+
+.admin-devis-inbox { min-width: 0; }
+.admin-devis-inbox :where(button, a, input, select) { font: inherit; }
+.admin-devis-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  min-width: 0;
+}
+.admin-devis-list-panel, .admin-devis-detail-panel { min-width: 0; }
+.admin-devis-list-panel { padding-inline-end: 24px; border-inline-end: 1px solid var(--surface); }
+.admin-devis-list-title-row, .admin-devis-request-top, .admin-devis-filter-row,
+.admin-devis-files-heading, .admin-devis-detail-header, .admin-devis-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.admin-devis-list-title-row { align-items: baseline; }
+.admin-devis-list-title-row h2 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.admin-devis-loaded-count, .admin-devis-result-count { color: var(--secondary); font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.admin-devis-search-field { display: grid; gap: 6px; margin-block-start: 16px; }
+.admin-devis-search-field label, .admin-devis-sort-field > span { color: var(--secondary); font-size: .8125rem; line-height: 1.35; }
+.admin-devis-search, .admin-devis-sort {
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--input-edge);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.admin-devis-search { width: 100%; padding: .6rem .75rem; }
+.admin-devis-search::placeholder { color: var(--secondary); opacity: 1; }
+.admin-devis-search:focus-visible, .admin-devis-sort:focus-visible { border: 2px solid var(--ink); outline: none; }
+.admin-devis-filter-row { align-items: end; margin-block-start: 12px; gap: 12px; }
+.admin-devis-filter-group { display: flex; min-width: 0; border-block-end: 1px solid var(--surface); }
+.admin-devis-filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: .5rem .6rem;
+  border: 0;
+  border-block-end: 2px solid transparent;
+  background: transparent;
+  color: var(--secondary);
+  font-size: .8125rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.admin-devis-filter-button span { color: var(--ink); font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.admin-devis-filter-button[aria-pressed="true"] { border-block-end-color: var(--ink); color: var(--ink); font-weight: 500; }
+.admin-devis-sort-field { display: grid; flex: 0 0 auto; gap: 4px; }
+.admin-devis-sort { width: 100%; max-width: 9.5rem; padding: .45rem 1.7rem .45rem .6rem; font-size: .8125rem; }
+.admin-devis-result-count { margin-block-start: 10px; }
+.admin-devis-request-list { max-height: min(68vh, 760px); margin: 8px 0 0; padding: 0; overflow-y: auto; list-style: none; scroll-padding-block: .5rem; }
+.admin-devis-request-list li + li { border-block-start: 1px solid var(--surface); }
+.admin-devis-request {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  min-height: 80px;
+  padding: 12px 10px 12px 12px;
+  border: 0;
+  border-inline-start: 2px solid transparent;
+  background: transparent;
+  color: var(--ink);
+  text-align: start;
+  cursor: pointer;
+}
+.admin-devis-request-top { align-items: baseline; }
+.admin-devis-request-top strong { min-width: 0; overflow: hidden; font-size: .9375rem; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.admin-devis-request-top time { flex: 0 0 auto; color: var(--secondary); font-size: .75rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.admin-devis-request-project { display: flex; min-width: 0; gap: 5px; overflow: hidden; color: var(--ink); font-size: .8125rem; line-height: 1.4; }
+.admin-devis-request-project span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin-devis-request-project span:nth-child(2) { flex: 0 0 auto; color: var(--secondary); }
+.admin-devis-request-files { color: var(--secondary); font-size: .75rem; line-height: 1.35; }
+.admin-devis-request.is-selected { border-inline-start-color: var(--ink); background: var(--ground); }
+.admin-devis-list-empty, .admin-devis-detail-empty { display: grid; align-content: center; justify-items: start; gap: 8px; min-height: 180px; }
+.admin-devis-list-empty { padding: 16px 8px 8px; }
+.admin-devis-list-empty p, .admin-devis-detail-empty p, .admin-devis-files-empty { color: var(--secondary); font-size: .875rem; line-height: 1.5; }
+.admin-devis-clear-filters { min-height: 44px; padding: .5rem 0; background: transparent; color: var(--ink); text-decoration: underline; text-underline-offset: .18em; cursor: pointer; }
+
+.admin-devis-detail-panel { padding-inline-start: 0; }
+.admin-devis-detail-header { align-items: baseline; padding-block-end: 14px; border-block-end: 1px solid var(--surface); }
+.admin-devis-detail-header h2, .admin-devis-detail-empty h2 { max-width: 32ch; font-size: 1.25rem; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.admin-devis-detail-header time { flex: 0 0 auto; max-width: 15rem; color: var(--secondary); font-size: .8125rem; text-align: end; }
+.admin-devis-project-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 14px 0; border-block-end: 1px solid var(--surface); }
+.admin-devis-project-facts dt { margin-block-end: 3px; color: var(--secondary); font-size: .75rem; }
+.admin-devis-project-facts dd { margin: 0; font-size: .875rem; font-weight: 500; overflow-wrap: anywhere; }
+.admin-devis-detail-section { margin-block-start: 24px; }
+.admin-devis-detail-section h3 { margin-block-end: 10px; font-size: .9375rem; font-weight: 600; line-height: 1.35; }
+.admin-devis-contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.admin-devis-contact-links a {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 10px 12px;
+  border: 1px solid var(--input-edge);
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.admin-devis-contact-links a span { font-size: .8125rem; font-weight: 500; line-height: 1.3; }
+.admin-devis-contact-links a strong { overflow-wrap: anywhere; font-size: .8125rem; font-weight: 400; line-height: 1.4; }
+.admin-devis-contact-links .admin-devis-contact-primary { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.admin-devis-description { max-width: 68ch; font-size: .9375rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-devis-files-heading { align-items: baseline; margin-block-end: 10px; }
+.admin-devis-files-heading h3 { margin: 0; }
+.admin-devis-files-heading span { color: var(--secondary); font-size: .8125rem; }
+.admin-devis-file-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.admin-devis-file { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; gap: 12px; min-width: 0; }
+.admin-devis-image-thumb, .admin-devis-file-visual {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 78px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--surface);
+  border-radius: 4px;
+  background: var(--ground);
+  color: var(--ink);
+  cursor: pointer;
+}
+.admin-devis-image-thumb { position: relative; }
+.admin-devis-image-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; outline: 1px solid rgb(0 0 0 / 10%); outline-offset: -1px; }
+.admin-devis-file-visual { align-content: center; gap: 5px; color: var(--secondary); }
+.admin-devis-file-visual svg { width: 24px; height: 24px; }
+.admin-devis-file-visual span { font-size: .75rem; font-weight: 600; }
+.admin-devis-file-info { display: grid; align-content: start; gap: 3px; min-width: 0; }
+.admin-devis-file-name { overflow-wrap: anywhere; font-size: .8125rem; font-weight: 500; line-height: 1.4; }
+.admin-devis-file-meta { color: var(--secondary); font-size: .75rem; line-height: 1.4; }
+.admin-devis-file-actions { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-block-start: 2px; }
+.admin-devis-file-actions button, .admin-devis-file-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .25rem 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: .8125rem;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  cursor: pointer;
+}
+.admin-devis-files-empty { padding-block: 8px; }
+.admin-devis-mobile-back { display: none; }
+.admin-devis-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; }
+
+.admin-devis-preview-dialog:not([open]) { display: none; }
+.admin-devis-preview-dialog[open] {
+  position: fixed;
+  inset: 1rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+  width: min(78rem, calc(100vw - 2rem));
+  height: min(54rem, calc(100dvh - 2rem));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 16px;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  border: 1px solid var(--surface);
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 8px 24px rgb(36 41 35 / 6%); /* taste-skill-ignore: floating attachment preview dialog */
+}
+.admin-devis-preview-dialog::backdrop { background: rgb(24 29 24 / 72%); }
+.admin-devis-preview-header { align-items: flex-start; min-width: 0; }
+.admin-devis-preview-header h2 { max-width: 60ch; overflow: hidden; font-size: 1rem; font-weight: 600; line-height: 1.35; text-overflow: ellipsis; }
+.admin-devis-close-preview, .admin-devis-retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: .55rem .8rem;
+  border: 1px solid var(--input-edge);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: .875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.admin-devis-retry { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.admin-devis-pdf-preview { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; }
+.admin-devis-pdf-preview iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 1px solid var(--surface); background: var(--ground); }
+.admin-devis-pdf-preview p, .admin-devis-preview-fallback { color: var(--secondary); font-size: .8125rem; }
+.admin-devis-pdf-preview a, .admin-devis-preview-fallback a { color: var(--ink); text-decoration: underline; text-underline-offset: .18em; }
+.admin-devis-image-preview { position: relative; min-height: 0; height: 100%; overflow: hidden; background: var(--ground); }
+.admin-devis-image-preview img { object-fit: contain; }
+.admin-devis-request:focus-visible, .admin-devis-filter-button:focus-visible, .admin-devis-image-thumb:focus-visible,
+.admin-devis-file-visual:focus-visible, .admin-devis-file-actions :where(button, a):focus-visible,
+.admin-devis-clear-filters:focus-visible, .admin-devis-mobile-back:focus-visible,
+.admin-devis-close-preview:focus-visible, .admin-devis-contact-links a:focus-visible,
+.admin-devis-retry:focus-visible, .admin-devis-search:focus-visible, .admin-devis-sort:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 880px) {
+  .admin-workspace > .admin-devis-page.frame {
+    min-height: calc(100dvh - 1px);
+    margin: 0;
+    border-inline: 0;
+    border-block-end: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-devis-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .admin-devis-list-panel { padding-inline-end: 0; border-inline-end: 0; }
+  .admin-devis-list-panel.is-hidden, .admin-devis-detail-panel { display: none; }
+  .admin-devis-detail-panel.is-visible { display: block; }
+  .admin-devis-request-list { max-height: none; overflow: visible; }
+  .admin-devis-mobile-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin: -4px 0 12px;
+    padding: 4px 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: .875rem;
+    text-decoration: underline;
+    text-underline-offset: .18em;
+    cursor: pointer;
+  }
+  .admin-devis-mobile-back svg { width: 16px; height: 16px; }
+}
+
+@media (max-width: 520px) {
+  .admin-devis-list-title-row { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .admin-devis-filter-row { align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+  .admin-devis-filter-group { flex: 1 1 100%; }
+  .admin-devis-filter-button { flex: 1 1 0; padding-inline: 4px; }
+  .admin-devis-sort-field { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 12px; }
+  .admin-devis-sort { flex: 0 1 13rem; max-width: none; }
+  .admin-devis-request-top { align-items: flex-start; flex-direction: column; gap: 2px; }
+  .admin-devis-detail-header { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .admin-devis-contact-links { grid-template-columns: minmax(0, 1fr); }
+  .admin-devis-file { grid-template-columns: 88px minmax(0, 1fr); gap: 10px; }
+  .admin-devis-image-thumb, .admin-devis-file-visual { width: 88px; height: 66px; }
+  .admin-devis-preview-dialog[open] { inset: .5rem; width: calc(100vw - 1rem); height: calc(100dvh - 1rem); padding: 12px; }
+  .admin-devis-preview-header { gap: 8px; }
+  .admin-devis-preview-header h2 { max-width: 34ch; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .admin-devis-request, .admin-devis-filter-button, .admin-devis-contact-links a,
+  .admin-devis-file-actions :where(button, a), .admin-devis-clear-filters,
+  .admin-devis-close-preview, .admin-devis-retry {
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .admin-devis-request:hover:not(.is-selected), .admin-devis-contact-secondary:hover,
+  .admin-devis-close-preview:hover, .admin-devis-retry:hover { background: var(--ground); }
+  .admin-devis-filter-button:hover, .admin-devis-file-actions :where(button, a):hover,
+  .admin-devis-clear-filters:hover { color: var(--ink); }
+  .admin-devis-contact-primary:hover, .admin-devis-retry:hover { background: var(--dark-surface); color: var(--paper); }
+}
+
+@media (forced-colors: active) {
+  .admin-workspace > .admin-devis-page.frame, .admin-devis-list-panel, .admin-devis-project-facts,
+  .admin-devis-list-panel li + li, .admin-devis-search, .admin-devis-sort,
+  .admin-devis-contact-links a, .admin-devis-image-thumb, .admin-devis-file-visual,
+  .admin-devis-preview-dialog, .admin-devis-pdf-preview iframe, .admin-devis-retry {
+    border-color: CanvasText;
+  }
+  .admin-devis-request.is-selected { border-inline-start-color: Highlight; }
+  .admin-devis-request:focus-visible, .admin-devis-filter-button:focus-visible, .admin-devis-image-thumb:focus-visible,
+  .admin-devis-file-visual:focus-visible, .admin-devis-file-actions :where(button, a):focus-visible,
+  .admin-devis-clear-filters:focus-visible, .admin-devis-mobile-back:focus-visible,
+  .admin-devis-close-preview:focus-visible, .admin-devis-contact-links a:focus-visible,
+  .admin-devis-retry:focus-visible, .admin-devis-search:focus-visible, .admin-devis-sort:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
   }
 }
