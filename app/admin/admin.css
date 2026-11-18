@@ -441,8 +441,7 @@
 .admin-devis-request:focus-visible, .admin-devis-filter-button:focus-visible, .admin-devis-image-thumb:focus-visible,
 .admin-devis-file-visual:focus-visible, .admin-devis-file-actions :where(button, a):focus-visible,
 .admin-devis-clear-filters:focus-visible, .admin-devis-mobile-back:focus-visible,
-.admin-devis-close-preview:focus-visible, .admin-devis-contact-links a:focus-visible,
-.admin-devis-retry:focus-visible, .admin-devis-search:focus-visible, .admin-devis-sort:focus-visible {
+.admin-devis-close-preview:focus-visible, .admin-devis-contact-links a:focus-visible, .admin-devis-retry:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
