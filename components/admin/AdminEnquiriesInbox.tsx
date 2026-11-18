@@ -158,15 +158,22 @@ export function AdminEnquiriesInbox({ enquiries }: { enquiries: AdminEnquiry[] }
               </div>
               <label className="admin-devis-sort-field" htmlFor={`${idPrefix}-sort`}>
                 <span>Trier</span>
-                <select
-                  id={`${idPrefix}-sort`}
-                  className="admin-devis-sort"
-                  value={sortOrder}
-                  onChange={(event) => setSortOrder(event.currentTarget.value as SortOrder)}
-                >
-                  <option value="newest">Plus récentes</option>
-                  <option value="oldest">Plus anciennes</option>
-                </select>
+                <span className="admin-devis-sort-control">
+                  <select
+                    id={`${idPrefix}-sort`}
+                    className="admin-devis-sort"
+                    value={sortOrder}
+                    onChange={(event) => setSortOrder(event.currentTarget.value as SortOrder)}
+                  >
+                    <option value="newest">Plus récentes</option>
+                    <option value="oldest">Plus anciennes</option>
+                  </select>
+                  <span className="admin-devis-sort-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" focusable="false">
+                      <path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </span>
               </label>
             </div>
             <p className="admin-devis-result-count" role="status" aria-live="polite" aria-atomic="true">
